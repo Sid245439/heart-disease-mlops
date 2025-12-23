@@ -15,6 +15,7 @@ python -c "from src.training import train_pipeline; train_pipeline('data/raw/hea
 #   API
 ### On New terminal
 conda activate heart-disease-mlops
+
 uvicorn app:app --reload
 ### Visit: http://localhost:8000/docs
 
@@ -22,6 +23,7 @@ uvicorn app:app --reload
 # MLFLOW
 ### On New Terminal
 conda activate heart-disease-mlops
+
 mlflow ui --host 0.0.0.0 --port 5000
 ### Visit: http://localhost:5000
 
@@ -29,7 +31,9 @@ mlflow ui --host 0.0.0.0 --port 5000
 # Docker- Add VS extension for docker before this
 ### Build and run - On new terminal
 conda activate heart-disease-mlops
+
 docker build -t heart-disease-mlops:latest .
+
 docker run -p 8000:8000 -v $(pwd)/models:/app/models:ro heart-disease-mlops:latest
 ### Visit: http://localhost:8000/docs
 
@@ -55,6 +59,7 @@ curl -X POST http://localhost:8000/predict \
     "ca": 0,
     "thal": 1
   }'
+
 
 
 
