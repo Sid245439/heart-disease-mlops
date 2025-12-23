@@ -2,6 +2,7 @@
 Follow Commands Setu by step
 
 conda env create -f environment.yml
+
 conda activate heart-disease-mlops
 
 python download_data.py
@@ -54,5 +55,6 @@ curl -X POST http://localhost:8000/predict \
     "ca": 0,
     "thal": 1
   }'
+
 
 
