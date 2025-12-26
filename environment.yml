@@ -34,7 +34,7 @@ dependencies:
   - python-dotenv=1.0.*
   
   # Monitoring & Logging
-  #- prometheus-client=0.18.*
+  - prometheus-client=0.18.*
 
   # Additional packages via pip
   - pip:
