@@ -36,6 +36,13 @@
 - Request/response metrics exported at `/metrics` (Prometheus). Sample config: `monitoring/prometheus.yml`.
 - Quick start Prometheus: `docker run -p 9090:9090 -v $(pwd)/monitoring/prometheus.yml:/etc/prometheus/prometheus.yml prom/prometheus`; optional Grafana: `docker run -d -p 3000:3000 grafana/grafana` (add Prom data source at `http://host.docker.internal:9090`).
 - K8s manifests include `prometheus.io/*` annotations for automatic scraping.
+- Screenshots included (in `screenshots/`):
+  - `monitoring-targets.png` (Prometheus targets page UP).
+  - `monitoring-requests-total.png` (`sum by(endpoint) (heart_api_requests_total)`).
+  - `monitoring-requests-rate-v1.png` and `monitoring-requests-rate-v2.png` (`sum by(endpoint) (rate(heart_api_requests_total[1m]))`).
+  - `monitoring-metrics-terminal-view.png` (`/metrics` output view).
+  - `curl-call-api-health.png` (API call/logging view).
+- CI/CD: GitHub Actions workflow at `.github/workflows/ci.yml` (lint + pytest).
 
 ## Architecture (high level)
 ```mermaid
@@ -64,6 +71,9 @@ flowchart LR
 - Repository: https://github.com/<your-username>/heart-disease-mlops
 - Screenshots: place CI/CD, deployment, and monitoring captures in `screenshots/`.
 - Short video: record end-to-end run (data → train → serve → predict → monitor).
+- Provide local access instructions (if not public): `uvicorn app:app --host 0.0.0.0 --port 8000`, or `docker run -p 8000:8000 -v $(pwd)/models:/app/models:ro heart-disease-mlops:latest`.
+- Include CI/CD workflow YAML (GitHub Actions/Jenkins) and deployment manifests (k8s/Helm) in repo.
+- Final written report: export this Markdown to a 10-page doc/docx/PDF as required.
 
 _(Convert this Markdown to PDF if your submission portal requires a PDF.)_
 
