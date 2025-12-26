@@ -1,0 +1,13 @@
+# Basic Prometheus config to scrape the FastAPI app locally
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: "heart-disease-api"
+    metrics_path: /metrics
+    static_configs:
+      - targets:
+          # FastAPI running on host machine (uvicorn or Docker mapped to 8000)
+          - host.docker.internal:8000
+          - localhost:8000
+
