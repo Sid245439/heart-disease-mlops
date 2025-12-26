@@ -19,6 +19,12 @@ conda activate heart-disease-mlops
 uvicorn app:app --reload
 ### Visit: http://localhost:8000/docs
 
+# Monitoring & Logging
+- API requests are logged to `logs/api.log` (set `LOG_LEVEL=DEBUG|INFO|...`).
+- Metrics are exposed at `/metrics` in Prometheus format.
+- Quick Prometheus: `docker run -p 9090:9090 -v $(pwd)/monitoring/prometheus.yml:/etc/prometheus/prometheus.yml prom/prometheus`
+- Grafana (optional): `docker run -d -p 3000:3000 grafana/grafana` then add Prometheus data source at `http://host.docker.internal:9090`.
+- Tail logs while hitting endpoints: `tail -f logs/api.log`
 
 # MLFLOW
 ### On New Terminal
