@@ -44,10 +44,10 @@ flowchart LR
       A[Raw CSV] --> B[download_data.py]
       B --> C[EDA_UCI.ipynb]
     end
-    C --> D[HeartDiseasePreprocessor\nsrc/preprocessing.py]
-    D --> E[ModelTrainer\nsrc/training.py]
+    C --> D[HeartDiseasePreprocessor<br/>src/preprocessing.py]
+    D --> E[ModelTrainer<br/>src/training.py]
     E -->|best model + preprocessor| F[(models/)]
-    F --> G[FastAPI Service\napp.py]
+    F --> G[FastAPI Service<br/>app.py]
     G --> H[/predict]
     G --> I[/metrics]
     G --> J[/health]
