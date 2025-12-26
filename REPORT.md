@@ -67,13 +67,3 @@ flowchart LR
 - `POST /predict` – returns `prediction`, `confidence`, `risk_level`.
 - `GET /metrics` – Prometheus scrape endpoint for request counts/latency.
 
-## Submission Links & Artifacts
-- Repository: https://github.com/<your-username>/heart-disease-mlops
-- Screenshots: place CI/CD, deployment, and monitoring captures in `screenshots/`.
-- Short video: record end-to-end run (data → train → serve → predict → monitor).
-- Provide local access instructions (if not public): `uvicorn app:app --host 0.0.0.0 --port 8000`, or `docker run -p 8000:8000 -v $(pwd)/models:/app/models:ro heart-disease-mlops:latest`.
-- Include CI/CD workflow YAML (GitHub Actions/Jenkins) and deployment manifests (k8s/Helm) in repo.
-- Final written report: export this Markdown to a 10-page doc/docx/PDF as required.
-
-_(Convert this Markdown to PDF if your submission portal requires a PDF.)_
-
