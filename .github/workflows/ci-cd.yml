@@ -93,7 +93,7 @@ jobs:
         python -c "from src.training import train_pipeline; train_pipeline('data/raw/heart_disease_raw.csv')"
     
     - name: Upload models
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: trained-models
         path: models/
