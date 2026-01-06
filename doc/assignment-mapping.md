@@ -8,7 +8,11 @@ This page maps the repository contents to the assignment requirements.
 - Download script: `download.py` → saves `data/raw/heart_disease_raw.csv`
 - EDA notebook: `exploration/eda.ipynb`
 - EDA writeup: `doc/eda.md`
-- EDA figures: `doc/images/`
+- EDA figures (view in GitHub Pages):
+  - [Target distribution](images/heart_disease_target_distribution.png)
+  - [Correlation heatmap](images/heart_disease_correlation_matrix.png)
+  - [Categorical distributions](images/heart_disease_categorical_distribution.png)
+  - [Numerical distributions](images/heart_disease_numerical_distribution.png)
 
 ## 2. Feature Engineering & Model Development
 
@@ -49,7 +53,12 @@ This page maps the repository contents to the assignment requirements.
 - Workflows:
   - `.github/workflows/ci.yml` (lint/format/typing/test in parallel)
   - `.github/workflows/ci-cd.yml` (reuses CI + builds Docker + trains)
-- Reports/artifacts: `doc/reports/` uploaded from workflows
+- Reports/artifacts (view in GitHub Pages):
+  - Ruff lint report: [reports/ruff/ruff-lint-report.html](reports/ruff/ruff-lint-report.html)
+  - Format check report: [reports/format/ruff-format-report.html](reports/format/ruff-format-report.html)
+  - Mypy report: [reports/typing/mypy-report.html](reports/typing/mypy-report.html)
+  - Pytest report: [reports/pytest/pytest-report.html](reports/pytest/pytest-report.html)
+  - Coverage report: [reports/coverage/htmlcov/index.html](reports/coverage/htmlcov/index.html)
 - CI/CD guide: `doc/ci-cd.md`
 
 ## 6. Model Containerization
@@ -73,6 +82,14 @@ This page maps the repository contents to the assignment requirements.
 - Metrics: Prometheus format at `/metrics`
 - Prometheus config: `monitoring/prometheus.yml`
 - Guide: `doc/monitoring.md`
+
+Monitoring evidence (view in GitHub Pages):
+
+- [Prometheus targets](images/screenshots/monitoring-targets.png)
+- [Requests total](images/screenshots/monitoring-requests-total.png)
+- [Request rate v1](images/screenshots/monitoring-requests-rate-v1.png)
+- [Request rate v2](images/screenshots/monitoring-requests-rate-v2.png)
+- [/metrics output](images/screenshots/monitoring-metrics-terminal-view.png)
 
 ## 9. Documentation & Reporting
 

@@ -64,3 +64,41 @@ Add a Prometheus datasource:
 - A chart for request totals
 - API `/metrics` output in the browser or terminal
 - Sample `logs/api.log` lines after calling `/predict`
+
+## Included screenshots (click to open)
+
+These screenshots are stored in `doc/images/screenshots/` and published with GitHub Pages.
+
+### Prometheus targets
+
+[Open image](images/screenshots/monitoring-targets.png)
+
+![Prometheus targets](images/screenshots/monitoring-targets.png)
+
+### Requests total
+
+[Open image](images/screenshots/monitoring-requests-total.png)
+
+![Requests total](images/screenshots/monitoring-requests-total.png)
+
+### Request rate
+
+[Open image (v1)](images/screenshots/monitoring-requests-rate-v1.png)
+
+![Request rate v1](images/screenshots/monitoring-requests-rate-v1.png)
+
+[Open image (v2)](images/screenshots/monitoring-requests-rate-v2.png)
+
+![Request rate v2](images/screenshots/monitoring-requests-rate-v2.png)
+
+### /metrics output
+
+[Open image](images/screenshots/monitoring-metrics-terminal-view.png)
+
+![Metrics output](images/screenshots/monitoring-metrics-terminal-view.png)
+
+### API health proof
+
+[Open image](images/screenshots/curl-call-api-health.png)
+
+![API health call](images/screenshots/curl-call-api-health.png)

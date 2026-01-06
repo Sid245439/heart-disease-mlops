@@ -45,8 +45,22 @@ Orchestrates:
 
 ## Where reports are stored
 
+## View reports (GitHub Pages)
+
+These files live under `doc/reports/` and are included in the published site, so you can open them directly:
+
+- Ruff lint report: [reports/ruff/ruff-lint-report.html](reports/ruff/ruff-lint-report.html)
+- Format check report: [reports/format/ruff-format-report.html](reports/format/ruff-format-report.html)
+  - Ruff format diff patch: [reports/format/ruff-format-diff.patch](reports/format/ruff-format-diff.patch)
+  - Black diff patch: [reports/format/black-diff.patch](reports/format/black-diff.patch)
+- Mypy report: [reports/typing/mypy-report.html](reports/typing/mypy-report.html)
+- Pytest report: [reports/pytest/pytest-report.html](reports/pytest/pytest-report.html)
+- Coverage report: [reports/coverage/htmlcov/index.html](reports/coverage/htmlcov/index.html)
+
+## Report locations (repo paths)
+
 - Ruff: `doc/reports/ruff/`
-- Format diff: `doc/reports/format/`
+- Format: `doc/reports/format/`
 - Mypy: `doc/reports/typing/`
-- Pytest + JUnit HTML: `doc/reports/pytest/`
-- Coverage HTML: `doc/reports/coverage/htmlcov/`
+- Pytest: `doc/reports/pytest/`
+- Coverage: `doc/reports/coverage/htmlcov/`
