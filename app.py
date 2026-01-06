@@ -1,4 +1,5 @@
 """FastAPI Prediction Service with logging + Prometheus metrics"""
+
 import logging
 import os
 import pickle
@@ -9,7 +10,6 @@ import pandas as pd
 from fastapi import FastAPI, HTTPException, Request, Response
 from prometheus_client import CONTENT_TYPE_LATEST, Counter, Histogram, generate_latest
 from pydantic import BaseModel
-
 
 # Structured logging to console + file
 LOG_LEVEL = os.getenv("LOG_LEVEL", "INFO").upper()
@@ -29,10 +29,14 @@ logger.addHandler(file_handler)
 
 # Prometheus metrics
 REQUEST_COUNT = Counter(
-    "heart_api_requests_total", "Total API requests", ["method", "endpoint", "http_status"]
+    "heart_api_requests_total",
+    "Total API requests",
+    ["method", "endpoint", "http_status"],
 )
 REQUEST_LATENCY = Histogram(
-    "heart_api_request_latency_seconds", "Request latency (s)", ["endpoint"]
+    "heart_api_request_latency_seconds",
+    "Request latency (s)",
+    ["endpoint"],
 )
 
 MODEL = None
@@ -59,13 +63,13 @@ def load_models():
     """Load trained model and preprocessor from disk"""
     global MODEL, PREPROCESSOR
     try:
-        with open("models/best_model.pkl", "rb") as f:
+        with Path("models/best_model.pkl").open("rb") as f:
             MODEL = pickle.load(f)
-        with open("models/preprocessor.pkl", "rb") as f:
+        with Path("models/preprocessor.pkl").open("rb") as f:
             PREPROCESSOR = pickle.load(f)
         logger.info("✓ Models loaded")
     except Exception as e:
-        logger.error(f"✗ Failed to load models: {e}")
+        logger.error("✗ Failed to load models: %s", e)
 
 
 app = FastAPI(title="Heart Disease Prediction API")
@@ -86,7 +90,7 @@ async def log_and_measure(request: Request, call_next):
         REQUEST_COUNT.labels(method=request.method, endpoint=endpoint, http_status=status_code).inc()
         REQUEST_LATENCY.labels(endpoint=endpoint).observe(duration)
         logger.info(
-            f"{request.method} {endpoint} status={status_code} duration_ms={duration*1000:.2f}"
+            f"{request.method} {endpoint} status={status_code} duration_ms={duration * 1000:.2f}",
         )
 
 
@@ -119,7 +123,7 @@ async def predict(patient: PatientData):
         risk_level = "low" if confidence < 0.6 else ("medium" if confidence < 0.8 else "high")
 
         logger.info(
-            f"prediction={int(prediction)} risk={risk_level} confidence={confidence:.3f} age={patient.age}"
+            f"prediction={int(prediction)} risk={risk_level} confidence={confidence:.3f} age={patient.age}",
         )
 
         return {

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Data Download Script - Run this ONCE to fetch the Heart Disease dataset"""
+"""Data Download Script - Run this ONCE to fetch the Heart Disease dataset."""
 
 import logging
 import sys
@@ -26,7 +26,7 @@ def ensure_directories():
     ]
     for dir_path in dirs:
         Path(dir_path).mkdir(parents=True, exist_ok=True)
-        logger.info(f"✓ Directory ensured: {dir_path}")
+        logger.info("✓ Directory ensured: %s", dir_path)
 
 
 def download_heart_disease_data():
@@ -42,7 +42,7 @@ def download_heart_disease_data():
         # Save raw data
         raw_path = "data/raw/heart_disease_raw.csv"
         heart_disease_df.to_csv(raw_path, index=False)
-        logger.info(f"✓ Raw data saved: {raw_path}")
+        logger.info("✓ Raw data saved: %s", raw_path)
 
         # Display info
         logger.info(f"Dataset shape: {heart_disease_df.shape}")
@@ -89,7 +89,7 @@ def create_sample_dataset():
     raw_path = "data/raw/heart_disease_raw.csv"
     df.to_csv(raw_path, index=False)
 
-    logger.info(f"✓ Sample data created: {raw_path}")
+    logger.info("✓ Sample data created: %s", raw_path)
     return df
 
 

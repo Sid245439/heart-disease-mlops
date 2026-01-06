@@ -47,7 +47,7 @@ class ModelTrainer:
             mlflow.sklearn.log_model(best_lr, "model")
 
             self.models["logistic_regression"] = {"model": best_lr, "metrics": metrics}
-            logger.info(f"LR Metrics: {metrics}")
+            logger.info("LR Metrics: %s", metrics)
             return best_lr, metrics
 
     def train_random_forest(self, X_train, y_train, X_test, y_test, feature_names=None):
@@ -80,7 +80,7 @@ class ModelTrainer:
                 "best_n_estimators": grid_search.best_params_["n_estimators"],
                 "best_max_depth": grid_search.best_params_["max_depth"],
                 "cv_folds": 5,
-            }
+            },
         )
         mlflow.log_metrics(metrics)
         mlflow.sklearn.log_model(best_rf, "model")
@@ -96,7 +96,7 @@ class ModelTrainer:
         importances = best_rf.feature_importances_
         # Ensure same length
         assert len(feature_names) == len(
-            importances
+            importances,
         ), f"len(feature_names)={len(feature_names)} != len(importances)={len(importances)}"
 
         feature_importance = pd.DataFrame(
@@ -122,7 +122,7 @@ class ModelTrainer:
             "best_params": grid_search.best_params_,
         }
 
-        logger.info(f"RF Metrics: {metrics}")
+        logger.info("RF Metrics: %s", metrics)
         return best_rf, metrics
 
     def _evaluate_model(self, model, X_train, y_train, X_test, y_test):
@@ -153,15 +153,15 @@ class ModelTrainer:
         """Select best model based on test AUC"""
         best_key = max(self.models.keys(), key=lambda x: self.models[x]["metrics"]["test_auc"])
         self.best_model = self.models[best_key]["model"]
-        logger.info(f"Best model: {best_key}")
+        logger.info("Best model: %s", best_key)
         return self.best_model
 
     def save_best_model(self, filepath="models/best_model.pkl"):
         """Save best model"""
         Path(filepath).parent.mkdir(parents=True, exist_ok=True)
-        with open(filepath, "wb") as f:
+        with Path(filepath).open("wb") as f:
             pickle.dump(self.best_model, f)
-        logger.info(f"Model saved to {filepath}")
+        logger.info("Model saved to %s", filepath)
 
 
 def train_pipeline(data_path="data/raw/heart_disease_raw.csv"):

@@ -1,15 +1,16 @@
-"""
-Simple EDA for Heart Disease dataset
+"""Simple EDA for Heart Disease dataset
 Run: python eda.py
 """
 
+from pathlib import Path
+
+import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
-import matplotlib.pyplot as plt
-from pathlib import Path
 
 RAW_PATH = "data/raw/heart_disease_raw.csv"
 PROC_PATH = "data/processed/heart_disease_clean_binary.csv"
+
 
 def basic_info(df, name="df"):
     print(f"\n===== {name} HEAD =====")
@@ -21,11 +22,13 @@ def basic_info(df, name="df"):
     print(f"\n===== {name} NA COUNTS =====")
     print(df.isna().sum())
 
+
 def plot_target_distribution(df, target_col, title_suffix=""):
     sns.countplot(x=target_col, data=df)
     plt.title(f"Target Distribution {title_suffix}")
     plt.savefig(f"logs/target_distribution{title_suffix}.png", dpi=120, bbox_inches="tight")
     plt.close()
+
 
 def plot_corr_heatmap(df, title_suffix=""):
     plt.figure(figsize=(10, 8))
@@ -34,6 +37,7 @@ def plot_corr_heatmap(df, title_suffix=""):
     plt.tight_layout()
     plt.savefig(f"logs/corr_heatmap{title_suffix}.png", dpi=120)
     plt.close()
+
 
 def main():
     Path("logs").mkdir(exist_ok=True)
@@ -55,6 +59,7 @@ def main():
 
     plot_target_distribution(df_bin, "target_binary", "_binary")
     plot_corr_heatmap(df_bin.drop(columns=[raw_target]), "_binary")
+
 
 if __name__ == "__main__":
     main()

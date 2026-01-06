@@ -1,11 +1,12 @@
 [project]
-name = "mlops-pdel"
+name = "heart_disease_mlops"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
     "matplotlib>=3.10.8",
+    "prometheus-client>=0.23.1",
     "scikit-learn>=1.8.0",
     "seaborn>=0.13.2",
 ]
@@ -23,17 +24,36 @@ dev = [
 lint = [
     "ruff~=0.14.7",
 ]
+format = [
+    "ruff~=0.14.7",
+]
 typing = [
     "mypy~=1.19.0",
 ]
 
 [tool.ruff]
+preview = true
 line-length = 120
-exclude = ["build/", "dist/", ".nox/", "noxfile.py"]
+exclude = ["build/", "dist/", ".nox/", "noxfile.py", "tests/"]
 
 [tool.ruff.lint]
 select = ["ALL"]
-ignore = ["D203", "D213"]
+ignore = [
+    # Whole rules families
+    "D",
+    "ANN",
+    "FIX",
+    "COM",
+    "EM",
+    # Specific rule code
+    # flake8-unused-arguments (ARG)
+    "ARG002",
+    "ARG003",
+    "ARG004",
+    # tryceratops (TRY)
+    "TRY002",
+    "TRY003",
+]
 
 [tool.mypy]
-exclude = ["build/", "dist/", ".nox/", "noxfile.py"] 
+exclude = ["build/", "dist/", ".nox/", "noxfile.py", "tests/"] 
