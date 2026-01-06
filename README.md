@@ -114,3 +114,8 @@ Invoke-RestMethod -Method Post -Uri http://localhost:8000/predict -ContentType a
 ## Kubernetes (local cluster)
 
 See `k8s/deployment.yaml` and the docs page `doc/deployment.md`.
+
+## Repository
+
+- [GitHub - Heart Disease MLOps](https://github.com/Sid245439/heart-disease-mlops)
+- [Documentation Site](https://sid245439.github.io/heart-disease-mlops/site/index.html)
