@@ -56,7 +56,6 @@ logs/
 # Testing
 .pytest_cache/
 .coverage
-htmlcov/
 .tox/
 
 # Environment
