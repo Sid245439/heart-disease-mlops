@@ -59,7 +59,7 @@ uvicorn app:app --reload
 ## Run MLflow UI
 
 ```bash
-mlflow ui --backend-store-uri file:./mlruns --host localhost --port 5000
+mlflow ui  --host localhost --port 5000
 ```
 
 - UI: http://localhost:5000
