@@ -40,6 +40,7 @@ format = [
 typing = [
     "junit2html>=31.0.5",
     "mypy~=1.19.0",
+    "pandas-stubs>=2.3.3.251219",
 ]
 test = [
     "pytest>=9.0.2",
@@ -56,6 +57,7 @@ exclude = ["build/", "dist/", ".nox/", "noxfile.py", "tests/"]
 select = ["ALL"]
 ignore = [
     # Whole rules families
+    "CPY001",
     "D",
     "ANN",
     "FIX",
