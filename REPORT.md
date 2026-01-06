@@ -75,3 +75,10 @@ flowchart TD
 - `GET /health` – readiness check; reports model load status.
 - `POST /predict` – returns `prediction`, `confidence`, `risk_level`.
 - `GET /metrics` – Prometheus scrape endpoint for request counts/latency.
+
+## Repository
+
+- [GitHub - Heart Disease MLOps](https://github.com/Sid245439/heart-disease-mlops)
+- [Documentation Site](https://sid245439.github.io/heart-disease-mlops/site/index.html)
+
+Note: For detailed instructions, code explanations, and screenshots, please refer to the full documentation site built with MkDocs located in the `site/` directory. The site is served using github pages. Please access it via the link above.
