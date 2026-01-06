@@ -11,21 +11,25 @@
       
       
       
+        <link rel="prev" href="containerization.html">
+      
+      
+        <link rel="next" href="monitoring.html">
       
       
         
       
       
-      <link rel="icon" href="/assets/images/favicon.png">
+      <link rel="icon" href="assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
-        <title>Heart Disease MLOps</title>
+        <title>Deployment (Kubernetes) - Heart Disease MLOps</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
       
       
 
@@ -44,9 +48,9 @@
       
     
     
-      <link rel="stylesheet" href="/_static/extra.css">
+      <link rel="stylesheet" href="_static/extra.css">
     
-    <script>__md_scope=new URL("/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -63,6 +67,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#production-deployment-kubernetes" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -75,7 +84,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/index.html" title="Heart Disease MLOps" class="md-header__button md-logo" aria-label="Heart Disease MLOps" data-md-component="logo">
+    <a href="index.html" title="Heart Disease MLOps" class="md-header__button md-logo" aria-label="Heart Disease MLOps" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -95,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              Deployment (Kubernetes)
             
           </span>
         </div>
@@ -189,7 +198,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/index.html" title="Heart Disease MLOps" class="md-nav__button md-logo" aria-label="Heart Disease MLOps" data-md-component="logo">
+    <a href="index.html" title="Heart Disease MLOps" class="md-nav__button md-logo" aria-label="Heart Disease MLOps" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -219,7 +228,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/index.html" class="md-nav__link">
+      <a href="index.html" class="md-nav__link">
         
   
   
@@ -246,7 +255,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/setup.html" class="md-nav__link">
+      <a href="setup.html" class="md-nav__link">
         
   
   
@@ -273,7 +282,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/eda.html" class="md-nav__link">
+      <a href="eda.html" class="md-nav__link">
         
   
   
@@ -300,7 +309,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/modeling.html" class="md-nav__link">
+      <a href="modeling.html" class="md-nav__link">
         
   
   
@@ -327,7 +336,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/experiment-tracking.html" class="md-nav__link">
+      <a href="experiment-tracking.html" class="md-nav__link">
         
   
   
@@ -354,7 +363,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/api.html" class="md-nav__link">
+      <a href="api.html" class="md-nav__link">
         
   
   
@@ -381,7 +390,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/ci-cd.html" class="md-nav__link">
+      <a href="ci-cd.html" class="md-nav__link">
         
   
   
@@ -408,7 +417,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/containerization.html" class="md-nav__link">
+      <a href="containerization.html" class="md-nav__link">
         
   
   
@@ -432,10 +441,37 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/deployment.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment (Kubernetes)
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="deployment.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -451,6 +487,131 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-deployed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is deployed
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#important-model-artifacts-in-kubernetes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Important: model artifacts in Kubernetes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploy-minikube-docker-desktop-kubernetes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deploy (Minikube / Docker Desktop Kubernetes)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deploy (Minikube / Docker Desktop Kubernetes)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-build-the-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1) Build the image
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-ensure-the-cluster-can-see-the-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2) Ensure the cluster can see the image
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-apply-the-manifest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3) Apply the manifest
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-verify" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4) Verify
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-access-the-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5) Access the service
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-to-screenshot-for-the-report" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What to screenshot for the report
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -462,7 +623,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/monitoring.html" class="md-nav__link">
+      <a href="monitoring.html" class="md-nav__link">
         
   
   
@@ -489,7 +650,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/architecture.html" class="md-nav__link">
+      <a href="architecture.html" class="md-nav__link">
         
   
   
@@ -516,7 +677,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/assignment-mapping.html" class="md-nav__link">
+      <a href="assignment-mapping.html" class="md-nav__link">
         
   
   
@@ -549,8 +710,82 @@
               
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+  
+  
+
+
+<h1 id="production-deployment-kubernetes">Production Deployment (Kubernetes)<a class="headerlink" href="#production-deployment-kubernetes" title="Permanent link">&para;</a></h1>
+<p>A Kubernetes manifest is provided at <code>k8s/deployment.yaml</code>.</p>
+<h2 id="what-is-deployed">What is deployed<a class="headerlink" href="#what-is-deployed" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Deployment: <code>heart-disease-predictor</code> (2 replicas)</li>
+<li>Service: <code>heart-disease-service</code> (type: <code>LoadBalancer</code>)</li>
+<li>HPA: <code>heart-disease-hpa</code> (CPU/memory based)</li>
+</ul>
+<p>The Pod template includes Prometheus scrape annotations for <code>/metrics</code>.</p>
+<h2 id="important-model-artifacts-in-kubernetes">Important: model artifacts in Kubernetes<a class="headerlink" href="#important-model-artifacts-in-kubernetes" title="Permanent link">&para;</a></h2>
+<p>The API loads these files at startup:</p>
+<ul>
+<li><code>models/best_model.pkl</code></li>
+<li><code>models/preprocessor.pkl</code></li>
+</ul>
+<p>The simplest approach for this assignment is:</p>
+<ol>
+<li>Train locally: <code>nox -s train</code></li>
+<li>Build the image after training (so the <code>models/</code> directory is baked into the image).</li>
+</ol>
+<p>The current manifest does <strong>not</strong> mount an external volume at <code>/app/models</code> so that the baked-in model artifacts remain available.</p>
+<h2 id="deploy-minikube-docker-desktop-kubernetes">Deploy (Minikube / Docker Desktop Kubernetes)<a class="headerlink" href="#deploy-minikube-docker-desktop-kubernetes" title="Permanent link">&para;</a></h2>
+<h3 id="1-build-the-image">1) Build the image<a class="headerlink" href="#1-build-the-image" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>nox<span class="w"> </span>-s<span class="w"> </span>train
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>heart-disease-mlops:latest<span class="w"> </span>.
+</code></pre></div>
+<h3 id="2-ensure-the-cluster-can-see-the-image">2) Ensure the cluster can see the image<a class="headerlink" href="#2-ensure-the-cluster-can-see-the-image" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Minikube</strong> (example):</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>minikube<span class="w"> </span>image<span class="w"> </span>load<span class="w"> </span>heart-disease-mlops:latest
+</code></pre></div>
+<p>Or build directly inside minikube’s Docker daemon.</p>
+<h3 id="3-apply-the-manifest">3) Apply the manifest<a class="headerlink" href="#3-apply-the-manifest" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>k8s/deployment.yaml
+</code></pre></div>
+<h3 id="4-verify">4) Verify<a class="headerlink" href="#4-verify" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>heart-disease
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>kubectl<span class="w"> </span>get<span class="w"> </span>svc<span class="w"> </span>heart-disease-service
+</code></pre></div>
+<h3 id="5-access-the-service">5) Access the service<a class="headerlink" href="#5-access-the-service" title="Permanent link">&para;</a></h3>
+<p>If you don’t have a cloud load balancer (typical for local clusters), use port-forward:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>kubectl<span class="w"> </span>port-forward<span class="w"> </span>svc/heart-disease-service<span class="w"> </span><span class="m">8000</span>:8000
+</code></pre></div>
+<p>Then open:</p>
+<ul>
+<li>http://localhost:8000/docs</li>
+</ul>
+<h2 id="what-to-screenshot-for-the-report">What to screenshot for the report<a class="headerlink" href="#what-to-screenshot-for-the-report" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>kubectl get pods</code> showing READY pods</li>
+<li><code>kubectl get svc</code> showing service exposure</li>
+<li>A successful <code>/health</code> and <code>/predict</code> call</li>
+<li>(Optional) HPA status</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -593,10 +828,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "/", "features": ["navigation.sections", "navigation.expand", "navigation.top", "toc.integrate", "content.code.copy", "search.highlight", "search.suggest"], "search": "/assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.expand", "navigation.top", "toc.integrate", "content.code.copy", "search.highlight", "search.suggest"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="/assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

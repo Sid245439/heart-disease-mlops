@@ -68,15 +68,9 @@ spec:
               cpu: 500m
               memory: 512Mi
 
-          # Volume for model files
-          volumeMounts:
-            - name: models
-              mountPath: /app/models
-              readOnly: true
-
-      volumes:
-        - name: models
-          emptyDir: {}
+          # Model artifacts are expected to be baked into the image at /app/models
+          # (train first, then build the image). If you prefer externalized model
+          # artifacts, replace this with a PersistentVolume/hostPath strategy.
 
 ---
 apiVersion: v1

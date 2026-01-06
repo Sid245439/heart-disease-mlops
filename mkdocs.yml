@@ -29,9 +29,17 @@ extra_css:
 
 nav:
   - Home: index.md
+  - Setup & Reproducibility: setup.md
   - EDA: eda.md
   - Modeling: modeling.md
   - Experiment Tracking: experiment-tracking.md
+  - API Serving: api.md
+  - CI/CD: ci-cd.md
+  - Containerization: containerization.md
+  - Deployment (Kubernetes): deployment.md
+  - Monitoring & Logging: monitoring.md
+  - Architecture: architecture.md
+  - Rubric Mapping: assignment-mapping.md
 
 markdown_extensions:
   - toc:

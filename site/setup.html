@@ -11,21 +11,25 @@
       
       
       
+        <link rel="prev" href="index.html">
+      
+      
+        <link rel="next" href="eda.html">
       
       
         
       
       
-      <link rel="icon" href="/assets/images/favicon.png">
+      <link rel="icon" href="assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
-        <title>Heart Disease MLOps</title>
+        <title>Setup & Reproducibility - Heart Disease MLOps</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
       
       
 
@@ -44,9 +48,9 @@
       
     
     
-      <link rel="stylesheet" href="/_static/extra.css">
+      <link rel="stylesheet" href="_static/extra.css">
     
-    <script>__md_scope=new URL("/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -63,6 +67,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#setup-reproducibility" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -75,7 +84,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/index.html" title="Heart Disease MLOps" class="md-header__button md-logo" aria-label="Heart Disease MLOps" data-md-component="logo">
+    <a href="index.html" title="Heart Disease MLOps" class="md-header__button md-logo" aria-label="Heart Disease MLOps" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -95,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              Setup & Reproducibility
             
           </span>
         </div>
@@ -189,7 +198,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/index.html" title="Heart Disease MLOps" class="md-nav__button md-logo" aria-label="Heart Disease MLOps" data-md-component="logo">
+    <a href="index.html" title="Heart Disease MLOps" class="md-nav__button md-logo" aria-label="Heart Disease MLOps" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -219,7 +228,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/index.html" class="md-nav__link">
+      <a href="index.html" class="md-nav__link">
         
   
   
@@ -243,10 +252,37 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/setup.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setup & Reproducibility
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="setup.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -262,6 +298,120 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#option-a-recommended-uv-nox" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option A (recommended): uv + nox
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Option A (recommended): uv + nox">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-install-uv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1) Install uv
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-install-nox" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2) Install nox
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-run-quality-gates-formatlinttypingtests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3) Run quality gates (format/lint/typing/tests)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-download-data-train" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4) Download data + train
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#option-b-pipvenv-requirementstxt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option B: pip/venv + requirements.txt
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#option-c-conda-legacy-notebook-friendly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option C: Conda (legacy / notebook-friendly)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reproducibility-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reproducibility notes
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -273,7 +423,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/eda.html" class="md-nav__link">
+      <a href="eda.html" class="md-nav__link">
         
   
   
@@ -300,7 +450,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/modeling.html" class="md-nav__link">
+      <a href="modeling.html" class="md-nav__link">
         
   
   
@@ -327,7 +477,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/experiment-tracking.html" class="md-nav__link">
+      <a href="experiment-tracking.html" class="md-nav__link">
         
   
   
@@ -354,7 +504,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/api.html" class="md-nav__link">
+      <a href="api.html" class="md-nav__link">
         
   
   
@@ -381,7 +531,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/ci-cd.html" class="md-nav__link">
+      <a href="ci-cd.html" class="md-nav__link">
         
   
   
@@ -408,7 +558,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/containerization.html" class="md-nav__link">
+      <a href="containerization.html" class="md-nav__link">
         
   
   
@@ -435,7 +585,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/deployment.html" class="md-nav__link">
+      <a href="deployment.html" class="md-nav__link">
         
   
   
@@ -462,7 +612,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/monitoring.html" class="md-nav__link">
+      <a href="monitoring.html" class="md-nav__link">
         
   
   
@@ -489,7 +639,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/architecture.html" class="md-nav__link">
+      <a href="architecture.html" class="md-nav__link">
         
   
   
@@ -516,7 +666,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/assignment-mapping.html" class="md-nav__link">
+      <a href="assignment-mapping.html" class="md-nav__link">
         
   
   
@@ -549,8 +699,79 @@
               
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+  
+  
+
+
+<h1 id="setup-reproducibility">Setup &amp; Reproducibility<a class="headerlink" href="#setup-reproducibility" title="Permanent link">&para;</a></h1>
+<p>This page describes how to set up the project from a clean machine and reproduce results.</p>
+<h2 id="option-a-recommended-uv-nox">Option A (recommended): <code>uv</code> + <code>nox</code><a class="headerlink" href="#option-a-recommended-uv-nox" title="Permanent link">&para;</a></h2>
+<p>This is the same tooling used by GitHub Actions workflows.</p>
+<h3 id="1-install-uv">1) Install uv<a class="headerlink" href="#1-install-uv" title="Permanent link">&para;</a></h3>
+<p>Follow: https://docs.astral.sh/uv/</p>
+<h3 id="2-install-nox">2) Install nox<a class="headerlink" href="#2-install-nox" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--system<span class="w"> </span>nox<span class="w"> </span>nox-uv
+</code></pre></div>
+<h3 id="3-run-quality-gates-formatlinttypingtests">3) Run quality gates (format/lint/typing/tests)<a class="headerlink" href="#3-run-quality-gates-formatlinttypingtests" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>nox
+</code></pre></div>
+<p>Artifacts are written to:</p>
+<ul>
+<li><code>doc/reports/ruff/</code></li>
+<li><code>doc/reports/format/</code></li>
+<li><code>doc/reports/typing/</code></li>
+<li><code>doc/reports/pytest/</code></li>
+<li><code>doc/reports/coverage/</code></li>
+</ul>
+<h3 id="4-download-data-train">4) Download data + train<a class="headerlink" href="#4-download-data-train" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>nox<span class="w"> </span>-s<span class="w"> </span>train
+</code></pre></div>
+<p>Outputs:</p>
+<ul>
+<li>Raw data: <code>data/raw/heart_disease_raw.csv</code></li>
+<li>Model: <code>models/best_model.pkl</code></li>
+<li>Preprocessor: <code>models/preprocessor.pkl</code></li>
+<li>MLflow runs: <code>mlruns/</code></li>
+</ul>
+<h2 id="option-b-pipvenv-requirementstxt">Option B: pip/venv + requirements.txt<a class="headerlink" href="#option-b-pipvenv-requirementstxt" title="Permanent link">&para;</a></h2>
+<p>The Docker image installs dependencies from <code>requirements.txt</code> (generated via <code>uv export</code>).</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>.<span class="w"> </span>.venv/bin/activate<span class="w">  </span><span class="c1"># macOS/Linux</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1"># Windows PowerShell: .venv\Scripts\Activate.ps1</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>python<span class="w"> </span>download.py
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;from src.training import train_pipeline; train_pipeline(&#39;data/raw/heart_disease_raw.csv&#39;)&quot;</span>
+</code></pre></div>
+<h2 id="option-c-conda-legacy-notebook-friendly">Option C: Conda (legacy / notebook-friendly)<a class="headerlink" href="#option-c-conda-legacy-notebook-friendly" title="Permanent link">&para;</a></h2>
+<p>A Conda environment is provided via <code>environment.yml</code>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>environment.yml
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>conda<span class="w"> </span>activate<span class="w"> </span>heart-disease-mlops
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>python<span class="w"> </span>download.py
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>pytest<span class="w"> </span>tests/<span class="w"> </span>-v
+</code></pre></div>
+<h2 id="reproducibility-notes">Reproducibility notes<a class="headerlink" href="#reproducibility-notes" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Training is deterministic where feasible (<code>random_state=42</code>).</li>
+<li>The preprocessor is saved separately and applied during inference to prevent training/serving skew.</li>
+<li><code>requirements.txt</code> is a lock-style export (pinned versions + hashes) generated by <code>nox -s requirements</code>.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -593,10 +814,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "/", "features": ["navigation.sections", "navigation.expand", "navigation.top", "toc.integrate", "content.code.copy", "search.highlight", "search.suggest"], "search": "/assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.expand", "navigation.top", "toc.integrate", "content.code.copy", "search.highlight", "search.suggest"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="/assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

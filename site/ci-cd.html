@@ -11,21 +11,25 @@
       
       
       
+        <link rel="prev" href="api.html">
+      
+      
+        <link rel="next" href="containerization.html">
       
       
         
       
       
-      <link rel="icon" href="/assets/images/favicon.png">
+      <link rel="icon" href="assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
-        <title>Heart Disease MLOps</title>
+        <title>CI/CD - Heart Disease MLOps</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
       
       
 
@@ -44,9 +48,9 @@
       
     
     
-      <link rel="stylesheet" href="/_static/extra.css">
+      <link rel="stylesheet" href="_static/extra.css">
     
-    <script>__md_scope=new URL("/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -63,6 +67,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#cicd" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -75,7 +84,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/index.html" title="Heart Disease MLOps" class="md-header__button md-logo" aria-label="Heart Disease MLOps" data-md-component="logo">
+    <a href="index.html" title="Heart Disease MLOps" class="md-header__button md-logo" aria-label="Heart Disease MLOps" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -95,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              CI/CD
             
           </span>
         </div>
@@ -189,7 +198,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/index.html" title="Heart Disease MLOps" class="md-nav__button md-logo" aria-label="Heart Disease MLOps" data-md-component="logo">
+    <a href="index.html" title="Heart Disease MLOps" class="md-nav__button md-logo" aria-label="Heart Disease MLOps" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -219,7 +228,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/index.html" class="md-nav__link">
+      <a href="index.html" class="md-nav__link">
         
   
   
@@ -246,7 +255,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/setup.html" class="md-nav__link">
+      <a href="setup.html" class="md-nav__link">
         
   
   
@@ -273,7 +282,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/eda.html" class="md-nav__link">
+      <a href="eda.html" class="md-nav__link">
         
   
   
@@ -300,7 +309,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/modeling.html" class="md-nav__link">
+      <a href="modeling.html" class="md-nav__link">
         
   
   
@@ -327,7 +336,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/experiment-tracking.html" class="md-nav__link">
+      <a href="experiment-tracking.html" class="md-nav__link">
         
   
   
@@ -354,7 +363,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/api.html" class="md-nav__link">
+      <a href="api.html" class="md-nav__link">
         
   
   
@@ -378,10 +387,37 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/ci-cd.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CI/CD
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="ci-cd.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -397,6 +433,98 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#nox-sessions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nox sessions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#github-actions-workflows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GitHub Actions workflows
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GitHub Actions workflows">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ci-ciyml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CI (ci.yml)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cicd-ci-cdyml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CI/CD (ci-cd.yml)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docs-docsyml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Docs (docs.yml)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-reports-are-stored" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where reports are stored
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -408,7 +536,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/containerization.html" class="md-nav__link">
+      <a href="containerization.html" class="md-nav__link">
         
   
   
@@ -435,7 +563,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/deployment.html" class="md-nav__link">
+      <a href="deployment.html" class="md-nav__link">
         
   
   
@@ -462,7 +590,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/monitoring.html" class="md-nav__link">
+      <a href="monitoring.html" class="md-nav__link">
         
   
   
@@ -489,7 +617,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/architecture.html" class="md-nav__link">
+      <a href="architecture.html" class="md-nav__link">
         
   
   
@@ -516,7 +644,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/assignment-mapping.html" class="md-nav__link">
+      <a href="assignment-mapping.html" class="md-nav__link">
         
   
   
@@ -549,8 +677,71 @@
               
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+  
+  
+
+
+<h1 id="cicd">CI/CD<a class="headerlink" href="#cicd" title="Permanent link">&para;</a></h1>
+<p>This project uses <code>nox</code> + <code>uv</code> locally and in GitHub Actions.</p>
+<h2 id="nox-sessions">Nox sessions<a class="headerlink" href="#nox-sessions" title="Permanent link">&para;</a></h2>
+<p>Defined in <code>noxfile.py</code>:</p>
+<ul>
+<li><code>nox -s lint</code> – <code>ruff check</code> (generates JUnit XML + HTML report)</li>
+<li><code>nox -s format</code> – <code>ruff format --check --diff</code> (diff patch under <code>doc/reports/format/</code>)</li>
+<li><code>nox -s typing</code> – <code>mypy</code> (generates JUnit XML + HTML report)</li>
+<li><code>nox -s test</code> – <code>pytest</code> + coverage (JUnit XML + HTML, coverage XML + HTML)</li>
+<li><code>nox -s train</code> – downloads data + trains models</li>
+<li><code>nox -s requirements</code> – regenerates <code>requirements.txt</code> via <code>uv export</code></li>
+<li><code>nox -s docs</code> – builds MkDocs site</li>
+</ul>
+<h2 id="github-actions-workflows">GitHub Actions workflows<a class="headerlink" href="#github-actions-workflows" title="Permanent link">&para;</a></h2>
+<p>Workflows are located under <code>.github/workflows/</code>.</p>
+<h3 id="ci-ciyml">CI (<code>ci.yml</code>)<a class="headerlink" href="#ci-ciyml" title="Permanent link">&para;</a></h3>
+<p>Runs in parallel jobs:</p>
+<ul>
+<li><code>lint</code></li>
+<li><code>format</code></li>
+<li><code>typing</code></li>
+<li><code>test</code></li>
+</ul>
+<p>Each job uploads artifacts from <code>doc/reports/</code> so you can view reports per workflow run.</p>
+<h3 id="cicd-ci-cdyml">CI/CD (<code>ci-cd.yml</code>)<a class="headerlink" href="#cicd-ci-cdyml" title="Permanent link">&para;</a></h3>
+<p>Orchestrates:</p>
+<ol>
+<li>Reuses CI via <code>uses: ./.github/workflows/ci.yml</code></li>
+<li>Builds Docker image (after regenerating <code>requirements.txt</code>)</li>
+<li>Triggers training via <code>nox -s train</code> and uploads the <code>models/</code> folder as an artifact</li>
+<li>Runs a security scan (Trivy)</li>
+</ol>
+<h3 id="docs-docsyml">Docs (<code>docs.yml</code>)<a class="headerlink" href="#docs-docsyml" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Builds MkDocs site via <code>nox -s docs</code></li>
+<li>Deploys to GitHub Pages (on push to main/master)</li>
+</ul>
+<h2 id="where-reports-are-stored">Where reports are stored<a class="headerlink" href="#where-reports-are-stored" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Ruff: <code>doc/reports/ruff/</code></li>
+<li>Format diff: <code>doc/reports/format/</code></li>
+<li>Mypy: <code>doc/reports/typing/</code></li>
+<li>Pytest + JUnit HTML: <code>doc/reports/pytest/</code></li>
+<li>Coverage HTML: <code>doc/reports/coverage/htmlcov/</code></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -593,10 +784,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "/", "features": ["navigation.sections", "navigation.expand", "navigation.top", "toc.integrate", "content.code.copy", "search.highlight", "search.suggest"], "search": "/assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.expand", "navigation.top", "toc.integrate", "content.code.copy", "search.highlight", "search.suggest"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="/assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

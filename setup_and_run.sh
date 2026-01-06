@@ -31,7 +31,7 @@ echo -e "${GREEN}✓ Environment activated${NC}"
 
 # Step 2: Download data
 echo -e "\n${BLUE}Step 2: Downloading Dataset...${NC}"
-python download_data.py
+python download.py
 echo -e "${GREEN}✓ Data downloaded${NC}"
 
 # Step 3: Run unit tests

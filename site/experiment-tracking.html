@@ -14,6 +14,8 @@
         <link rel="prev" href="modeling.html">
       
       
+        <link rel="next" href="api.html">
+      
       
         
       
@@ -64,6 +66,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#experiment-tracking-mlflow" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -248,6 +255,33 @@
   
   
     <li class="md-nav__item">
+      <a href="setup.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setup & Reproducibility
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="eda.html" class="md-nav__link">
         
   
@@ -309,6 +343,24 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Experiment Tracking
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="experiment-tracking.html" class="md-nav__link md-nav__link--active">
         
   
@@ -326,6 +378,295 @@
 
       </a>
       
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#experiment-tracking-mlflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Experiment Tracking (MLflow)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Experiment Tracking (MLflow)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-gets-tracked" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What gets tracked
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-a-simplest-track-locally-with-the-default-file-store" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option A (simplest): track locally with the default file store
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-b-run-an-mlflow-tracking-server-recommended-for-repeatable-local-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option B: run an MLflow Tracking Server (recommended for repeatable local work)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#where-to-find-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where to find results
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common troubleshooting
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Serving
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ci-cd.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CI/CD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="containerization.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Containerization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="deployment.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment (Kubernetes)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="monitoring.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Monitoring & Logging
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="architecture.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="assignment-mapping.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rubric Mapping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -352,7 +693,113 @@
 
   <h1>Experiment Tracking</h1>
 
-
+<h2 id="experiment-tracking-mlflow">Experiment Tracking (MLflow)<a class="headerlink" href="#experiment-tracking-mlflow" title="Permanent link">&para;</a></h2>
+<p>This project uses <strong>MLflow Tracking</strong> to record model-training experiments (parameters, metrics, and artifacts) so you can compare runs and reproduce results.</p>
+<h3 id="what-gets-tracked">What gets tracked<a class="headerlink" href="#what-gets-tracked" title="Permanent link">&para;</a></h3>
+<p>During training, the code in <code>src/training.py</code>:</p>
+<ul>
+<li>Sets/uses an MLflow experiment named <code>heart-disease-mlops</code>.</li>
+<li>Creates runs for:</li>
+<li>Logistic Regression (<code>run_name="logistic-regression"</code>)</li>
+<li>Random Forest (<code>run_name="random-forest"</code>)</li>
+<li>Logs:</li>
+<li><strong>Params</strong>: hyperparameters (e.g., <code>C</code> for LR, <code>n_estimators</code>, <code>max_depth</code> for RF)</li>
+<li><strong>Metrics</strong>: accuracy/precision/recall/F1 + AUC values</li>
+<li><strong>Artifacts</strong>: a feature-importance plot for Random Forest</li>
+<li><strong>Models</strong>: each trained estimator via <code>mlflow.sklearn.log_model(...)</code></li>
+</ul>
+<p>In addition to MLflow tracking, the pipeline also writes local model artifacts:</p>
+<ul>
+<li><code>models/best_model.pkl</code></li>
+<li><code>models/preprocessor.pkl</code></li>
+</ul>
+<h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h3>
+<p>You need Python dependencies installed.</p>
+<p>Recommended (this repo’s standard):</p>
+<ul>
+<li>Install <code>uv</code></li>
+<li>Use <code>nox</code> sessions (which use <code>uv</code> under the hood via <code>nox-uv</code>)</li>
+</ul>
+<p>If you haven’t installed <code>nox</code> locally yet:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--system<span class="w"> </span>nox<span class="w"> </span>nox-uv
+</code></pre></div>
+<h3 id="option-a-simplest-track-locally-with-the-default-file-store">Option A (simplest): track locally with the default file store<a class="headerlink" href="#option-a-simplest-track-locally-with-the-default-file-store" title="Permanent link">&para;</a></h3>
+<p>By default, MLflow stores runs in a local folder named <code>./mlruns</code> (created automatically).</p>
+<ol>
+<li>Run training</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>nox<span class="w"> </span>-s<span class="w"> </span>train
+</code></pre></div>
+<p>This downloads the dataset (to <code>data/raw/heart_disease_raw.csv</code>) and runs the training pipeline.</p>
+<ol>
+<li>Start the MLflow UI</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>mlflow<span class="w"> </span>ui<span class="w"> </span>--backend-store-uri<span class="w"> </span>file:./mlruns<span class="w"> </span>--host<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span>--port<span class="w"> </span><span class="m">5000</span>
+</code></pre></div>
+<ol>
+<li>
+<p>Open the UI in your browser</p>
+</li>
+<li>
+<p><code>http://127.0.0.1:5000</code></p>
+</li>
+</ol>
+<h3 id="option-b-run-an-mlflow-tracking-server-recommended-for-repeatable-local-work">Option B: run an MLflow Tracking Server (recommended for repeatable local work)<a class="headerlink" href="#option-b-run-an-mlflow-tracking-server-recommended-for-repeatable-local-work" title="Permanent link">&para;</a></h3>
+<p>If you want a more “server-like” setup (separate backend store + artifact directory), run:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>mlflow<span class="w"> </span>server<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span>--backend-store-uri<span class="w"> </span>sqlite:///mlflow.db<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span>--default-artifact-root<span class="w"> </span>./mlartifacts<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span>--host<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span>--port<span class="w"> </span><span class="m">5000</span>
+</code></pre></div>
+<p>Then, in a separate terminal, point clients at it:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">MLFLOW_TRACKING_URI</span><span class="o">=</span>http://127.0.0.1:5000
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>nox<span class="w"> </span>-s<span class="w"> </span>train
+</code></pre></div>
+<p>Windows PowerShell:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nv">$env:MLFLOW_TRACKING_URI</span> <span class="p">=</span> <span class="s2">&quot;http://127.0.0.1:5000&quot;</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">nox</span> <span class="n">-s</span> <span class="n">train</span>
+</code></pre></div>
+<h3 id="where-to-find-results">Where to find results<a class="headerlink" href="#where-to-find-results" title="Permanent link">&para;</a></h3>
+<ul>
+<li>MLflow UI:</li>
+<li>Experiments → <code>heart-disease-mlops</code></li>
+<li>Runs → compare LR vs RF, metrics, params</li>
+<li>Artifacts tab → model artifacts + feature importance plot</li>
+<li>Local files:</li>
+<li><code>models/best_model.pkl</code> and <code>models/preprocessor.pkl</code> are used by the inference service.</li>
+</ul>
+<h3 id="common-troubleshooting">Common troubleshooting<a class="headerlink" href="#common-troubleshooting" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>UI shows no runs</strong></p>
+</li>
+<li>
+<p>Make sure the UI points at the same backend store where runs are written.</p>
+</li>
+<li>
+<p>If you used the default file store, run <code>mlflow ui --backend-store-uri file:./mlruns</code> from the repo root.</p>
+</li>
+<li>
+<p><strong>Port already in use (5000)</strong></p>
+</li>
+<li>
+<p>Pick another port, e.g. <code>--port 5001</code>.</p>
+</li>
+<li>
+<p><strong>Runs are created but artifacts are missing</strong></p>
+</li>
+<li>
+<p>Check file permissions in the artifact root directory.</p>
+</li>
+<li>
+<p>For a server setup, confirm <code>--default-artifact-root</code> is writable.</p>
+</li>
+<li>
+<p><strong>CI vs local behavior</strong></p>
+</li>
+<li>In CI, a long-running MLflow server usually isn’t started; tracking typically writes to the local file store.</li>
+</ul>
 
 
 
