@@ -10,11 +10,11 @@ RUN apt-get update && apt-get install -y \
     g++ \
     && rm -rf /var/lib/apt/lists/*
 
-# Copy environment file and create conda env (alternative: use pip)
-COPY environment.yml /app/
+# Copy requirements first (better layer caching)
+COPY requirements.txt /app/requirements.txt
 
-# Install dependencies via pip (faster than conda in Docker)
-RUN pip install --no-cache-dir -r requirements.txt
+# Install dependencies via pip
+RUN pip install --no-cache-dir -r /app/requirements.txt
 
 # Copy application code
 COPY . /app/

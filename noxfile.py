@@ -164,3 +164,20 @@ def train(session: Session) -> None:
 def docs(session: Session) -> None:
     """Build documentation site (MkDocs)."""
     session.run("mkdocs", "build", "--clean", "--strict")
+
+
+@session(
+    venv_backend="uv",
+    python="3.12",
+    uv_no_install_project=True,
+)
+def requirements(session: Session) -> None:
+    """Generate a fresh requirements.txt from pyproject/lock using uv."""
+    session.run(
+        "uv",
+        "export",
+        "--no-dev",
+        "-o",
+        "requirements.txt",
+        external=True,
+    )

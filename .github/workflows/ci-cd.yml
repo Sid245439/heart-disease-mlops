@@ -14,7 +14,25 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v4
+        with:
+          enable-cache: true
+
+      - name: Install nox
+        run: |
+          uv pip install --system nox nox-uv
+
+      - name: Generate requirements.txt (nox)
+        run: |
+          nox -s requirements
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
