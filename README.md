@@ -134,4 +134,5 @@ See `k8s/deployment.yaml` and the docs page `doc/deployment.md`.
 ## Repository
 
 - [GitHub - Heart Disease MLOps](https://github.com/Sid245439/heart-disease-mlops)
-- [Documentation Site](https://sid245439.github.io/heart-disease-mlops/site/index.html)
+- [Documentation Site](https://sid245439.github.io/heart-disease-mlops/site/index.html) 10 page detailed report
+- [Documentation source files](./doc/)
