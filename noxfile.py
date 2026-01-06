@@ -7,6 +7,7 @@ from nox_uv import session
 
 MODULE_NAME = "src"
 
+
 PROJECT_DIRECTORY = Path(__file__).parent.resolve()
 DOCS_DIRECTORY = PROJECT_DIRECTORY / "doc"
 REPORTS_DIRECTORY = DOCS_DIRECTORY / "reports"
