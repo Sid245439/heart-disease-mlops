@@ -1,0 +1,4219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ruff-format-report.xml</title>
+    <style type="text/css">
+        body {
+    background-color: white;
+    padding-bottom: 20em;
+    margin: 0;
+    min-height: 15cm;
+}
+
+h1, h2, h3, h4, h5, h6, h7 {
+    font-family: sans-serif;
+}
+
+h1 {
+    background-color: #007acc;
+    color: white;
+    padding: 3mm;
+    margin-top: 0;
+    margin-bottom: 1mm;
+}
+
+.footer {
+    font-style: italic;
+    font-size: small;
+    text-align: right;
+    padding: 1em;
+}
+
+.testsuite {
+    padding-bottom: 2em;
+    margin-left: 1em;
+}
+
+.proplist {
+    width: 100%;
+    margin-bottom: 2em;
+    border-collapse: collapse;
+    border: 1px solid grey;
+}
+
+.proplist th {
+    background-color: silver;
+    width: 5em;
+    padding: 2px;
+    padding-right: 1em;
+    text-align: left;
+}
+
+.proplist td {
+    padding: 2px;
+    word-break: break-all;
+}
+
+.index-table {
+    width: 90%;
+    margin-left: 1em;
+}
+
+.index-table td {
+    vertical-align: top;
+    max-width: 200px;
+    word-wrap: break-word;
+}
+
+.failure-index {
+
+}
+
+.toc {
+    margin-bottom: 2em;
+    font-family: monospace;
+}
+
+.stdio, pre {
+    min-height: 1em;
+    background-color: #1e1e1e;
+    color: silver;
+    padding: 0.5em;
+}
+.tdpre {
+    background-color: #1e1e1e;
+}
+
+.test {
+    margin-left: 0.5cm;
+}
+
+.toc {
+    list-style: none;
+}
+
+.toc li.outcome {
+    list-style: none;
+}
+
+.toc li.outcome::before {
+    content: "\2022";
+    color: black;
+    font-weight: bold;
+    display: inline-block;
+    width: 1.27em;
+    margin-left: -1.27em;
+    font-size: 1.2em;
+}
+
+.toc li.outcome-failed {
+    background-color: lightcoral;
+}
+
+.toc li.outcome-failed::before {
+    color: red;
+}
+
+.toc li.outcome-passed::before {
+    color: green;
+}
+
+.toc li.outcome-skipped::before {
+    color: orange;
+}
+
+.testcases .outcome {
+    border-left: 1em;
+    padding: 2px;
+}
+
+.testcases .outcome-failed {
+    border-left: 1em solid lightcoral;
+}
+
+
+.outcome-passed {
+    border-left: 1em solid lightgreen;
+}
+
+.outcome-skipped {
+    border-left: 1em dotted silver;
+}
+
+.testcases .outcome-passed {
+    border-left: 1em solid lightgreen;
+}
+
+.testcases .outcome-skipped {
+    border-left: 1em solid #FED8B1;
+}
+
+.stats-table {
+}
+
+.stats-table td {
+    min-width: 4em;
+    text-align: right;
+}
+
+.stats-table .failed {
+    background-color: lightcoral;
+}
+
+.stats-table .passed {
+    background-color: lightgreen;
+}
+
+.matrix-table {
+    table-layout: fixed;
+    border-spacing: 0;
+    width: available;
+    margin-left: 1em;
+}
+
+.matrix-table td {
+    vertical-align: center;
+}
+
+.matrix-table td:last-child {
+    width: 0;
+}
+
+.matrix-table tr:hover {
+    background-color: yellow;
+}
+
+.matrix-axis-name {
+    white-space: nowrap;
+    padding-right: 0.5em;
+    border-left: 1px solid black;
+    border-top: 1px solid black;
+    text-align: right;
+}
+
+.matrix-axis-line {
+    border-left: 1px solid black;
+    width: 0.5em;
+}
+
+.matrix-classname {
+    text-align: left;
+    width: 100%;
+    border-top: 2px solid grey;
+    border-bottom: 1px solid silver;
+}
+
+.matrix-casename {
+    text-align: left;
+    font-weight: normal;
+    font-style: italic;
+    padding-left: 1em;
+    border-bottom: 1px solid silver;
+}
+
+.matrix-result {
+    display: block;
+    width: 1em;
+    text-align: center;
+    padding: 1mm;
+    margin: 0;
+}
+
+.matrix-result-combined {
+    white-space: nowrap;
+    padding-right: 0.2em;
+    text-align: right;
+}
+
+.matrix-result-failed {
+    background-color: lightcoral;
+}
+
+.matrix-result-passed {
+    background-color: lightgreen;
+}
+
+.matrix-result-skipped {
+    background-color: lightyellow;
+}
+
+.matrix-even {
+    background-color: lightgray;
+}
+    </style>
+</head>
+<body>
+    
+<h1>
+    Test Report : ruff-format-report.xml
+</h1>
+
+
+<a id="toc"></a>
+<table class="index-table">
+    <tr>
+        <td>
+            <ul class="toc">
+            
+                
+                <li>C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\EDA_UCI
+                <ul>
+                    
+                    <li class="outcome outcome-failed"><a href="#77281b9e-6bd8-46ca-925f-ebbaff6f9055">org.ruff.CPY001</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#29de1ca3-a81a-45f1-b858-a04fb6db7ceb">org.ruff.RUF003</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#b591edd0-5e8f-401a-9006-398c08da0214">org.ruff.T201</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#f24c7b85-9f07-4165-b44e-6d3b3557f630">org.ruff.T201</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#33300dc0-aec3-4740-9af8-a77c8faf4fb8">org.ruff.T201</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#a23e124d-407b-497b-8562-9afd63032dcd">org.ruff.T201</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#ea9e47c6-ecb4-4864-93d7-95b30776f13d">org.ruff.RUF003</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#d49b7c51-445a-4740-bb4a-d07134e348bb">org.ruff.RUF003</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#7af44dd4-da25-4575-83d1-9c6a0617bc8b">org.ruff.T201</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#4f812e10-8bf4-4dc1-8da8-1d428ce7bff3">org.ruff.T201</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#60bc0de9-ca62-4e16-a5e5-bb1a0f674d6f">org.ruff.RUF003</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#60967b4a-561c-4991-8e44-1a23a4c53914">org.ruff.T201</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#5ad9359b-033d-4380-8838-e2cd3ff05c61">org.ruff.T201</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#e2159ae1-a495-4f5d-9421-feb8840328e6">org.ruff.T201</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#b3a9f61a-8af5-4ad9-a0a7-56bd1de86593">org.ruff.T201</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#3caded37-85e8-48b3-ae14-2cd1642c3223">org.ruff.T201</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#0f9e2a21-d5e9-4c04-b32c-d76674fb1841">org.ruff.T201</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#744e9a6d-be69-49d6-ad05-dd7b8857b5d9">org.ruff.T201</a></li>
+                    
+                </ul>
+                </li>
+                
+            
+                
+                <li>C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\app
+                <ul>
+                    
+                    <li class="outcome outcome-failed"><a href="#2a113e8e-afdc-4021-8f8f-c5e9ceaf33c1">org.ruff.CPY001</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#0be08593-f69a-4aeb-9661-d4a4b0fcb7c9">org.ruff.S403</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#94a2756a-080c-44d0-a517-6a69c7e0d12c">org.ruff.PLW0603</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#1c47bce3-9179-495a-9138-c988cf17e6f6">org.ruff.PLW0603</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#d3e875e1-f37f-4f44-a8c9-e9b54b70473d">org.ruff.S301</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#6fc9cf8f-46c0-4d22-9c23-af9c1712ea62">org.ruff.S301</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#e8ce6439-e8db-4a70-8ffe-5fe20b209b6b">org.ruff.BLE001</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#8c5865ac-8928-469a-928f-49885bb27c19">org.ruff.TRY400</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#20abf23e-91f5-4e5a-87cf-33d2dd106168">org.ruff.DOC201</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#d509872c-f128-4f3a-8d04-7a47f8ca25d5">org.ruff.G004</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#b8369adc-1916-4c59-8ccc-adc11e5d75f4">org.ruff.RUF029</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#d9c18aac-3402-41c5-843e-8ec5c3bcd2bb">org.ruff.DOC201</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#0ce36968-4fff-4ed3-b3fe-33f8f4973927">org.ruff.TRY301</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#004e5004-5e21-4502-b4f7-7899dda619bc">org.ruff.PLR2004</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#68ec7c4a-55a8-420b-b11f-91eba5d576da">org.ruff.PLR2004</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#ec2da0a9-8165-40fd-bf5d-fe0eb5f513b2">org.ruff.G004</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#d888e46f-ab7a-4031-867b-093c74d0f0ee">org.ruff.B904</a></li>
+                    
+                </ul>
+                </li>
+                
+            
+                
+                <li>C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\download_data
+                <ul>
+                    
+                    <li class="outcome outcome-failed"><a href="#fcda693d-af26-4062-ab83-89de334117c3">org.ruff.CPY001</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#47a8415b-3b7d-47c2-b4fd-b1c723ac7a0b">org.ruff.DOC201</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#3d92f63a-8495-4edb-8b69-1e52e5b9b26c">org.ruff.G004</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#7707df0a-0f32-4779-b899-dde441e3ce8e">org.ruff.G004</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#c02c9560-405d-4b92-878d-c9a49bad7dde">org.ruff.G004</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#5c7a4686-2159-4315-bd54-71b3ac1f4d07">org.ruff.G004</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#d6487282-5f26-43ae-9dcd-d1f5e260c6ff">org.ruff.G004</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#da7e92ac-af50-4c54-b33e-526539363027">org.ruff.PD003</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#55941979-4db4-4a58-bbcf-81fa9fffddac">org.ruff.TRY300</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#f1fee3b7-9ac1-4c28-a899-4457b2d73ab4">org.ruff.BLE001</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#1a0dab26-cf7f-40b3-ab3f-9162788877f2">org.ruff.TRY400</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#da83ea50-1286-44bc-bcb3-64fd159f4db6">org.ruff.G004</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#92a675d2-c970-41b0-b6ba-4fc4754e8158">org.ruff.DOC201</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#a5c03e9d-c6d5-4d1f-adcb-376c5b0e05bd">org.ruff.PLC0415</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#fde3b8b6-4779-4c52-ba14-df78beb1d774">org.ruff.NPY002</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#7aaed086-98ef-4d84-8cf4-f36cd32d2700">org.ruff.NPY002</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#fc082af5-4b86-42fe-b332-10fd680d9749">org.ruff.NPY002</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#79ade89b-5982-4a14-981f-e47b38323e33">org.ruff.NPY002</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#b635027a-227c-47c0-8c1e-5608e60004fa">org.ruff.NPY002</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#c0bed6f0-c972-4670-908e-81cb5eaa925f">org.ruff.NPY002</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#7fff3f4b-f2c4-418d-8785-267f11d65543">org.ruff.NPY002</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#bad48c08-8b26-4296-a9a5-94d636907dc2">org.ruff.NPY002</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#cca1d7a5-748d-4508-aacc-b2fee886b90b">org.ruff.NPY002</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#5bb99789-778a-480e-bf10-b135c7361f40">org.ruff.NPY002</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#03f726de-805a-4274-bfd4-2ae803bf39b4">org.ruff.NPY002</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#518ab5c1-d3e5-422e-a24b-2e472dac650f">org.ruff.NPY002</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#0b71c3cd-1f91-42f9-9f96-79b14dbd15c7">org.ruff.NPY002</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#7e4d0946-8ea0-4e14-a319-1eae75cac6ce">org.ruff.NPY002</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#97836cfe-252d-4043-9779-e14df45b29e3">org.ruff.NPY002</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#2bf17407-21af-4a72-9266-1f1673defe3a">org.ruff.F841</a></li>
+                    
+                </ul>
+                </li>
+                
+            
+                
+                <li>C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\exploration\eda
+                <ul>
+                    
+                    <li class="outcome outcome-failed"><a href="#15f4c042-74ae-41a3-8a2f-bd8010f008af">org.ruff.CPY001</a></li>
+                    
+                </ul>
+                </li>
+                
+            
+                
+                <li>C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\exploration\modeling
+                <ul>
+                    
+                    <li class="outcome outcome-failed"><a href="#f4e39b71-9e26-46e0-af90-b8fedf6fe150">org.ruff.CPY001</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#b29a870e-9bd1-418b-bbdc-3a5f834cae78">org.ruff.T201</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#1f3cd0ba-6509-43f7-876e-41cbfc178d10">org.ruff.T201</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#6ef875b4-cff4-41ce-a9df-2771fc85fbac">org.ruff.T201</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#45b1ac44-ffc8-49cb-a723-bf0276d81792">org.ruff.T201</a></li>
+                    
+                </ul>
+                </li>
+                
+            
+                
+                <li>C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\__init__
+                <ul>
+                    
+                    <li class="outcome outcome-failed"><a href="#ff174f64-4b15-4479-85bf-6344efd43adf">org.ruff.CPY001</a></li>
+                    
+                </ul>
+                </li>
+                
+            
+                
+                <li>C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\eda
+                <ul>
+                    
+                    <li class="outcome outcome-failed"><a href="#46e2a34c-50a3-41b8-abeb-8974af51da7b">org.ruff.CPY001</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#f25ee4f8-dc77-4e01-a256-3fddbc6d472a">org.ruff.T201</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#a24b6184-159c-4657-bd7a-4575e44bb216">org.ruff.T201</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#331434bb-a4fa-4f07-bdeb-058662657b4d">org.ruff.T201</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#0500a192-95ab-4784-97eb-246d1dccb75e">org.ruff.T201</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#7a0c0407-6b93-44ab-b167-a1223bc48a26">org.ruff.T201</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#95d6aedd-89bf-41a0-a0bd-eeb15ce6b893">org.ruff.T201</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#1635fb90-b25a-4771-91d3-4941a5d4823c">org.ruff.T201</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#16aa3f6c-a3d1-4d85-a563-ce19160450b7">org.ruff.T201</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#56628f7e-c638-450b-978c-3d9a5b8c2afb">org.ruff.T201</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#9d2dc610-6e85-4e2a-83e9-6ba5ead312db">org.ruff.T201</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#b72db66e-7bb4-47b2-82b5-3840d2e61444">org.ruff.T201</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#1273e7fa-f1a5-455a-a816-ae409c49e3bd">org.ruff.T201</a></li>
+                    
+                </ul>
+                </li>
+                
+            
+                
+                <li>C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\preprocessing
+                <ul>
+                    
+                    <li class="outcome outcome-failed"><a href="#ee045cfe-802f-4d6f-ac6d-a6821f67ebb6">org.ruff.CPY001</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#162378e4-432d-4fef-b57d-914f6b7c0184">org.ruff.S403</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#d60c7d8a-0142-47c0-a47c-df6e325c53f8">org.ruff.N803</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#989bbd2d-b2cc-41a4-82c4-a32cabbaed16">org.ruff.DOC201</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#a652aa1d-f0ef-45ad-ab0b-e2a7cca81925">org.ruff.N806</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#96077e0c-b557-4764-b9b8-1be216263181">org.ruff.G004</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#20e079d6-32d9-4141-a830-ffe364a39612">org.ruff.N803</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#017cfb5e-5c50-4414-9678-9b4dfea37551">org.ruff.DOC201</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#bb231f13-cbab-42ba-8c8c-6af2eaa38710">org.ruff.DOC501</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#a3fa6ecb-42ff-45dc-a523-fe9378ecbca5">org.ruff.N806</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#b6bf6ea1-508b-4c56-8999-e05f2f9169ab">org.ruff.N806</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#bdb7e7b4-3e51-44e6-a09c-4dfd49fdcb07">org.ruff.N803</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#cbe3a208-a670-452b-9e1f-aa5a619ef261">org.ruff.S301</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#01b909e9-33c0-478a-9a9f-ac5aa0e5aa11">org.ruff.DOC201</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#2fd13671-2108-4f8a-b7c9-deeaeb0d0cae">org.ruff.G004</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#9aa83c18-ce6c-4689-b88e-4449d2181df0">org.ruff.N806</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#05849a59-6074-47f4-b14c-cf20f630451d">org.ruff.G004</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#622a74de-1098-4951-89db-9eeb93e779e2">org.ruff.G004</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#fa87ccf7-111c-444a-837c-7f8b06a84075">org.ruff.N806</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#a1745ecf-85f6-490b-a15e-c5ac8a819476">org.ruff.N806</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#633f2b5a-7a9b-4554-a7ba-099976e6164c">org.ruff.G004</a></li>
+                    
+                </ul>
+                </li>
+                
+            
+                
+                <li>C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\training
+                <ul>
+                    
+                    <li class="outcome outcome-failed"><a href="#3d55b65a-6c67-40b6-85ff-fe997698fa4e">org.ruff.CPY001</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#80ee0678-82d5-492e-9f7a-a9f00d417057">org.ruff.S403</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#aecd5d97-9174-4bb8-a689-851bc990054d">org.ruff.N803</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#4b579858-5717-45b9-8dbb-aa6d048d8d29">org.ruff.N803</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#08b9489b-6580-4863-9e87-1f142e09fc40">org.ruff.DOC201</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#7d2dd6c9-6b9a-4b30-bfb3-4c913971ebef">org.ruff.N803</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#ae31ec7a-0948-4099-b4a1-dbe2eb858113">org.ruff.N803</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#355c1a99-7acb-4169-ac51-388b798beaa3">org.ruff.DOC201</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#a8568b18-75dd-4897-9b17-f7f4fb61cd7a">org.ruff.S101</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#3fd9059c-c31f-4d84-8abf-ed4b6582ab5a">org.ruff.PLR6301</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#6313ea43-f600-4c7a-a68c-8e66f3db6cd9">org.ruff.N803</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#1c1cf5c1-f38c-4ba1-97ec-59e022e4347b">org.ruff.N803</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#3c87112f-5a76-4618-8243-6c584b5b2437">org.ruff.DOC201</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#8703bc0f-b96b-46c4-ba82-5a9a13fff3b0">org.ruff.E722</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#56b597ea-e574-417e-ae90-7129613c6c41">org.ruff.DOC201</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#6cd367d0-baa7-4f84-8f26-ae5a9bf8be65">org.ruff.DOC201</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#dd2af72c-53c8-4b06-ad2d-c7bf7d37b4c4">org.ruff.N806</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#528c4e29-f2fc-4525-876b-073063bd1664">org.ruff.N806</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#11c63ceb-1ee1-4904-bd12-c4a9fd67e2bb">org.ruff.N806</a></li>
+                    
+                    <li class="outcome outcome-failed"><a href="#2b941a87-ca6a-478c-adea-867e6559cb25">org.ruff.N806</a></li>
+                    
+                </ul>
+                </li>
+                
+            
+            </ul>
+        </td>
+        <td class="failure-index">
+            <ul class="toc">
+            
+                
+                    
+                    
+                    <li><a href="#77281b9e-6bd8-46ca-925f-ebbaff6f9055">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\EDA_UCI : org.ruff.CPY001</a></li>
+                    
+                    
+                    
+                    <li><a href="#29de1ca3-a81a-45f1-b858-a04fb6db7ceb">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\EDA_UCI : org.ruff.RUF003</a></li>
+                    
+                    
+                    
+                    <li><a href="#b591edd0-5e8f-401a-9006-398c08da0214">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\EDA_UCI : org.ruff.T201</a></li>
+                    
+                    
+                    
+                    <li><a href="#f24c7b85-9f07-4165-b44e-6d3b3557f630">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\EDA_UCI : org.ruff.T201</a></li>
+                    
+                    
+                    
+                    <li><a href="#33300dc0-aec3-4740-9af8-a77c8faf4fb8">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\EDA_UCI : org.ruff.T201</a></li>
+                    
+                    
+                    
+                    <li><a href="#a23e124d-407b-497b-8562-9afd63032dcd">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\EDA_UCI : org.ruff.T201</a></li>
+                    
+                    
+                    
+                    <li><a href="#ea9e47c6-ecb4-4864-93d7-95b30776f13d">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\EDA_UCI : org.ruff.RUF003</a></li>
+                    
+                    
+                    
+                    <li><a href="#d49b7c51-445a-4740-bb4a-d07134e348bb">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\EDA_UCI : org.ruff.RUF003</a></li>
+                    
+                    
+                    
+                    <li><a href="#7af44dd4-da25-4575-83d1-9c6a0617bc8b">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\EDA_UCI : org.ruff.T201</a></li>
+                    
+                    
+                    
+                    <li><a href="#4f812e10-8bf4-4dc1-8da8-1d428ce7bff3">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\EDA_UCI : org.ruff.T201</a></li>
+                    
+                    
+                    
+                    <li><a href="#60bc0de9-ca62-4e16-a5e5-bb1a0f674d6f">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\EDA_UCI : org.ruff.RUF003</a></li>
+                    
+                    
+                    
+                    <li><a href="#60967b4a-561c-4991-8e44-1a23a4c53914">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\EDA_UCI : org.ruff.T201</a></li>
+                    
+                    
+                    
+                    <li><a href="#5ad9359b-033d-4380-8838-e2cd3ff05c61">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\EDA_UCI : org.ruff.T201</a></li>
+                    
+                    
+                    
+                    <li><a href="#e2159ae1-a495-4f5d-9421-feb8840328e6">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\EDA_UCI : org.ruff.T201</a></li>
+                    
+                    
+                    
+                    <li><a href="#b3a9f61a-8af5-4ad9-a0a7-56bd1de86593">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\EDA_UCI : org.ruff.T201</a></li>
+                    
+                    
+                    
+                    <li><a href="#3caded37-85e8-48b3-ae14-2cd1642c3223">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\EDA_UCI : org.ruff.T201</a></li>
+                    
+                    
+                    
+                    <li><a href="#0f9e2a21-d5e9-4c04-b32c-d76674fb1841">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\EDA_UCI : org.ruff.T201</a></li>
+                    
+                    
+                    
+                    <li><a href="#744e9a6d-be69-49d6-ad05-dd7b8857b5d9">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\EDA_UCI : org.ruff.T201</a></li>
+                    
+                    
+                
+            
+                
+                    
+                    
+                    <li><a href="#2a113e8e-afdc-4021-8f8f-c5e9ceaf33c1">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\app : org.ruff.CPY001</a></li>
+                    
+                    
+                    
+                    <li><a href="#0be08593-f69a-4aeb-9661-d4a4b0fcb7c9">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\app : org.ruff.S403</a></li>
+                    
+                    
+                    
+                    <li><a href="#94a2756a-080c-44d0-a517-6a69c7e0d12c">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\app : org.ruff.PLW0603</a></li>
+                    
+                    
+                    
+                    <li><a href="#1c47bce3-9179-495a-9138-c988cf17e6f6">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\app : org.ruff.PLW0603</a></li>
+                    
+                    
+                    
+                    <li><a href="#d3e875e1-f37f-4f44-a8c9-e9b54b70473d">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\app : org.ruff.S301</a></li>
+                    
+                    
+                    
+                    <li><a href="#6fc9cf8f-46c0-4d22-9c23-af9c1712ea62">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\app : org.ruff.S301</a></li>
+                    
+                    
+                    
+                    <li><a href="#e8ce6439-e8db-4a70-8ffe-5fe20b209b6b">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\app : org.ruff.BLE001</a></li>
+                    
+                    
+                    
+                    <li><a href="#8c5865ac-8928-469a-928f-49885bb27c19">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\app : org.ruff.TRY400</a></li>
+                    
+                    
+                    
+                    <li><a href="#20abf23e-91f5-4e5a-87cf-33d2dd106168">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\app : org.ruff.DOC201</a></li>
+                    
+                    
+                    
+                    <li><a href="#d509872c-f128-4f3a-8d04-7a47f8ca25d5">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\app : org.ruff.G004</a></li>
+                    
+                    
+                    
+                    <li><a href="#b8369adc-1916-4c59-8ccc-adc11e5d75f4">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\app : org.ruff.RUF029</a></li>
+                    
+                    
+                    
+                    <li><a href="#d9c18aac-3402-41c5-843e-8ec5c3bcd2bb">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\app : org.ruff.DOC201</a></li>
+                    
+                    
+                    
+                    <li><a href="#0ce36968-4fff-4ed3-b3fe-33f8f4973927">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\app : org.ruff.TRY301</a></li>
+                    
+                    
+                    
+                    <li><a href="#004e5004-5e21-4502-b4f7-7899dda619bc">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\app : org.ruff.PLR2004</a></li>
+                    
+                    
+                    
+                    <li><a href="#68ec7c4a-55a8-420b-b11f-91eba5d576da">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\app : org.ruff.PLR2004</a></li>
+                    
+                    
+                    
+                    <li><a href="#ec2da0a9-8165-40fd-bf5d-fe0eb5f513b2">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\app : org.ruff.G004</a></li>
+                    
+                    
+                    
+                    <li><a href="#d888e46f-ab7a-4031-867b-093c74d0f0ee">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\app : org.ruff.B904</a></li>
+                    
+                    
+                
+            
+                
+                    
+                    
+                    <li><a href="#fcda693d-af26-4062-ab83-89de334117c3">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\download_data : org.ruff.CPY001</a></li>
+                    
+                    
+                    
+                    <li><a href="#47a8415b-3b7d-47c2-b4fd-b1c723ac7a0b">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\download_data : org.ruff.DOC201</a></li>
+                    
+                    
+                    
+                    <li><a href="#3d92f63a-8495-4edb-8b69-1e52e5b9b26c">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\download_data : org.ruff.G004</a></li>
+                    
+                    
+                    
+                    <li><a href="#7707df0a-0f32-4779-b899-dde441e3ce8e">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\download_data : org.ruff.G004</a></li>
+                    
+                    
+                    
+                    <li><a href="#c02c9560-405d-4b92-878d-c9a49bad7dde">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\download_data : org.ruff.G004</a></li>
+                    
+                    
+                    
+                    <li><a href="#5c7a4686-2159-4315-bd54-71b3ac1f4d07">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\download_data : org.ruff.G004</a></li>
+                    
+                    
+                    
+                    <li><a href="#d6487282-5f26-43ae-9dcd-d1f5e260c6ff">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\download_data : org.ruff.G004</a></li>
+                    
+                    
+                    
+                    <li><a href="#da7e92ac-af50-4c54-b33e-526539363027">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\download_data : org.ruff.PD003</a></li>
+                    
+                    
+                    
+                    <li><a href="#55941979-4db4-4a58-bbcf-81fa9fffddac">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\download_data : org.ruff.TRY300</a></li>
+                    
+                    
+                    
+                    <li><a href="#f1fee3b7-9ac1-4c28-a899-4457b2d73ab4">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\download_data : org.ruff.BLE001</a></li>
+                    
+                    
+                    
+                    <li><a href="#1a0dab26-cf7f-40b3-ab3f-9162788877f2">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\download_data : org.ruff.TRY400</a></li>
+                    
+                    
+                    
+                    <li><a href="#da83ea50-1286-44bc-bcb3-64fd159f4db6">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\download_data : org.ruff.G004</a></li>
+                    
+                    
+                    
+                    <li><a href="#92a675d2-c970-41b0-b6ba-4fc4754e8158">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\download_data : org.ruff.DOC201</a></li>
+                    
+                    
+                    
+                    <li><a href="#a5c03e9d-c6d5-4d1f-adcb-376c5b0e05bd">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\download_data : org.ruff.PLC0415</a></li>
+                    
+                    
+                    
+                    <li><a href="#fde3b8b6-4779-4c52-ba14-df78beb1d774">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\download_data : org.ruff.NPY002</a></li>
+                    
+                    
+                    
+                    <li><a href="#7aaed086-98ef-4d84-8cf4-f36cd32d2700">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\download_data : org.ruff.NPY002</a></li>
+                    
+                    
+                    
+                    <li><a href="#fc082af5-4b86-42fe-b332-10fd680d9749">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\download_data : org.ruff.NPY002</a></li>
+                    
+                    
+                    
+                    <li><a href="#79ade89b-5982-4a14-981f-e47b38323e33">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\download_data : org.ruff.NPY002</a></li>
+                    
+                    
+                    
+                    <li><a href="#b635027a-227c-47c0-8c1e-5608e60004fa">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\download_data : org.ruff.NPY002</a></li>
+                    
+                    
+                    
+                    <li><a href="#c0bed6f0-c972-4670-908e-81cb5eaa925f">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\download_data : org.ruff.NPY002</a></li>
+                    
+                    
+                    
+                    <li><a href="#7fff3f4b-f2c4-418d-8785-267f11d65543">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\download_data : org.ruff.NPY002</a></li>
+                    
+                    
+                    
+                    <li><a href="#bad48c08-8b26-4296-a9a5-94d636907dc2">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\download_data : org.ruff.NPY002</a></li>
+                    
+                    
+                    
+                    <li><a href="#cca1d7a5-748d-4508-aacc-b2fee886b90b">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\download_data : org.ruff.NPY002</a></li>
+                    
+                    
+                    
+                    <li><a href="#5bb99789-778a-480e-bf10-b135c7361f40">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\download_data : org.ruff.NPY002</a></li>
+                    
+                    
+                    
+                    <li><a href="#03f726de-805a-4274-bfd4-2ae803bf39b4">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\download_data : org.ruff.NPY002</a></li>
+                    
+                    
+                    
+                    <li><a href="#518ab5c1-d3e5-422e-a24b-2e472dac650f">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\download_data : org.ruff.NPY002</a></li>
+                    
+                    
+                    
+                    <li><a href="#0b71c3cd-1f91-42f9-9f96-79b14dbd15c7">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\download_data : org.ruff.NPY002</a></li>
+                    
+                    
+                    
+                    <li><a href="#7e4d0946-8ea0-4e14-a319-1eae75cac6ce">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\download_data : org.ruff.NPY002</a></li>
+                    
+                    
+                    
+                    <li><a href="#97836cfe-252d-4043-9779-e14df45b29e3">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\download_data : org.ruff.NPY002</a></li>
+                    
+                    
+                    
+                    <li><a href="#2bf17407-21af-4a72-9266-1f1673defe3a">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\download_data : org.ruff.F841</a></li>
+                    
+                    
+                
+            
+                
+                    
+                    
+                    <li><a href="#15f4c042-74ae-41a3-8a2f-bd8010f008af">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\exploration\eda : org.ruff.CPY001</a></li>
+                    
+                    
+                
+            
+                
+                    
+                    
+                    <li><a href="#f4e39b71-9e26-46e0-af90-b8fedf6fe150">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\exploration\modeling : org.ruff.CPY001</a></li>
+                    
+                    
+                    
+                    <li><a href="#b29a870e-9bd1-418b-bbdc-3a5f834cae78">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\exploration\modeling : org.ruff.T201</a></li>
+                    
+                    
+                    
+                    <li><a href="#1f3cd0ba-6509-43f7-876e-41cbfc178d10">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\exploration\modeling : org.ruff.T201</a></li>
+                    
+                    
+                    
+                    <li><a href="#6ef875b4-cff4-41ce-a9df-2771fc85fbac">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\exploration\modeling : org.ruff.T201</a></li>
+                    
+                    
+                    
+                    <li><a href="#45b1ac44-ffc8-49cb-a723-bf0276d81792">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\exploration\modeling : org.ruff.T201</a></li>
+                    
+                    
+                
+            
+                
+                    
+                    
+                    <li><a href="#ff174f64-4b15-4479-85bf-6344efd43adf">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\__init__ : org.ruff.CPY001</a></li>
+                    
+                    
+                
+            
+                
+                    
+                    
+                    <li><a href="#46e2a34c-50a3-41b8-abeb-8974af51da7b">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\eda : org.ruff.CPY001</a></li>
+                    
+                    
+                    
+                    <li><a href="#f25ee4f8-dc77-4e01-a256-3fddbc6d472a">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\eda : org.ruff.T201</a></li>
+                    
+                    
+                    
+                    <li><a href="#a24b6184-159c-4657-bd7a-4575e44bb216">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\eda : org.ruff.T201</a></li>
+                    
+                    
+                    
+                    <li><a href="#331434bb-a4fa-4f07-bdeb-058662657b4d">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\eda : org.ruff.T201</a></li>
+                    
+                    
+                    
+                    <li><a href="#0500a192-95ab-4784-97eb-246d1dccb75e">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\eda : org.ruff.T201</a></li>
+                    
+                    
+                    
+                    <li><a href="#7a0c0407-6b93-44ab-b167-a1223bc48a26">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\eda : org.ruff.T201</a></li>
+                    
+                    
+                    
+                    <li><a href="#95d6aedd-89bf-41a0-a0bd-eeb15ce6b893">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\eda : org.ruff.T201</a></li>
+                    
+                    
+                    
+                    <li><a href="#1635fb90-b25a-4771-91d3-4941a5d4823c">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\eda : org.ruff.T201</a></li>
+                    
+                    
+                    
+                    <li><a href="#16aa3f6c-a3d1-4d85-a563-ce19160450b7">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\eda : org.ruff.T201</a></li>
+                    
+                    
+                    
+                    <li><a href="#56628f7e-c638-450b-978c-3d9a5b8c2afb">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\eda : org.ruff.T201</a></li>
+                    
+                    
+                    
+                    <li><a href="#9d2dc610-6e85-4e2a-83e9-6ba5ead312db">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\eda : org.ruff.T201</a></li>
+                    
+                    
+                    
+                    <li><a href="#b72db66e-7bb4-47b2-82b5-3840d2e61444">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\eda : org.ruff.T201</a></li>
+                    
+                    
+                    
+                    <li><a href="#1273e7fa-f1a5-455a-a816-ae409c49e3bd">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\eda : org.ruff.T201</a></li>
+                    
+                    
+                
+            
+                
+                    
+                    
+                    <li><a href="#ee045cfe-802f-4d6f-ac6d-a6821f67ebb6">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\preprocessing : org.ruff.CPY001</a></li>
+                    
+                    
+                    
+                    <li><a href="#162378e4-432d-4fef-b57d-914f6b7c0184">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\preprocessing : org.ruff.S403</a></li>
+                    
+                    
+                    
+                    <li><a href="#d60c7d8a-0142-47c0-a47c-df6e325c53f8">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\preprocessing : org.ruff.N803</a></li>
+                    
+                    
+                    
+                    <li><a href="#989bbd2d-b2cc-41a4-82c4-a32cabbaed16">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\preprocessing : org.ruff.DOC201</a></li>
+                    
+                    
+                    
+                    <li><a href="#a652aa1d-f0ef-45ad-ab0b-e2a7cca81925">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\preprocessing : org.ruff.N806</a></li>
+                    
+                    
+                    
+                    <li><a href="#96077e0c-b557-4764-b9b8-1be216263181">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\preprocessing : org.ruff.G004</a></li>
+                    
+                    
+                    
+                    <li><a href="#20e079d6-32d9-4141-a830-ffe364a39612">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\preprocessing : org.ruff.N803</a></li>
+                    
+                    
+                    
+                    <li><a href="#017cfb5e-5c50-4414-9678-9b4dfea37551">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\preprocessing : org.ruff.DOC201</a></li>
+                    
+                    
+                    
+                    <li><a href="#bb231f13-cbab-42ba-8c8c-6af2eaa38710">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\preprocessing : org.ruff.DOC501</a></li>
+                    
+                    
+                    
+                    <li><a href="#a3fa6ecb-42ff-45dc-a523-fe9378ecbca5">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\preprocessing : org.ruff.N806</a></li>
+                    
+                    
+                    
+                    <li><a href="#b6bf6ea1-508b-4c56-8999-e05f2f9169ab">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\preprocessing : org.ruff.N806</a></li>
+                    
+                    
+                    
+                    <li><a href="#bdb7e7b4-3e51-44e6-a09c-4dfd49fdcb07">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\preprocessing : org.ruff.N803</a></li>
+                    
+                    
+                    
+                    <li><a href="#cbe3a208-a670-452b-9e1f-aa5a619ef261">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\preprocessing : org.ruff.S301</a></li>
+                    
+                    
+                    
+                    <li><a href="#01b909e9-33c0-478a-9a9f-ac5aa0e5aa11">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\preprocessing : org.ruff.DOC201</a></li>
+                    
+                    
+                    
+                    <li><a href="#2fd13671-2108-4f8a-b7c9-deeaeb0d0cae">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\preprocessing : org.ruff.G004</a></li>
+                    
+                    
+                    
+                    <li><a href="#9aa83c18-ce6c-4689-b88e-4449d2181df0">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\preprocessing : org.ruff.N806</a></li>
+                    
+                    
+                    
+                    <li><a href="#05849a59-6074-47f4-b14c-cf20f630451d">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\preprocessing : org.ruff.G004</a></li>
+                    
+                    
+                    
+                    <li><a href="#622a74de-1098-4951-89db-9eeb93e779e2">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\preprocessing : org.ruff.G004</a></li>
+                    
+                    
+                    
+                    <li><a href="#fa87ccf7-111c-444a-837c-7f8b06a84075">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\preprocessing : org.ruff.N806</a></li>
+                    
+                    
+                    
+                    <li><a href="#a1745ecf-85f6-490b-a15e-c5ac8a819476">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\preprocessing : org.ruff.N806</a></li>
+                    
+                    
+                    
+                    <li><a href="#633f2b5a-7a9b-4554-a7ba-099976e6164c">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\preprocessing : org.ruff.G004</a></li>
+                    
+                    
+                
+            
+                
+                    
+                    
+                    <li><a href="#3d55b65a-6c67-40b6-85ff-fe997698fa4e">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\training : org.ruff.CPY001</a></li>
+                    
+                    
+                    
+                    <li><a href="#80ee0678-82d5-492e-9f7a-a9f00d417057">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\training : org.ruff.S403</a></li>
+                    
+                    
+                    
+                    <li><a href="#aecd5d97-9174-4bb8-a689-851bc990054d">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\training : org.ruff.N803</a></li>
+                    
+                    
+                    
+                    <li><a href="#4b579858-5717-45b9-8dbb-aa6d048d8d29">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\training : org.ruff.N803</a></li>
+                    
+                    
+                    
+                    <li><a href="#08b9489b-6580-4863-9e87-1f142e09fc40">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\training : org.ruff.DOC201</a></li>
+                    
+                    
+                    
+                    <li><a href="#7d2dd6c9-6b9a-4b30-bfb3-4c913971ebef">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\training : org.ruff.N803</a></li>
+                    
+                    
+                    
+                    <li><a href="#ae31ec7a-0948-4099-b4a1-dbe2eb858113">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\training : org.ruff.N803</a></li>
+                    
+                    
+                    
+                    <li><a href="#355c1a99-7acb-4169-ac51-388b798beaa3">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\training : org.ruff.DOC201</a></li>
+                    
+                    
+                    
+                    <li><a href="#a8568b18-75dd-4897-9b17-f7f4fb61cd7a">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\training : org.ruff.S101</a></li>
+                    
+                    
+                    
+                    <li><a href="#3fd9059c-c31f-4d84-8abf-ed4b6582ab5a">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\training : org.ruff.PLR6301</a></li>
+                    
+                    
+                    
+                    <li><a href="#6313ea43-f600-4c7a-a68c-8e66f3db6cd9">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\training : org.ruff.N803</a></li>
+                    
+                    
+                    
+                    <li><a href="#1c1cf5c1-f38c-4ba1-97ec-59e022e4347b">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\training : org.ruff.N803</a></li>
+                    
+                    
+                    
+                    <li><a href="#3c87112f-5a76-4618-8243-6c584b5b2437">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\training : org.ruff.DOC201</a></li>
+                    
+                    
+                    
+                    <li><a href="#8703bc0f-b96b-46c4-ba82-5a9a13fff3b0">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\training : org.ruff.E722</a></li>
+                    
+                    
+                    
+                    <li><a href="#56b597ea-e574-417e-ae90-7129613c6c41">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\training : org.ruff.DOC201</a></li>
+                    
+                    
+                    
+                    <li><a href="#6cd367d0-baa7-4f84-8f26-ae5a9bf8be65">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\training : org.ruff.DOC201</a></li>
+                    
+                    
+                    
+                    <li><a href="#dd2af72c-53c8-4b06-ad2d-c7bf7d37b4c4">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\training : org.ruff.N806</a></li>
+                    
+                    
+                    
+                    <li><a href="#528c4e29-f2fc-4525-876b-073063bd1664">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\training : org.ruff.N806</a></li>
+                    
+                    
+                    
+                    <li><a href="#11c63ceb-1ee1-4904-bd12-c4a9fd67e2bb">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\training : org.ruff.N806</a></li>
+                    
+                    
+                    
+                    <li><a href="#2b941a87-ca6a-478c-adea-867e6559cb25">[F] C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\training : org.ruff.N806</a></li>
+                    
+                    
+                
+            
+            </ul>
+        </td>
+    </tr>
+</table>
+
+
+
+    <div class="testsuite">
+        <h2>Test Suite: C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\EDA_UCI.ipynb</h2>
+        <a id="c6327d3c-2f83-41ac-a32f-9b3f1099e492"></a>
+        
+        <span>Package: org.ruff</span>
+        
+        
+        <h3>Results</h3>
+        <table class="proplist">
+            <tr>
+                <th>Duration</th><td>0.0 sec</td>
+            </tr>
+            <tr>
+                <th>Tests</th><td>18</td>
+            </tr>
+            <tr>
+                <th>Failures</th><td>18</td>
+            </tr>
+        </table>
+
+        <div class="testclasses">
+            <h3>Tests</h3>
+            
+            <div class="testclass">
+                <h4>C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\EDA_UCI</h4>
+                <div class="testcases">
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="77281b9e-6bd8-46ca-925f-ebbaff6f9055"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.CPY001</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Missing copyright notice at top of file</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>Missing copyright notice at top of file</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="29de1ca3-a81a-45f1-b858-a04fb6db7ceb"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.RUF003</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Comment contains ambiguous `–` (EN DASH). Did you mean `-` (HYPHEN-MINUS)?</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>Comment contains ambiguous `–` (EN DASH). Did you mean `-` (HYPHEN-MINUS)?</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="b591edd0-5e8f-401a-9006-398c08da0214"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.T201</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>`print` found</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>`print` found</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="f24c7b85-9f07-4165-b44e-6d3b3557f630"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.T201</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>`print` found</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>`print` found</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="33300dc0-aec3-4740-9af8-a77c8faf4fb8"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.T201</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>`print` found</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>`print` found</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="a23e124d-407b-497b-8562-9afd63032dcd"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.T201</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>`print` found</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>`print` found</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="ea9e47c6-ecb4-4864-93d7-95b30776f13d"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.RUF003</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Comment contains ambiguous `–` (EN DASH). Did you mean `-` (HYPHEN-MINUS)?</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>Comment contains ambiguous `–` (EN DASH). Did you mean `-` (HYPHEN-MINUS)?</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="d49b7c51-445a-4740-bb4a-d07134e348bb"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.RUF003</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Comment contains ambiguous `–` (EN DASH). Did you mean `-` (HYPHEN-MINUS)?</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>Comment contains ambiguous `–` (EN DASH). Did you mean `-` (HYPHEN-MINUS)?</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="7af44dd4-da25-4575-83d1-9c6a0617bc8b"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.T201</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>`print` found</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>`print` found</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="4f812e10-8bf4-4dc1-8da8-1d428ce7bff3"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.T201</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>`print` found</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>`print` found</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="60bc0de9-ca62-4e16-a5e5-bb1a0f674d6f"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.RUF003</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Comment contains ambiguous `–` (EN DASH). Did you mean `-` (HYPHEN-MINUS)?</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>Comment contains ambiguous `–` (EN DASH). Did you mean `-` (HYPHEN-MINUS)?</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="60967b4a-561c-4991-8e44-1a23a4c53914"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.T201</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>`print` found</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>`print` found</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="5ad9359b-033d-4380-8838-e2cd3ff05c61"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.T201</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>`print` found</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>`print` found</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="e2159ae1-a495-4f5d-9421-feb8840328e6"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.T201</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>`print` found</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>`print` found</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="b3a9f61a-8af5-4ad9-a0a7-56bd1de86593"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.T201</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>`print` found</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>`print` found</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="3caded37-85e8-48b3-ae14-2cd1642c3223"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.T201</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>`print` found</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>`print` found</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="0f9e2a21-d5e9-4c04-b32c-d76674fb1841"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.T201</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>`print` found</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>`print` found</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="744e9a6d-be69-49d6-ad05-dd7b8857b5d9"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.T201</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>`print` found</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>`print` found</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+
+    <div class="testsuite">
+        <h2>Test Suite: C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\app.py</h2>
+        <a id="08729e2a-93cb-4379-b9e8-4f31ddcf4f6a"></a>
+        
+        <span>Package: org.ruff</span>
+        
+        
+        <h3>Results</h3>
+        <table class="proplist">
+            <tr>
+                <th>Duration</th><td>0.0 sec</td>
+            </tr>
+            <tr>
+                <th>Tests</th><td>17</td>
+            </tr>
+            <tr>
+                <th>Failures</th><td>17</td>
+            </tr>
+        </table>
+
+        <div class="testclasses">
+            <h3>Tests</h3>
+            
+            <div class="testclass">
+                <h4>C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\app</h4>
+                <div class="testcases">
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="2a113e8e-afdc-4021-8f8f-c5e9ceaf33c1"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.CPY001</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Missing copyright notice at top of file</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 1, col 1, Missing copyright notice at top of file</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="0be08593-f69a-4aeb-9661-d4a4b0fcb7c9"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.S403</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>`pickle`, `cPickle`, `dill`, and `shelve` modules are possibly insecure</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 5, col 8, `pickle`, `cPickle`, `dill`, and `shelve` modules are possibly insecure</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="94a2756a-080c-44d0-a517-6a69c7e0d12c"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.PLW0603</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Using the global statement to update `MODEL` is discouraged</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 64, col 12, Using the global statement to update `MODEL` is discouraged</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="1c47bce3-9179-495a-9138-c988cf17e6f6"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.PLW0603</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Using the global statement to update `PREPROCESSOR` is discouraged</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 64, col 19, Using the global statement to update `PREPROCESSOR` is discouraged</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="d3e875e1-f37f-4f44-a8c9-e9b54b70473d"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.S301</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>`pickle` and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 67, col 21, `pickle` and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="6fc9cf8f-46c0-4d22-9c23-af9c1712ea62"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.S301</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>`pickle` and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 69, col 28, `pickle` and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="e8ce6439-e8db-4a70-8ffe-5fe20b209b6b"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.BLE001</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Do not catch blind exception: `Exception`</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 71, col 12, Do not catch blind exception: `Exception`</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="8c5865ac-8928-469a-928f-49885bb27c19"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.TRY400</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Use `logging.exception` instead of `logging.error`</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 72, col 9, Use `logging.exception` instead of `logging.error`</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="20abf23e-91f5-4e5a-87cf-33d2dd106168"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.DOC201</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>`return` is not documented in docstring</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 80, col 5, `return` is not documented in docstring</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="d509872c-f128-4f3a-8d04-7a47f8ca25d5"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.G004</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Logging statement uses f-string</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 93, col 13, Logging statement uses f-string</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="b8369adc-1916-4c59-8ccc-adc11e5d75f4"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.RUF029</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Function `startup_event` is declared `async`, but doesn&#39;t `await` or use `async` features.</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 98, col 11, Function `startup_event` is declared `async`, but doesn&#39;t `await` or use `async` features.</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="d9c18aac-3402-41c5-843e-8ec5c3bcd2bb"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.DOC201</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>`return` is not documented in docstring</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 109, col 5, `return` is not documented in docstring</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="0ce36968-4fff-4ed3-b3fe-33f8f4973927"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.TRY301</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Abstract `raise` to an inner function</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 117, col 13, Abstract `raise` to an inner function</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="004e5004-5e21-4502-b4f7-7899dda619bc"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.PLR2004</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Magic value used in comparison, consider replacing `0.6` with a constant variable</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 123, col 44, Magic value used in comparison, consider replacing `0.6` with a constant variable</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="68ec7c4a-55a8-420b-b11f-91eba5d576da"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.PLR2004</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Magic value used in comparison, consider replacing `0.8` with a constant variable</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 123, col 79, Magic value used in comparison, consider replacing `0.8` with a constant variable</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="ec2da0a9-8165-40fd-bf5d-fe0eb5f513b2"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.G004</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Logging statement uses f-string</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 126, col 13, Logging statement uses f-string</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="d888e46f-ab7a-4031-867b-093c74d0f0ee"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.B904</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Within an `except` clause, raise exceptions with `raise ... from err` or `raise ... from None` to distinguish them from errors in exception handling</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 139, col 9, Within an `except` clause, raise exceptions with `raise ... from err` or `raise ... from None` to distinguish them from errors in exception handling</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+
+    <div class="testsuite">
+        <h2>Test Suite: C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\download_data.py</h2>
+        <a id="060f094d-4aca-4411-8a3e-5667a2f616f4"></a>
+        
+        <span>Package: org.ruff</span>
+        
+        
+        <h3>Results</h3>
+        <table class="proplist">
+            <tr>
+                <th>Duration</th><td>0.0 sec</td>
+            </tr>
+            <tr>
+                <th>Tests</th><td>30</td>
+            </tr>
+            <tr>
+                <th>Failures</th><td>30</td>
+            </tr>
+        </table>
+
+        <div class="testclasses">
+            <h3>Tests</h3>
+            
+            <div class="testclass">
+                <h4>C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\download_data</h4>
+                <div class="testcases">
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="fcda693d-af26-4062-ab83-89de334117c3"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.CPY001</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Missing copyright notice at top of file</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 1, col 1, Missing copyright notice at top of file</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="47a8415b-3b7d-47c2-b4fd-b1c723ac7a0b"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.DOC201</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>`return` is not documented in docstring</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 33, col 5, `return` is not documented in docstring</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="3d92f63a-8495-4edb-8b69-1e52e5b9b26c"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.G004</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Logging statement uses f-string</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 48, col 21, Logging statement uses f-string</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="7707df0a-0f32-4779-b899-dde441e3ce8e"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.G004</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Logging statement uses f-string</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 49, col 21, Logging statement uses f-string</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="c02c9560-405d-4b92-878d-c9a49bad7dde"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.G004</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Logging statement uses f-string</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 50, col 21, Logging statement uses f-string</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="5c7a4686-2159-4315-bd54-71b3ac1f4d07"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.G004</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Logging statement uses f-string</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 51, col 21, Logging statement uses f-string</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="d6487282-5f26-43ae-9dcd-d1f5e260c6ff"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.G004</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Logging statement uses f-string</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 52, col 21, Logging statement uses f-string</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="da7e92ac-af50-4c54-b33e-526539363027"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.PD003</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>`.isna` is preferred to `.isnull`; functionality is equivalent</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 52, col 40, `.isna` is preferred to `.isnull`; functionality is equivalent</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="55941979-4db4-4a58-bbcf-81fa9fffddac"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.TRY300</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Consider moving this statement to an `else` block</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 54, col 9, Consider moving this statement to an `else` block</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="f1fee3b7-9ac1-4c28-a899-4457b2d73ab4"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.BLE001</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Do not catch blind exception: `Exception`</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 56, col 12, Do not catch blind exception: `Exception`</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="1a0dab26-cf7f-40b3-ab3f-9162788877f2"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.TRY400</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Use `logging.exception` instead of `logging.error`</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 57, col 9, Use `logging.exception` instead of `logging.error`</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="da83ea50-1286-44bc-bcb3-64fd159f4db6"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.G004</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Logging statement uses f-string</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 57, col 22, Logging statement uses f-string</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="92a675d2-c970-41b0-b6ba-4fc4754e8158"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.DOC201</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>`return` is not documented in docstring</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 63, col 5, `return` is not documented in docstring</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="a5c03e9d-c6d5-4d1f-adcb-376c5b0e05bd"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.PLC0415</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>`import` should be at the top-level of a file</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 66, col 5, `import` should be at the top-level of a file</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="fde3b8b6-4779-4c52-ba14-df78beb1d774"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.NPY002</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Replace legacy `np.random.seed` call with `np.random.Generator`</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 68, col 5, Replace legacy `np.random.seed` call with `np.random.Generator`</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="7aaed086-98ef-4d84-8cf4-f36cd32d2700"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.NPY002</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Replace legacy `np.random.randint` call with `np.random.Generator`</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 72, col 16, Replace legacy `np.random.randint` call with `np.random.Generator`</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="fc082af5-4b86-42fe-b332-10fd680d9749"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.NPY002</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Replace legacy `np.random.randint` call with `np.random.Generator`</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 73, col 16, Replace legacy `np.random.randint` call with `np.random.Generator`</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="79ade89b-5982-4a14-981f-e47b38323e33"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.NPY002</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Replace legacy `np.random.randint` call with `np.random.Generator`</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 74, col 15, Replace legacy `np.random.randint` call with `np.random.Generator`</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="b635027a-227c-47c0-8c1e-5608e60004fa"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.NPY002</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Replace legacy `np.random.randint` call with `np.random.Generator`</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 75, col 21, Replace legacy `np.random.randint` call with `np.random.Generator`</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="c0bed6f0-c972-4670-908e-81cb5eaa925f"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.NPY002</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Replace legacy `np.random.randint` call with `np.random.Generator`</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 76, col 17, Replace legacy `np.random.randint` call with `np.random.Generator`</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="7fff3f4b-f2c4-418d-8785-267f11d65543"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.NPY002</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Replace legacy `np.random.randint` call with `np.random.Generator`</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 77, col 16, Replace legacy `np.random.randint` call with `np.random.Generator`</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="bad48c08-8b26-4296-a9a5-94d636907dc2"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.NPY002</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Replace legacy `np.random.randint` call with `np.random.Generator`</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 78, col 20, Replace legacy `np.random.randint` call with `np.random.Generator`</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="cca1d7a5-748d-4508-aacc-b2fee886b90b"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.NPY002</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Replace legacy `np.random.randint` call with `np.random.Generator`</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 79, col 20, Replace legacy `np.random.randint` call with `np.random.Generator`</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="5bb99789-778a-480e-bf10-b135c7361f40"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.NPY002</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Replace legacy `np.random.randint` call with `np.random.Generator`</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 80, col 18, Replace legacy `np.random.randint` call with `np.random.Generator`</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="03f726de-805a-4274-bfd4-2ae803bf39b4"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.NPY002</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Replace legacy `np.random.uniform` call with `np.random.Generator`</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 81, col 20, Replace legacy `np.random.uniform` call with `np.random.Generator`</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="518ab5c1-d3e5-422e-a24b-2e472dac650f"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.NPY002</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Replace legacy `np.random.randint` call with `np.random.Generator`</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 82, col 18, Replace legacy `np.random.randint` call with `np.random.Generator`</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="0b71c3cd-1f91-42f9-9f96-79b14dbd15c7"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.NPY002</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Replace legacy `np.random.randint` call with `np.random.Generator`</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 83, col 15, Replace legacy `np.random.randint` call with `np.random.Generator`</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="7e4d0946-8ea0-4e14-a319-1eae75cac6ce"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.NPY002</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Replace legacy `np.random.randint` call with `np.random.Generator`</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 84, col 17, Replace legacy `np.random.randint` call with `np.random.Generator`</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="97836cfe-252d-4043-9779-e14df45b29e3"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.NPY002</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Replace legacy `np.random.randint` call with `np.random.Generator`</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 85, col 16, Replace legacy `np.random.randint` call with `np.random.Generator`</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="2bf17407-21af-4a72-9266-1f1673defe3a"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.F841</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Local variable `df` is assigned to but never used</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 105, col 5, Local variable `df` is assigned to but never used</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+
+    <div class="testsuite">
+        <h2>Test Suite: C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\exploration\eda.ipynb</h2>
+        <a id="5325d55f-c055-454c-8d4e-8288e92bffe6"></a>
+        
+        <span>Package: org.ruff</span>
+        
+        
+        <h3>Results</h3>
+        <table class="proplist">
+            <tr>
+                <th>Duration</th><td>0.0 sec</td>
+            </tr>
+            <tr>
+                <th>Tests</th><td>1</td>
+            </tr>
+            <tr>
+                <th>Failures</th><td>1</td>
+            </tr>
+        </table>
+
+        <div class="testclasses">
+            <h3>Tests</h3>
+            
+            <div class="testclass">
+                <h4>C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\exploration\eda</h4>
+                <div class="testcases">
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="15f4c042-74ae-41a3-8a2f-bd8010f008af"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.CPY001</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Missing copyright notice at top of file</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>Missing copyright notice at top of file</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+
+    <div class="testsuite">
+        <h2>Test Suite: C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\exploration\modeling.ipynb</h2>
+        <a id="f8f8f19c-654a-4881-ab9f-54d0420f5c93"></a>
+        
+        <span>Package: org.ruff</span>
+        
+        
+        <h3>Results</h3>
+        <table class="proplist">
+            <tr>
+                <th>Duration</th><td>0.0 sec</td>
+            </tr>
+            <tr>
+                <th>Tests</th><td>5</td>
+            </tr>
+            <tr>
+                <th>Failures</th><td>5</td>
+            </tr>
+        </table>
+
+        <div class="testclasses">
+            <h3>Tests</h3>
+            
+            <div class="testclass">
+                <h4>C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\exploration\modeling</h4>
+                <div class="testcases">
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="f4e39b71-9e26-46e0-af90-b8fedf6fe150"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.CPY001</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Missing copyright notice at top of file</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>Missing copyright notice at top of file</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="b29a870e-9bd1-418b-bbdc-3a5f834cae78"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.T201</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>`print` found</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>`print` found</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="1f3cd0ba-6509-43f7-876e-41cbfc178d10"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.T201</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>`print` found</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>`print` found</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="6ef875b4-cff4-41ce-a9df-2771fc85fbac"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.T201</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>`print` found</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>`print` found</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="45b1ac44-ffc8-49cb-a723-bf0276d81792"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.T201</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>`print` found</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>`print` found</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+
+    <div class="testsuite">
+        <h2>Test Suite: C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\__init__.py</h2>
+        <a id="6f883e2e-34b1-4e1a-a021-a05b4b8de15c"></a>
+        
+        <span>Package: org.ruff</span>
+        
+        
+        <h3>Results</h3>
+        <table class="proplist">
+            <tr>
+                <th>Duration</th><td>0.0 sec</td>
+            </tr>
+            <tr>
+                <th>Tests</th><td>1</td>
+            </tr>
+            <tr>
+                <th>Failures</th><td>1</td>
+            </tr>
+        </table>
+
+        <div class="testclasses">
+            <h3>Tests</h3>
+            
+            <div class="testclass">
+                <h4>C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\__init__</h4>
+                <div class="testcases">
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="ff174f64-4b15-4479-85bf-6344efd43adf"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.CPY001</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Missing copyright notice at top of file</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 1, col 1, Missing copyright notice at top of file</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+
+    <div class="testsuite">
+        <h2>Test Suite: C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\eda.py</h2>
+        <a id="5a4ce60d-6d46-4015-b0c8-d90a57b7d243"></a>
+        
+        <span>Package: org.ruff</span>
+        
+        
+        <h3>Results</h3>
+        <table class="proplist">
+            <tr>
+                <th>Duration</th><td>0.0 sec</td>
+            </tr>
+            <tr>
+                <th>Tests</th><td>13</td>
+            </tr>
+            <tr>
+                <th>Failures</th><td>13</td>
+            </tr>
+        </table>
+
+        <div class="testclasses">
+            <h3>Tests</h3>
+            
+            <div class="testclass">
+                <h4>C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\eda</h4>
+                <div class="testcases">
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="46e2a34c-50a3-41b8-abeb-8974af51da7b"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.CPY001</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Missing copyright notice at top of file</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 1, col 1, Missing copyright notice at top of file</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="f25ee4f8-dc77-4e01-a256-3fddbc6d472a"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.T201</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>`print` found</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 16, col 5, `print` found</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="a24b6184-159c-4657-bd7a-4575e44bb216"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.T201</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>`print` found</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 17, col 5, `print` found</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="331434bb-a4fa-4f07-bdeb-058662657b4d"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.T201</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>`print` found</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 18, col 5, `print` found</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="0500a192-95ab-4784-97eb-246d1dccb75e"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.T201</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>`print` found</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 19, col 5, `print` found</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="7a0c0407-6b93-44ab-b167-a1223bc48a26"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.T201</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>`print` found</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 20, col 5, `print` found</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="95d6aedd-89bf-41a0-a0bd-eeb15ce6b893"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.T201</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>`print` found</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 21, col 5, `print` found</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="1635fb90-b25a-4771-91d3-4941a5d4823c"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.T201</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>`print` found</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 22, col 5, `print` found</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="16aa3f6c-a3d1-4d85-a563-ce19160450b7"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.T201</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>`print` found</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 23, col 5, `print` found</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="56628f7e-c638-450b-978c-3d9a5b8c2afb"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.T201</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>`print` found</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 49, col 5, `print` found</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="9d2dc610-6e85-4e2a-83e9-6ba5ead312db"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.T201</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>`print` found</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 50, col 5, `print` found</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="b72db66e-7bb4-47b2-82b5-3840d2e61444"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.T201</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>`print` found</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 57, col 5, `print` found</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="1273e7fa-f1a5-455a-a816-ae409c49e3bd"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.T201</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>`print` found</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 58, col 5, `print` found</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+
+    <div class="testsuite">
+        <h2>Test Suite: C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\preprocessing.py</h2>
+        <a id="ed52b996-4966-45dc-ac03-3ee756ecdace"></a>
+        
+        <span>Package: org.ruff</span>
+        
+        
+        <h3>Results</h3>
+        <table class="proplist">
+            <tr>
+                <th>Duration</th><td>0.0 sec</td>
+            </tr>
+            <tr>
+                <th>Tests</th><td>21</td>
+            </tr>
+            <tr>
+                <th>Failures</th><td>21</td>
+            </tr>
+        </table>
+
+        <div class="testclasses">
+            <h3>Tests</h3>
+            
+            <div class="testclass">
+                <h4>C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\preprocessing</h4>
+                <div class="testcases">
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="ee045cfe-802f-4d6f-ac6d-a6821f67ebb6"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.CPY001</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Missing copyright notice at top of file</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 1, col 1, Missing copyright notice at top of file</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="162378e4-432d-4fef-b57d-914f6b7c0184"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.S403</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>`pickle`, `cPickle`, `dill`, and `shelve` modules are possibly insecure</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 6, col 8, `pickle`, `cPickle`, `dill`, and `shelve` modules are possibly insecure</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="d60c7d8a-0142-47c0-a47c-df6e325c53f8"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.N803</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Argument name `X` should be lowercase</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 29, col 19, Argument name `X` should be lowercase</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="989bbd2d-b2cc-41a4-82c4-a32cabbaed16"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.DOC201</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>`return` is not documented in docstring</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 30, col 9, `return` is not documented in docstring</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="a652aa1d-f0ef-45ad-ab0b-e2a7cca81925"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.N806</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Variable `X_numeric_filled` in function should be lowercase</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 38, col 13, Variable `X_numeric_filled` in function should be lowercase</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="96077e0c-b557-4764-b9b8-1be216263181"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.G004</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Logging statement uses f-string</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 47, col 21, Logging statement uses f-string</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="20e079d6-32d9-4141-a830-ffe364a39612"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.N803</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Argument name `X` should be lowercase</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 50, col 25, Argument name `X` should be lowercase</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="017cfb5e-5c50-4414-9678-9b4dfea37551"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.DOC201</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>`return` is not documented in docstring</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 51, col 9, `return` is not documented in docstring</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="bb231f13-cbab-42ba-8c8c-6af2eaa38710"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.DOC501</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Raised exception `ValueError` missing from docstring</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 51, col 9, Raised exception `ValueError` missing from docstring</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="a3fa6ecb-42ff-45dc-a523-fe9378ecbca5"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.N806</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Variable `X` in function should be lowercase</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 52, col 9, Variable `X` in function should be lowercase</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="b6bf6ea1-508b-4c56-8999-e05f2f9169ab"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.N806</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Variable `X` in function should be lowercase</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 59, col 13, Variable `X` in function should be lowercase</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="bdb7e7b4-3e51-44e6-a09c-4dfd49fdcb07"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.N803</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Argument name `X` should be lowercase</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 80, col 29, Argument name `X` should be lowercase</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="cbe3a208-a670-452b-9e1f-aa5a619ef261"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.S301</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>`pickle` and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 92, col 20, `pickle` and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="01b909e9-33c0-478a-9a9f-ac5aa0e5aa11"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.DOC201</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>`return` is not documented in docstring</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 96, col 5, `return` is not documented in docstring</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="2fd13671-2108-4f8a-b7c9-deeaeb0d0cae"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.G004</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Logging statement uses f-string</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 102, col 17, Logging statement uses f-string</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="9aa83c18-ce6c-4689-b88e-4449d2181df0"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.N806</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Variable `X` in function should be lowercase</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 108, col 5, Variable `X` in function should be lowercase</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="05849a59-6074-47f4-b14c-cf20f630451d"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.G004</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Logging statement uses f-string</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 111, col 17, Logging statement uses f-string</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="622a74de-1098-4951-89db-9eeb93e779e2"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.G004</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Logging statement uses f-string</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 112, col 17, Logging statement uses f-string</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="fa87ccf7-111c-444a-837c-7f8b06a84075"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.N806</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Variable `X_train` in function should be lowercase</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 114, col 5, Variable `X_train` in function should be lowercase</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="a1745ecf-85f6-490b-a15e-c5ac8a819476"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.N806</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Variable `X_test` in function should be lowercase</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 114, col 14, Variable `X_test` in function should be lowercase</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="633f2b5a-7a9b-4554-a7ba-099976e6164c"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.G004</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Logging statement uses f-string</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 122, col 17, Logging statement uses f-string</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+
+    <div class="testsuite">
+        <h2>Test Suite: C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\training.py</h2>
+        <a id="314ea634-9c77-4215-bba7-a946f7e303a7"></a>
+        
+        <span>Package: org.ruff</span>
+        
+        
+        <h3>Results</h3>
+        <table class="proplist">
+            <tr>
+                <th>Duration</th><td>0.0 sec</td>
+            </tr>
+            <tr>
+                <th>Tests</th><td>20</td>
+            </tr>
+            <tr>
+                <th>Failures</th><td>20</td>
+            </tr>
+        </table>
+
+        <div class="testclasses">
+            <h3>Tests</h3>
+            
+            <div class="testclass">
+                <h4>C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\training</h4>
+                <div class="testcases">
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="3d55b65a-6c67-40b6-85ff-fe997698fa4e"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.CPY001</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Missing copyright notice at top of file</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 1, col 1, Missing copyright notice at top of file</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="80ee0678-82d5-492e-9f7a-a9f00d417057"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.S403</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>`pickle`, `cPickle`, `dill`, and `shelve` modules are possibly insecure</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 4, col 8, `pickle`, `cPickle`, `dill`, and `shelve` modules are possibly insecure</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="aecd5d97-9174-4bb8-a689-851bc990054d"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.N803</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Argument name `X_train` should be lowercase</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 32, col 41, Argument name `X_train` should be lowercase</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="4b579858-5717-45b9-8dbb-aa6d048d8d29"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.N803</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Argument name `X_test` should be lowercase</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 32, col 59, Argument name `X_test` should be lowercase</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="08b9489b-6580-4863-9e87-1f142e09fc40"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.DOC201</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>`return` is not documented in docstring</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 33, col 9, `return` is not documented in docstring</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="7d2dd6c9-6b9a-4b30-bfb3-4c913971ebef"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.N803</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Argument name `X_train` should be lowercase</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 53, col 35, Argument name `X_train` should be lowercase</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="ae31ec7a-0948-4099-b4a1-dbe2eb858113"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.N803</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Argument name `X_test` should be lowercase</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 53, col 53, Argument name `X_test` should be lowercase</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="355c1a99-7acb-4169-ac51-388b798beaa3"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.DOC201</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>`return` is not documented in docstring</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 54, col 9, `return` is not documented in docstring</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="a8568b18-75dd-4897-9b17-f7f4fb61cd7a"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.S101</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Use of `assert` detected</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 98, col 9, Use of `assert` detected</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="3fd9059c-c31f-4d84-8abf-ed4b6582ab5a"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.PLR6301</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Method `_evaluate_model` could be a function, class method, or static method</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 128, col 9, Method `_evaluate_model` could be a function, class method, or static method</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="6313ea43-f600-4c7a-a68c-8e66f3db6cd9"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.N803</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Argument name `X_train` should be lowercase</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 128, col 38, Argument name `X_train` should be lowercase</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="1c1cf5c1-f38c-4ba1-97ec-59e022e4347b"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.N803</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Argument name `X_test` should be lowercase</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 128, col 56, Argument name `X_test` should be lowercase</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="3c87112f-5a76-4618-8243-6c584b5b2437"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.DOC201</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>`return` is not documented in docstring</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 129, col 9, `return` is not documented in docstring</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="8703bc0f-b96b-46c4-ba82-5a9a13fff3b0"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.E722</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Do not use bare `except`</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 138, col 9, Do not use bare `except`</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="56b597ea-e574-417e-ae90-7129613c6c41"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.DOC201</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>`return` is not documented in docstring</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 153, col 9, `return` is not documented in docstring</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="6cd367d0-baa7-4f84-8f26-ae5a9bf8be65"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.DOC201</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>`return` is not documented in docstring</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 168, col 5, `return` is not documented in docstring</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="dd2af72c-53c8-4b06-ad2d-c7bf7d37b4c4"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.N806</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Variable `X_train` in function should be lowercase</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 172, col 5, Variable `X_train` in function should be lowercase</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="528c4e29-f2fc-4525-876b-073063bd1664"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.N806</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Variable `X_test` in function should be lowercase</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 172, col 14, Variable `X_test` in function should be lowercase</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="11c63ceb-1ee1-4904-bd12-c4a9fd67e2bb"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.N806</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Variable `X_train_processed` in function should be lowercase</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 176, col 5, Variable `X_train_processed` in function should be lowercase</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="2b941a87-ca6a-478c-adea-867e6559cb25"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>org.ruff.N806</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.0 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>Variable `X_test_processed` in function should be lowercase</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>line 177, col 5, Variable `X_test_processed` in function should be lowercase</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+
+
+
+<p class="footer">
+    Generated by junit2html
+</p>
+</body>
+</html>

@@ -1,0 +1,240 @@
+--- C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\app.py	2026-01-06 10:26:24.260872+00:00
++++ C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\app.py	2026-01-06 10:29:09.497482+00:00
+@@ -21,11 +21,13 @@
+     format="%(asctime)s [%(levelname)s] %(name)s - %(message)s",
+ )
+ logger = logging.getLogger("heart_disease_api")
+ 
+ file_handler = logging.FileHandler(LOG_DIR / "api.log")
+-file_handler.setFormatter(logging.Formatter("%(asctime)s [%(levelname)s] %(name)s - %(message)s"))
++file_handler.setFormatter(
++    logging.Formatter("%(asctime)s [%(levelname)s] %(name)s - %(message)s")
++)
+ logger.addHandler(file_handler)
+ 
+ 
+ # Prometheus metrics
+ REQUEST_COUNT = Counter(
+@@ -85,11 +87,13 @@
+         status_code = response.status_code
+         return response
+     finally:
+         duration = time.perf_counter() - start_time
+         endpoint = request.url.path
+-        REQUEST_COUNT.labels(method=request.method, endpoint=endpoint, http_status=status_code).inc()
++        REQUEST_COUNT.labels(
++            method=request.method, endpoint=endpoint, http_status=status_code
++        ).inc()
+         REQUEST_LATENCY.labels(endpoint=endpoint).observe(duration)
+         logger.info(
+             f"{request.method} {endpoint} status={status_code} duration_ms={duration * 1000:.2f}",
+         )
+ 
+@@ -118,11 +122,13 @@
+ 
+         input_df = pd.DataFrame([patient.model_dump()])
+         input_processed = PREPROCESSOR.transform(input_df)
+         prediction = MODEL.predict(input_processed)[0]
+         confidence = max(MODEL.predict_proba(input_processed)[0])
+-        risk_level = "low" if confidence < 0.6 else ("medium" if confidence < 0.8 else "high")
++        risk_level = (
++            "low" if confidence < 0.6 else ("medium" if confidence < 0.8 else "high")
++        )
+ 
+         logger.info(
+             f"prediction={int(prediction)} risk={risk_level} confidence={confidence:.3f} age={patient.age}",
+         )
+ 
+--- C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\download_data.py	2026-01-06 10:26:24.260872+00:00
++++ C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\download_data.py	2026-01-06 10:29:09.536391+00:00
+@@ -35,22 +35,26 @@
+     """
+     logger.info("Starting Heart Disease dataset download...")
+ 
+     try:
+         # Fetch from UCI ML Repository
+-        heart_disease_df = pd.read_csv("https://archive.ics.uci.edu/static/public/45/data.csv")
++        heart_disease_df = pd.read_csv(
++            "https://archive.ics.uci.edu/static/public/45/data.csv"
++        )
+ 
+         # Save raw data
+         raw_path = "data/raw/heart_disease_raw.csv"
+         heart_disease_df.to_csv(raw_path, index=False)
+         logger.info("✓ Raw data saved: %s", raw_path)
+ 
+         # Display info
+         logger.info(f"Dataset shape: {heart_disease_df.shape}")
+         logger.info(f"Features: {list(heart_disease_df.columns[:-1])}")
+         logger.info(f"Target: {heart_disease_df.columns[-1]}")
+-        logger.info(f"\nTarget distribution:\n{heart_disease_df.iloc[:, -1].value_counts()}")
++        logger.info(
++            f"\nTarget distribution:\n{heart_disease_df.iloc[:, -1].value_counts()}"
++        )
+         logger.info(f"Missing values: {heart_disease_df.isnull().sum().sum()} total")
+ 
+         return heart_disease_df
+ 
+     except Exception as e:
+--- C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\eda.py	2026-01-06 10:26:24.260872+00:00
++++ C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\eda.py	2026-01-06 10:29:09.597768+00:00
+@@ -24,11 +24,13 @@
+ 
+ 
+ def plot_target_distribution(df, target_col, title_suffix=""):
+     sns.countplot(x=target_col, data=df)
+     plt.title(f"Target Distribution {title_suffix}")
+-    plt.savefig(f"logs/target_distribution{title_suffix}.png", dpi=120, bbox_inches="tight")
++    plt.savefig(
++        f"logs/target_distribution{title_suffix}.png", dpi=120, bbox_inches="tight"
++    )
+     plt.close()
+ 
+ 
+ def plot_corr_heatmap(df, title_suffix=""):
+     plt.figure(figsize=(10, 8))
+--- C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\preprocessing.py	2026-01-06 10:26:24.260872+00:00
++++ C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\preprocessing.py	2026-01-06 10:29:09.636307+00:00
+@@ -9,11 +9,13 @@
+ import numpy as np
+ import pandas as pd
+ from sklearn.model_selection import train_test_split
+ from sklearn.preprocessing import LabelEncoder, StandardScaler
+ 
+-logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
++logging.basicConfig(
++    level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"
++)
+ logger = logging.getLogger(__name__)
+ 
+ 
+ class HeartDiseasePreprocessor:
+     """Preprocessing pipeline - ROBUST NaN handling"""
+@@ -28,11 +30,13 @@
+ 
+     def fit(self, X):
+         """Fit on training data"""
+         self.feature_columns = X.columns.tolist()
+         self.numeric_features = X.select_dtypes(include=["number"]).columns.tolist()
+-        self.categorical_features = [col for col in X.columns if col not in self.numeric_features]
++        self.categorical_features = [
++            col for col in X.columns if col not in self.numeric_features
++        ]
+ 
+         # Store medians for NaN filling
+         if self.numeric_features:
+             self.numeric_medians = X[self.numeric_features].median()
+             X_numeric_filled = X[self.numeric_features].fillna(self.numeric_medians)
+@@ -42,11 +46,13 @@
+         for col in self.categorical_features:
+             le = LabelEncoder()
+             le.fit(X[col].astype(str).fillna("missing"))
+             self.encoders[col] = le
+ 
+-        logger.info(f"✓ Fitted. Numeric: {len(self.numeric_features)}, Categorical: {len(self.categorical_features)}")
++        logger.info(
++            f"✓ Fitted. Numeric: {len(self.numeric_features)}, Categorical: {len(self.categorical_features)}"
++        )
+         return self
+ 
+     def transform(self, X):
+         """Transform with NaN safety"""
+         X = X.copy()
+@@ -58,20 +64,24 @@
+                     X[col] = np.nan
+             X = X.reindex(columns=self.feature_columns)
+ 
+         # Fill numeric NaNs
+         if self.numeric_features and self.numeric_medians is not None:
+-            X[self.numeric_features] = X[self.numeric_features].fillna(self.numeric_medians)
++            X[self.numeric_features] = X[self.numeric_features].fillna(
++                self.numeric_medians
++            )
+ 
+         # Scale numerics
+         if self.numeric_features:
+             X[self.numeric_features] = self.scaler.transform(X[self.numeric_features])
+ 
+         # Encode categoricals
+         for col in self.categorical_features:
+             if col in X.columns:
+-                X[col] = self.encoders[col].transform(X[col].astype(str).fillna("missing"))
++                X[col] = self.encoders[col].transform(
++                    X[col].astype(str).fillna("missing")
++                )
+ 
+         # FINAL NaN CHECK
+         if X.isna().any().any():
+             raise ValueError(f"Output contains NaNs: {X.isna().sum().sum()}")
+ 
+--- C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\training.py	2026-01-06 10:26:24.260872+00:00
++++ C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\training.py	2026-01-06 10:29:09.686008+00:00
+@@ -40,17 +40,21 @@
+         logger.info("Training Logistic Regression...")
+ 
+         with mlflow.start_run(run_name="logistic-regression"):
+             param_grid = {"C": [0.001, 0.01, 0.1, 1, 10], "max_iter": [1000]}
+             lr = LogisticRegression(random_state=42, solver="lbfgs")
+-            grid_search = GridSearchCV(lr, param_grid, cv=5, n_jobs=-1, scoring="roc_auc")
++            grid_search = GridSearchCV(
++                lr, param_grid, cv=5, n_jobs=-1, scoring="roc_auc"
++            )
+             grid_search.fit(X_train, y_train)
+ 
+             best_lr = grid_search.best_estimator_
+             metrics = self._evaluate_model(best_lr, X_train, y_train, X_test, y_test)
+ 
+-            mlflow.log_params({"model": "LogisticRegression", "best_C": grid_search.best_params_["C"]})
++            mlflow.log_params(
++                {"model": "LogisticRegression", "best_C": grid_search.best_params_["C"]}
++            )
+             mlflow.log_metrics(metrics)
+             mlflow.sklearn.log_model(best_lr, "model")
+ 
+             self.models["logistic_regression"] = {"model": best_lr, "metrics": metrics}
+             logger.info("LR Metrics: %s", metrics)
+@@ -95,11 +99,13 @@
+         if feature_names is None:
+             # If X_train is a DataFrame, use its columns; else index features
+             if hasattr(X_train, "columns"):
+                 feature_names = list(X_train.columns)
+             else:
+-                feature_names = [f"f{i}" for i in range(len(best_rf.feature_importances_))]
++                feature_names = [
++                    f"f{i}" for i in range(len(best_rf.feature_importances_))
++                ]
+ 
+         importances = best_rf.feature_importances_
+         # Ensure same length
+         assert len(feature_names) == len(
+             importances,
+@@ -155,11 +161,13 @@
+             "train_auc": train_auc,
+         }
+ 
+     def select_best_model(self):
+         """Select best model based on test AUC"""
+-        best_key = max(self.models.keys(), key=lambda x: self.models[x]["metrics"]["test_auc"])
++        best_key = max(
++            self.models.keys(), key=lambda x: self.models[x]["metrics"]["test_auc"]
++        )
+         self.best_model = self.models[best_key]["model"]
+         logger.info("Best model: %s", best_key)
+         return self.best_model
+ 
+     def save_best_model(self, filepath="models/best_model.pkl"):
+@@ -182,11 +190,13 @@
+     X_train_processed = preprocessor.fit_transform(X_train)
+     X_test_processed = preprocessor.transform(X_test)
+ 
+     # Train models
+     trainer = ModelTrainer()
+-    trainer.train_logistic_regression(X_train_processed, y_train, X_test_processed, y_test)
++    trainer.train_logistic_regression(
++        X_train_processed, y_train, X_test_processed, y_test
++    )
+     trainer.train_random_forest(X_train_processed, y_train, X_test_processed, y_test)
+ 
+     # Save best
+     trainer.select_best_model()
+     trainer.save_best_model()

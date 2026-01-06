@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>EDA - Heart Disease MLOps</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">Heart Disease MLOps</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href=".." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./" class="nav-link active" aria-current="page">EDA</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../modeling/" class="nav-link">Modeling</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../experiment-tracking/" class="nav-link">Experiment Tracking</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href=".." class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../modeling/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/${GITHUB_REPOSITORY}/edit/master/docs/eda.md" class="nav-link">Edit on ${GITHUB_REPOSITORY}
+                                    </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#exploratory-data-analysis-eda-heart-disease-uci" class="nav-link">Exploratory Data Analysis (EDA) — Heart Disease UCI</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#1-objective-and-approach" class="nav-link">1. Objective and Approach</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#2-dataset-acquisition" class="nav-link">2. Dataset Acquisition</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#3-data-description-features-target" class="nav-link">3. Data Description (Features + Target)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#4-basic-data-quality-checks" class="nav-link">4. Basic Data Quality Checks</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#5-class-balance-target-distribution" class="nav-link">5. Class Balance (Target Distribution)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#6-feature-type-grouping-for-eda" class="nav-link">6. Feature-Type Grouping for EDA</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#7-univariate-analysis-distributions" class="nav-link">7. Univariate Analysis (Distributions)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#8-correlation-analysis" class="nav-link">8. Correlation Analysis</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#9-statistical-association-for-categorical-features-chi-square-test" class="nav-link">9. Statistical Association for Categorical Features (Chi-square Test)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#10-reproducibility-how-to-regenerate-eda-outputs" class="nav-link">10. Reproducibility: How to Regenerate EDA Outputs</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#11-eda-artifacts-for-report-submission" class="nav-link">11. EDA Artifacts (for Report / Submission)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="exploratory-data-analysis-eda-heart-disease-uci">Exploratory Data Analysis (EDA) — Heart Disease UCI<a class="headerlink" href="#exploratory-data-analysis-eda-heart-disease-uci" title="Permanent link">&para;</a></h1>
+<p>This document captures the complete EDA process used in this project.</p>
+<p>Primary EDA source:</p>
+<ul>
+<li>Notebook: <code>exploration/eda.ipynb</code></li>
+<li>Generated figures: <code>doc/images/</code></li>
+</ul>
+<h2 id="1-objective-and-approach">1. Objective and Approach<a class="headerlink" href="#1-objective-and-approach" title="Permanent link">&para;</a></h2>
+<p><strong>Goal:</strong> Understand the Heart Disease UCI dataset’s structure, target definition, missingness, feature distributions, and relationships so we can design a robust preprocessing + modeling pipeline.</p>
+<p><strong>Key EDA outputs (as required):</strong></p>
+<ul>
+<li>Target/class balance visualization</li>
+<li>Feature distribution plots (categorical and numerical)</li>
+<li>Correlation heatmap</li>
+<li>Basic statistical association check for categorical features</li>
+</ul>
+<h2 id="2-dataset-acquisition">2. Dataset Acquisition<a class="headerlink" href="#2-dataset-acquisition" title="Permanent link">&para;</a></h2>
+<p>Two equivalent ways are supported in this repo:</p>
+<ol>
+<li>
+<p><strong>Reproducible download script (recommended for pipelines):</strong></p>
+</li>
+<li>
+<p>Script: <code>download_data.py</code></p>
+</li>
+<li>Output: <code>data/raw/heart_disease_raw.csv</code></li>
+</ol>
+<p>Run:</p>
+<pre><code class="language-bash">python download_data.py
+</code></pre>
+<p>This script downloads the data from the url <code>https://archive.ics.uci.edu/static/public/45/data.csv</code>. This is the 45th version of the data.</p>
+<ol>
+<li><strong>Direct CSV read (used inside the EDA notebook):</strong></li>
+</ol>
+<p>The notebook loads from:</p>
+<ul>
+<li>https://archive.ics.uci.edu/static/public/45/data.csv</li>
+</ul>
+<h2 id="3-data-description-features-target">3. Data Description (Features + Target)<a class="headerlink" href="#3-data-description-features-target" title="Permanent link">&para;</a></h2>
+<p>The dataset contains the commonly used 14 attributes (UCI Heart Disease):</p>
+<ul>
+<li><code>age</code>: age (years)</li>
+<li><code>sex</code>: 1=male, 0=female</li>
+<li><code>cp</code>: chest pain type (1–4)</li>
+<li><code>trestbps</code>: resting blood pressure (mm Hg)</li>
+<li><code>chol</code>: serum cholesterol (mg/dl)</li>
+<li><code>fbs</code>: fasting blood sugar &gt; 120 mg/dl (1=true, 0=false)</li>
+<li><code>restecg</code>: resting ECG results (0–2)</li>
+<li><code>thalach</code>: max heart rate achieved</li>
+<li><code>exang</code>: exercise induced angina (1=yes, 0=no)</li>
+<li><code>oldpeak</code>: ST depression induced by exercise relative to rest</li>
+<li><code>slope</code>: slope of peak exercise ST segment (1–3)</li>
+<li><code>ca</code>: number of major vessels (0–3)</li>
+<li><code>thal</code>: thalassemia indicator (commonly 3, 6, 7)</li>
+<li><code>num</code>: original diagnosis label (0–4)</li>
+</ul>
+<h3 id="target-definition-used-in-this-project">Target definition used in this project<a class="headerlink" href="#target-definition-used-in-this-project" title="Permanent link">&para;</a></h3>
+<p>The original <code>num</code> is multi-valued (<code>0,1,2,3,4</code>). To make this a <strong>binary classification</strong> problem:</p>
+<ul>
+<li><code>target = 0</code> if <code>num == 0</code> (absence of disease)</li>
+<li><code>target = 1</code> if <code>num != 0</code> (presence of disease)</li>
+</ul>
+<p>After deriving <code>target</code>, the notebook drops <code>num</code> to avoid leakage and ambiguity.</p>
+<h2 id="4-basic-data-quality-checks">4. Basic Data Quality Checks<a class="headerlink" href="#4-basic-data-quality-checks" title="Permanent link">&para;</a></h2>
+<p>The notebook performs initial inspection via:</p>
+<ul>
+<li><code>df.info()</code> for dtypes and non-null counts</li>
+<li><code>df.describe()</code> for numeric summary statistics</li>
+</ul>
+<h3 id="missing-values">Missing values<a class="headerlink" href="#missing-values" title="Permanent link">&para;</a></h3>
+<p>During inspection, two columns stand out as having missing values:</p>
+<ul>
+<li><code>ca</code></li>
+<li><code>thal</code></li>
+</ul>
+<p>These are treated as <strong>categorical</strong> in analysis (even though they are encoded numerically) and are typically handled via <strong>mode/most-frequent imputation</strong> during preprocessing.</p>
+<p>Note: for the Chi-square test in the notebook, missing rows are excluded using <code>dropna()</code> to keep the statistical test well-defined.</p>
+<h2 id="5-class-balance-target-distribution">5. Class Balance (Target Distribution)<a class="headerlink" href="#5-class-balance-target-distribution" title="Permanent link">&para;</a></h2>
+<p>To validate the problem setup and understand potential imbalance, the notebook plots a countplot of <code>target</code>.</p>
+<p><img alt="Heart Disease Target Distribution" src="../images/heart_disease_target_distribution.png" /></p>
+<p>Interpretation (as observed in the notebook):</p>
+<ul>
+<li>The dataset is not extremely imbalanced, but class proportions should still be verified before choosing metrics and thresholds.</li>
+</ul>
+<h2 id="6-feature-type-grouping-for-eda">6. Feature-Type Grouping for EDA<a class="headerlink" href="#6-feature-type-grouping-for-eda" title="Permanent link">&para;</a></h2>
+<p>For analysis, features are grouped into categorical vs numerical:</p>
+<p><strong>Categorical (discrete, encoded) columns:</strong></p>
+<pre><code class="language-text">sex, cp, fbs, restecg, exang, slope, ca, thal
+</code></pre>
+<p><strong>Numerical (continuous/ordinal) columns:</strong></p>
+<pre><code class="language-text">age, trestbps, chol, thalach, oldpeak
+</code></pre>
+<p>This grouping drives the choice of plots and informs later preprocessing decisions (encoding and scaling).</p>
+<h2 id="7-univariate-analysis-distributions">7. Univariate Analysis (Distributions)<a class="headerlink" href="#7-univariate-analysis-distributions" title="Permanent link">&para;</a></h2>
+<h3 id="71-categorical-feature-distributions-by-target">7.1 Categorical feature distributions by target<a class="headerlink" href="#71-categorical-feature-distributions-by-target" title="Permanent link">&para;</a></h3>
+<p>The notebook generates countplots for each categorical feature with <code>hue="target"</code> to compare category frequencies across the two classes.</p>
+<p><img alt="Heart Disease Categorical Distribution" src="../images/heart_disease_categorical_distribution.png" /></p>
+<p>Typical EDA takeaways from these plots:</p>
+<ul>
+<li>Some categorical features show visibly different distributions between <code>target=0</code> and <code>target=1</code>, which suggests predictive signal.</li>
+<li>Some categories are dominant within a feature (rare categories exist), which is important for encoding choices and potential regularization.</li>
+</ul>
+<h3 id="72-numerical-feature-distributions-by-target">7.2 Numerical feature distributions by target<a class="headerlink" href="#72-numerical-feature-distributions-by-target" title="Permanent link">&para;</a></h3>
+<p>The notebook uses histogram + KDE overlays (<code>sns.histplot(..., kde=True)</code>) split by target.</p>
+<p><img alt="Heart Disease Numerical Distribution" src="../images/heart_disease_numerical_distribution.png" /></p>
+<p>Notebook observation captured in comments:</p>
+<ul>
+<li>Most numerical variables appear roughly bell-shaped except <code>oldpeak</code>, which is more skewed.</li>
+</ul>
+<p>Implication for modeling (preprocessing decision driver):</p>
+<ul>
+<li>Standardization is generally suitable for most continuous features.</li>
+<li>Skewed features can sometimes benefit from alternative scaling (e.g., MinMax/robust scaling) or transformations, to be validated during model development.</li>
+</ul>
+<h2 id="8-correlation-analysis">8. Correlation Analysis<a class="headerlink" href="#8-correlation-analysis" title="Permanent link">&para;</a></h2>
+<p>To identify linear relationships and potential multicollinearity, the notebook computes a correlation matrix and visualizes it using a heatmap (values shown as percentages).</p>
+<p><img alt="Heart Disease Correlation Matrix" src="../images/heart_disease_correlation_matrix.png" /></p>
+<p>Notebook conclusion:</p>
+<ul>
+<li>No pair of features exhibits extremely high correlation that would force removal purely due to multicollinearity concerns.</li>
+<li>Therefore, all features are retained for downstream model training (feature selection is deferred to modeling/validation).</li>
+</ul>
+<h2 id="9-statistical-association-for-categorical-features-chi-square-test">9. Statistical Association for Categorical Features (Chi-square Test)<a class="headerlink" href="#9-statistical-association-for-categorical-features-chi-square-test" title="Permanent link">&para;</a></h2>
+<p>To quantify whether categorical features are associated with the target, the notebook runs a Chi-square test (<code>sklearn.feature_selection.chi2</code>) on the categorical subset (after dropping missing rows).</p>
+<p>Result interpretation recorded in the notebook:</p>
+<ul>
+<li>Most categorical variables show statistically significant association with the target (p-value &lt; 0.05).</li>
+<li><code>fbs</code> is not significant in isolation (very high p-value), but is still retained because:</li>
+<li>features can contribute jointly even if marginal association is weak</li>
+<li>final decision should be made using cross-validated model performance</li>
+</ul>
+<h2 id="10-reproducibility-how-to-regenerate-eda-outputs">10. Reproducibility: How to Regenerate EDA Outputs<a class="headerlink" href="#10-reproducibility-how-to-regenerate-eda-outputs" title="Permanent link">&para;</a></h2>
+<p>From a clean environment:</p>
+<ol>
+<li>
+<p>Run the notebook end-to-end:</p>
+</li>
+<li>
+<p>Open: <code>exploration/eda.ipynb</code></p>
+</li>
+<li>Run all cells</li>
+<li>Figures are saved to: <code>doc/images/</code></li>
+</ol>
+<p>Optional: a lightweight script also exists for quick checks:</p>
+<ul>
+<li><code>src/eda.py</code> prints basic info and writes plots into <code>logs/</code>.</li>
+</ul>
+<h2 id="11-eda-artifacts-for-report-submission">11. EDA Artifacts (for Report / Submission)<a class="headerlink" href="#11-eda-artifacts-for-report-submission" title="Permanent link">&para;</a></h2>
+<p>The notebook saves the following figures (submission-ready):</p>
+<ul>
+<li><code>doc/images/heart_disease_target_distribution.png</code></li>
+<li><code>doc/images/heart_disease_categorical_distribution.png</code></li>
+<li><code>doc/images/heart_disease_numerical_distribution.png</code></li>
+<li><code>doc/images/heart_disease_correlation_matrix.png</code></li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
