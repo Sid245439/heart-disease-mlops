@@ -32,6 +32,14 @@ jobs:
         run: |
           nox -s lint
 
+      - name: Upload lint reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lint-reports
+          path: doc/reports/ruff/
+          if-no-files-found: ignore
+
   format:
     runs-on: ubuntu-latest
 
@@ -56,6 +64,14 @@ jobs:
       - name: Format check (black + ruff format)
         run: |
           nox -s format
+
+      - name: Upload format reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: format-reports
+          path: doc/reports/format/
+          if-no-files-found: ignore
 
   typing:
     runs-on: ubuntu-latest
@@ -82,6 +98,14 @@ jobs:
         run: |
           nox -s typing
 
+      - name: Upload typing reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: typing-reports
+          path: doc/reports/typing/
+          if-no-files-found: ignore
+
   test:
     runs-on: ubuntu-latest
 
@@ -106,3 +130,13 @@ jobs:
       - name: Tests (pytest)
         run: |
           nox -s test
+
+      - name: Upload test reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-reports
+          path: |
+            doc/reports/pytest/
+            doc/reports/coverage/
+          if-no-files-found: ignore
