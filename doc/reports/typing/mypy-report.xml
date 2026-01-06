@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuite errors="0" failures="1" name="mypy" skips="0" tests="1" time="0.967">
+  <testcase classname="mypy" file="mypy" line="1" name="mypy-py3_12-win32" time="0.967">
+    <failure message="mypy produced messages">src\eda.py:7: error: Cannot find implementation or library stub for module named "matplotlib.pyplot"  [import-not-found]
+src\eda.py:7: note: See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports
+src\eda.py:7: error: Cannot find implementation or library stub for module named "matplotlib"  [import-not-found]
+src\eda.py:8: error: Library stubs not installed for "pandas"  [import-untyped]
+src\eda.py:8: note: Hint: "python3 -m pip install pandas-stubs"
+src\eda.py:8: note: (or run "mypy --install-types" to install all missing stub packages)
+src\eda.py:9: error: Library stubs not installed for "seaborn"  [import-untyped]
+src\eda.py:9: note: Hint: "python3 -m pip install types-seaborn"
+download_data.py:8: error: Library stubs not installed for "pandas"  [import-untyped]
+download_data.py:66: error: Cannot find implementation or library stub for module named "numpy"  [import-not-found]
+app.py:9: error: Library stubs not installed for "pandas"  [import-untyped]
+app.py:10: error: Cannot find implementation or library stub for module named "fastapi"  [import-not-found]
+app.py:11: error: Cannot find implementation or library stub for module named "prometheus_client"  [import-not-found]
+app.py:12: error: Cannot find implementation or library stub for module named "pydantic"  [import-not-found]
+src\preprocessing.py:9: error: Cannot find implementation or library stub for module named "numpy"  [import-not-found]
+src\preprocessing.py:10: error: Library stubs not installed for "pandas"  [import-untyped]
+src\preprocessing.py:11: error: Cannot find implementation or library stub for module named "sklearn.model_selection"  [import-not-found]
+src\preprocessing.py:12: error: Cannot find implementation or library stub for module named "sklearn.preprocessing"  [import-not-found]
+src\training.py:7: error: Cannot find implementation or library stub for module named "matplotlib.pyplot"  [import-not-found]
+src\training.py:7: error: Cannot find implementation or library stub for module named "matplotlib"  [import-not-found]
+src\training.py:8: error: Cannot find implementation or library stub for module named "mlflow"  [import-not-found]
+src\training.py:9: error: Cannot find implementation or library stub for module named "mlflow.sklearn"  [import-not-found]
+src\training.py:10: error: Library stubs not installed for "pandas"  [import-untyped]
+src\training.py:11: error: Library stubs not installed for "seaborn"  [import-untyped]
+src\training.py:12: error: Cannot find implementation or library stub for module named "sklearn.ensemble"  [import-not-found]
+src\training.py:13: error: Cannot find implementation or library stub for module named "sklearn.linear_model"  [import-not-found]
+src\training.py:14: error: Cannot find implementation or library stub for module named "sklearn.metrics"  [import-not-found]
+src\training.py:21: error: Cannot find implementation or library stub for module named "sklearn.model_selection"  [import-not-found]</failure>
+  </testcase>
+</testsuite>

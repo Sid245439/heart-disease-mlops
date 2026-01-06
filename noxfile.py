@@ -8,7 +8,7 @@ from nox import Session
 import nox
 from nox_uv import session
 
-MODULE_NAME = "heart_disease_mlops"
+MODULE_NAME = "src"
 
 PROJECT_DIRECTORY = Path(__file__).parent.resolve()
 DOCS_DIRECTORY = PROJECT_DIRECTORY / "doc"
@@ -17,6 +17,7 @@ RUFF_DIRECTORY = REPORTS_DIRECTORY / "ruff"
 PYTEST_DIRECTORY = REPORTS_DIRECTORY / "pytest"
 COVERAGE_DIRECTORY = REPORTS_DIRECTORY / "coverage"
 FORMAT_DIRECTORY = REPORTS_DIRECTORY / "format"
+TYPING_DIRECTORY = REPORTS_DIRECTORY / "typing"
 
 
 nox.options.reuse_existing_virtualenvs = True
@@ -69,16 +70,12 @@ def format(session: Session) -> None:
     """Run black and ruff to format the code."""
     FORMAT_DIRECTORY.mkdir(parents=True, exist_ok=True)
 
-    # Save formatter diffs for review.
+    # Check formatting and save diffs for review.
     with (FORMAT_DIRECTORY / "black-diff.patch").open("w") as f:
-        session.run("black", ".", "--diff", stdout=f, stderr=None)
+        session.run("black", ".", "--check", "--diff", stdout=f, stderr=None)
 
     with (FORMAT_DIRECTORY / "ruff-format-diff.patch").open("w") as f:
-        session.run("ruff", "format", ".", "--diff", stdout=f, stderr=None)
-
-    # Apply formatting.
-    session.run("black", ".", "--check")
-    session.run("ruff", "format", ".", "--check")
+        session.run("ruff", "format", ".", "--check", "--diff", stdout=f, stderr=None)
 
 
 @session(
@@ -89,11 +86,21 @@ def format(session: Session) -> None:
 )
 def typing(session: Session) -> None:
     """Run mypy to check typing issues."""
+    TYPING_DIRECTORY.mkdir(parents=True, exist_ok=True)
+
+    mypy_xml = TYPING_DIRECTORY / "mypy-report.xml"
+    mypy_html = TYPING_DIRECTORY / "mypy-report.html"
+
+    # Generate report even when there are typing errors.
+    session.run("mypy", ".", "--junit-xml", str(mypy_xml), success_codes=[0, 1])
+    session.run("junit2html", str(mypy_xml), "--report-matrix", str(mypy_html))
+
+    # Re-run normally to set the proper exit code.
     session.run("mypy", ".")
 
 
 @session(
-    venv_backend="uv", uv_only_groups=["dev"], python="3.12", uv_no_install_project=True
+    venv_backend="uv", uv_groups=["dev"], python="3.12", uv_no_install_project=True
 )
 def dev(session: Session) -> None:
     """Set up development environment."""
@@ -101,3 +108,37 @@ def dev(session: Session) -> None:
     # The virtual environment will be created with the specified packages
     # when this session is called.
     pass
+
+@session(
+    venv_backend="uv",
+    uv_groups=["test"],
+    python="3.12",
+    uv_no_install_project=True,
+)
+def test(session: Session) -> None:
+    """Run the test suite."""
+    # Ensure report directories exist
+    PYTEST_DIRECTORY.mkdir(parents=True, exist_ok=True)
+    COVERAGE_DIRECTORY.mkdir(parents=True, exist_ok=True)
+
+    pytest_xml = PYTEST_DIRECTORY / "pytest-report.xml"
+    pytest_html = PYTEST_DIRECTORY / "pytest-report.html"
+    coverage_xml = COVERAGE_DIRECTORY / "coverage-report.xml"
+
+    # Run pytest with coverage and generate XML report
+    session.run(
+        "pytest",
+        f"--junitxml={pytest_xml}",
+        f"--cov={MODULE_NAME}",
+        f"--cov-report=xml:{coverage_xml}",
+        f"--cov-report=html:{COVERAGE_DIRECTORY / 'htmlcov'}",
+        "tests/",
+    )
+
+    # Convert pytest XML report to HTML
+    session.run(
+        "junit2html",
+        str(pytest_xml),
+        "--report-matrix",
+        str(pytest_html),
+    )

@@ -31,7 +31,13 @@ format = [
     "ruff~=0.14.7",
 ]
 typing = [
+    "junit2html>=31.0.5",
     "mypy~=1.19.0",
+]
+test = [
+    "pytest>=9.0.2",
+    "pytest-cov>=6.3.0",
+    "junit2html>=31.0.5",
 ]
 
 [tool.ruff]
