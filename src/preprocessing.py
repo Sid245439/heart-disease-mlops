@@ -11,9 +11,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder, StandardScaler
 
-logging.basicConfig(
-    level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"
-)
+logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 logger = logging.getLogger(__name__)
 
 
@@ -32,9 +30,7 @@ class HeartDiseasePreprocessor:
         """Fit on training data"""
         self.feature_columns = X.columns.tolist()
         self.numeric_features = X.select_dtypes(include=["number"]).columns.tolist()
-        self.categorical_features = [
-            col for col in X.columns if col not in self.numeric_features
-        ]
+        self.categorical_features = [col for col in X.columns if col not in self.numeric_features]
 
         # Store medians for NaN filling
         if self.numeric_features:
@@ -48,9 +44,7 @@ class HeartDiseasePreprocessor:
             le.fit(X[col].astype(str).fillna("missing"))
             self.encoders[col] = le
 
-        logger.info(
-            f"✓ Fitted. Numeric: {len(self.numeric_features)}, Categorical: {len(self.categorical_features)}"
-        )
+        logger.info(f"✓ Fitted. Numeric: {len(self.numeric_features)}, Categorical: {len(self.categorical_features)}")
         return self
 
     def transform(self, X):
@@ -66,9 +60,7 @@ class HeartDiseasePreprocessor:
 
         # Fill numeric NaNs
         if self.numeric_features and self.numeric_medians is not None:
-            X[self.numeric_features] = X[self.numeric_features].fillna(
-                self.numeric_medians
-            )
+            X[self.numeric_features] = X[self.numeric_features].fillna(self.numeric_medians)
 
         # Scale numerics
         if self.numeric_features:
@@ -77,9 +69,7 @@ class HeartDiseasePreprocessor:
         # Encode categoricals
         for col in self.categorical_features:
             if col in X.columns:
-                X[col] = self.encoders[col].transform(
-                    X[col].astype(str).fillna("missing")
-                )
+                X[col] = self.encoders[col].transform(X[col].astype(str).fillna("missing"))
 
         # FINAL NaN CHECK
         if X.isna().any().any():

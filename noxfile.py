@@ -70,10 +70,6 @@ def format(session: Session) -> None:
     """Run black and ruff to format the code."""
     FORMAT_DIRECTORY.mkdir(parents=True, exist_ok=True)
 
-    # Check formatting and save diffs for review.
-    with (FORMAT_DIRECTORY / "black-diff.patch").open("w") as f:
-        session.run("black", ".", "--check", "--diff", stdout=f, stderr=None)
-
     with (FORMAT_DIRECTORY / "ruff-format-diff.patch").open("w") as f:
         session.run("ruff", "format", ".", "--check", "--diff", stdout=f, stderr=None)
 
