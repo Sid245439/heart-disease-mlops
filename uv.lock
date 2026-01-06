@@ -959,6 +959,7 @@ dev = [
 docs = [
     { name = "mkdocs" },
     { name = "mkdocs-material" },
+    { name = "pymdown-extensions" },
 ]
 format = [
     { name = "junit2html" },
@@ -1013,6 +1014,7 @@ dev = [
 docs = [
     { name = "mkdocs", specifier = ">=1.6.1" },
     { name = "mkdocs-material", specifier = ">=9.6.6" },
+    { name = "pymdown-extensions", specifier = ">=10.14.3" },
 ]
 format = [
     { name = "junit2html", specifier = ">=31.0.5" },

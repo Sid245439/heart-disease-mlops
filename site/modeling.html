@@ -48,6 +48,8 @@
       
     
     
+      <link rel="stylesheet" href="_static/extra.css">
+    
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -139,6 +141,8 @@
         </button>
       </nav>
       
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
@@ -190,7 +194,9 @@
 
 
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="index.html" title="Heart Disease MLOps" class="md-nav__button md-logo" aria-label="Heart Disease MLOps" data-md-component="logo">
       
@@ -615,270 +621,6 @@
               </div>
             
             
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-problem-formulation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Problem Formulation
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-feature-set" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Feature Set
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-data-splitting-strategy" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Data Splitting Strategy
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-preprocessing-feature-engineering-pipeline" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Preprocessing / Feature Engineering Pipeline
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4. Preprocessing / Feature Engineering Pipeline">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#41-numerical-preprocessing" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4.1 Numerical preprocessing
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#42-categorical-preprocessing" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4.2 Categorical preprocessing
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#43-why-a-pipeline-matters-mlops-relevance" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4.3 Why a pipeline matters (MLOps relevance)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-candidate-models-notebook-experimentation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. Candidate Models (Notebook Experimentation)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-threshold-selection-recall-constrained-decision-rule" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        6. Threshold Selection (Recall-Constrained Decision Rule)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-evaluation-metrics" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        7. Evaluation Metrics
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#8-final-model-choice-notebook" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        8. Final Model Choice (Notebook)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#9-scripted-reproducible-training-project-pipeline" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        9. Scripted, Reproducible Training (Project Pipeline)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="9. Scripted, Reproducible Training (Project Pipeline)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#91-models-trained-assignment-requirement" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        9.1 Models trained (assignment requirement)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#92-cross-validation-and-tuning" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        9.2 Cross-validation and tuning
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#93-metrics-collected" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        9.3 Metrics collected
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#94-model-selection" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        9.4 Model selection
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#95-artifacts-saved" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        9.5 Artifacts saved
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#10-how-to-reproduce-modeling-end-to-end" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        10. How to Reproduce Modeling End-to-End
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="10. How to Reproduce Modeling End-to-End">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#option-a-notebook-exploration" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Option A — Notebook exploration
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#option-b-reproducible-training-pipeline-recommended" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Option B — Reproducible training pipeline (recommended)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           
             <div class="md-content" data-md-component="content">
@@ -1069,18 +811,18 @@
 <ol>
 <li>Download data:</li>
 </ol>
-<pre><code class="language-bash">python download_data.py
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>python<span class="w"> </span>download_data.py
+</code></pre></div>
 <ol>
 <li>Train + log experiments:</li>
 </ol>
-<pre><code class="language-bash">python -c &quot;from src.training import train_pipeline; train_pipeline('data/raw/heart_disease_raw.csv')&quot;
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;from src.training import train_pipeline; train_pipeline(&#39;data/raw/heart_disease_raw.csv&#39;)&quot;</span>
+</code></pre></div>
 <ol>
 <li>View experiment tracking UI:</li>
 </ol>
-<pre><code class="language-bash">mlflow ui --host 0.0.0.0 --port 5000
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>mlflow<span class="w"> </span>ui<span class="w"> </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>--port<span class="w"> </span><span class="m">5000</span>
+</code></pre></div>
 <p>This will use the local <code>mlruns/</code> directory and show runs for Logistic Regression and Random Forest (parameters, metrics, and model artifacts).</p>
 
 
@@ -1101,6 +843,12 @@
           
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
         
       </main>
       
@@ -1131,7 +879,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": [], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.expand", "navigation.top", "toc.integrate", "content.code.copy", "search.highlight", "search.suggest"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="assets/javascripts/bundle.79ae519e.min.js"></script>

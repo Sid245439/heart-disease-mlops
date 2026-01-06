@@ -48,6 +48,8 @@
       
     
     
+      <link rel="stylesheet" href="_static/extra.css">
+    
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -139,6 +141,8 @@
         </button>
       </nav>
       
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
@@ -190,7 +194,9 @@
 
 
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="index.html" title="Heart Disease MLOps" class="md-nav__button md-logo" aria-label="Heart Disease MLOps" data-md-component="logo">
       
@@ -560,215 +566,6 @@
               </div>
             
             
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-objective-and-approach" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Objective and Approach
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-dataset-acquisition" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Dataset Acquisition
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-data-description-features-target" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Data Description (Features + Target)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3. Data Description (Features + Target)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#target-definition-used-in-this-project" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Target definition used in this project
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-basic-data-quality-checks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Basic Data Quality Checks
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4. Basic Data Quality Checks">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#missing-values" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Missing values
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-class-balance-target-distribution" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. Class Balance (Target Distribution)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-feature-type-grouping-for-eda" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        6. Feature-Type Grouping for EDA
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-univariate-analysis-distributions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        7. Univariate Analysis (Distributions)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="7. Univariate Analysis (Distributions)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#71-categorical-feature-distributions-by-target" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        7.1 Categorical feature distributions by target
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#72-numerical-feature-distributions-by-target" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        7.2 Numerical feature distributions by target
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#8-correlation-analysis" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        8. Correlation Analysis
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#9-statistical-association-for-categorical-features-chi-square-test" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        9. Statistical Association for Categorical Features (Chi-square Test)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#10-reproducibility-how-to-regenerate-eda-outputs" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        10. Reproducibility: How to Regenerate EDA Outputs
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#11-eda-artifacts-for-report-submission" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        11. EDA Artifacts (for Report / Submission)
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           
             <div class="md-content" data-md-component="content">
@@ -810,8 +607,8 @@
 <li>Output: <code>data/raw/heart_disease_raw.csv</code></li>
 </ol>
 <p>Run:</p>
-<pre><code class="language-bash">python download_data.py
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>python<span class="w"> </span>download_data.py
+</code></pre></div>
 <p>This script downloads the data from the url <code>https://archive.ics.uci.edu/static/public/45/data.csv</code>. This is the 45th version of the data.</p>
 <ol>
 <li><strong>Direct CSV read (used inside the EDA notebook):</strong></li>
@@ -869,11 +666,11 @@
 <h2 id="6-feature-type-grouping-for-eda">6. Feature-Type Grouping for EDA<a class="headerlink" href="#6-feature-type-grouping-for-eda" title="Permanent link">&para;</a></h2>
 <p>For analysis, features are grouped into categorical vs numerical:</p>
 <p><strong>Categorical (discrete, encoded) columns:</strong></p>
-<pre><code class="language-text">sex, cp, fbs, restecg, exang, slope, ca, thal
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sex, cp, fbs, restecg, exang, slope, ca, thal
+</code></pre></div>
 <p><strong>Numerical (continuous/ordinal) columns:</strong></p>
-<pre><code class="language-text">age, trestbps, chol, thalach, oldpeak
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>age, trestbps, chol, thalach, oldpeak
+</code></pre></div>
 <p>This grouping drives the choice of plots and informs later preprocessing decisions (encoding and scaling).</p>
 <h2 id="7-univariate-analysis-distributions">7. Univariate Analysis (Distributions)<a class="headerlink" href="#7-univariate-analysis-distributions" title="Permanent link">&para;</a></h2>
 <h3 id="71-categorical-feature-distributions-by-target">7.1 Categorical feature distributions by target<a class="headerlink" href="#71-categorical-feature-distributions-by-target" title="Permanent link">&para;</a></h3>
@@ -957,6 +754,12 @@
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
       </main>
       
         <footer class="md-footer">
@@ -986,7 +789,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": [], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.expand", "navigation.top", "toc.integrate", "content.code.copy", "search.highlight", "search.suggest"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
