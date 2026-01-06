@@ -7,6 +7,7 @@ from nox_uv import session
 
 MODULE_NAME = "src"
 
+
 PROJECT_DIRECTORY = Path(__file__).parent.resolve()
 DOCS_DIRECTORY = PROJECT_DIRECTORY / "doc"
 REPORTS_DIRECTORY = DOCS_DIRECTORY / "reports"
@@ -167,7 +168,7 @@ def mlflow_ui(session: Session) -> None:
 
     args = list(session.posargs)
     if not args:
-        args = ["--host", "localhost", "--port", "5000"]
+        args = ["--host", "localhost", "--port", "5001"]
 
     session.run("mlflow", "ui", *args, external=True)
 
