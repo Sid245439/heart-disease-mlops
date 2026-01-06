@@ -2,34 +2,107 @@ name: CI
 
 on:
   push:
-    branches: [ main, master ]
+    branches: [main, master, develop]
   pull_request:
-    branches: [ main, master ]
+    branches: [main, master, develop]
 
 jobs:
-  tests:
+  lint:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        shell: bash -l {0}
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up Micromamba (environment.yml)
-        uses: mamba-org/setup-micromamba@v1
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
-          environment-file: environment.yml
-          cache-downloads: true
-          cache-env: true
-          init-shell: bash
+          python-version: "3.12"
 
-      - name: Lint
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v4
+        with:
+          enable-cache: true
+
+      - name: Install nox
         run: |
-          micromamba run -n heart-disease-mlops flake8 src app.py
+          uv pip install --system nox nox-uv
 
-      - name: Run tests
+      - name: Lint (ruff)
         run: |
-          micromamba run -n heart-disease-mlops pytest tests -v
+          nox -s lint
 
+  format:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v4
+        with:
+          enable-cache: true
+
+      - name: Install nox
+        run: |
+          uv pip install --system nox nox-uv
+
+      - name: Format check (black + ruff format)
+        run: |
+          nox -s format
+
+  typing:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v4
+        with:
+          enable-cache: true
+
+      - name: Install nox
+        run: |
+          uv pip install --system nox nox-uv
+
+      - name: Type check (mypy)
+        run: |
+          nox -s typing
+
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v4
+        with:
+          enable-cache: true
+
+      - name: Install nox
+        run: |
+          uv pip install --system nox nox-uv
+
+      - name: Tests (pytest)
+        run: |
+          nox -s test

@@ -95,9 +95,7 @@ def typing(session: Session) -> None:
     session.run("mypy", ".")
 
 
-@session(
-    venv_backend="uv", uv_groups=["dev"], python="3.12", uv_no_install_project=True
-)
+@session(venv_backend="uv", uv_groups=["dev"], python="3.12", uv_no_install_project=True)
 def dev(session: Session) -> None:
     """Set up development environment."""
     # No need to implement anything here for now
