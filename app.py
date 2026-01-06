@@ -23,7 +23,9 @@ logging.basicConfig(
 logger = logging.getLogger("heart_disease_api")
 
 file_handler = logging.FileHandler(LOG_DIR / "api.log")
-file_handler.setFormatter(logging.Formatter("%(asctime)s [%(levelname)s] %(name)s - %(message)s"))
+file_handler.setFormatter(
+    logging.Formatter("%(asctime)s [%(levelname)s] %(name)s - %(message)s")
+)
 logger.addHandler(file_handler)
 
 
@@ -87,7 +89,9 @@ async def log_and_measure(request: Request, call_next):
     finally:
         duration = time.perf_counter() - start_time
         endpoint = request.url.path
-        REQUEST_COUNT.labels(method=request.method, endpoint=endpoint, http_status=status_code).inc()
+        REQUEST_COUNT.labels(
+            method=request.method, endpoint=endpoint, http_status=status_code
+        ).inc()
         REQUEST_LATENCY.labels(endpoint=endpoint).observe(duration)
         logger.info(
             f"{request.method} {endpoint} status={status_code} duration_ms={duration * 1000:.2f}",
@@ -120,7 +124,9 @@ async def predict(patient: PatientData):
         input_processed = PREPROCESSOR.transform(input_df)
         prediction = MODEL.predict(input_processed)[0]
         confidence = max(MODEL.predict_proba(input_processed)[0])
-        risk_level = "low" if confidence < 0.6 else ("medium" if confidence < 0.8 else "high")
+        risk_level = (
+            "low" if confidence < 0.6 else ("medium" if confidence < 0.8 else "high")
+        )
 
         logger.info(
             f"prediction={int(prediction)} risk={risk_level} confidence={confidence:.3f} age={patient.age}",

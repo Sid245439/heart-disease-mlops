@@ -37,7 +37,9 @@ def download_heart_disease_data():
 
     try:
         # Fetch from UCI ML Repository
-        heart_disease_df = pd.read_csv("https://archive.ics.uci.edu/static/public/45/data.csv")
+        heart_disease_df = pd.read_csv(
+            "https://archive.ics.uci.edu/static/public/45/data.csv"
+        )
 
         # Save raw data
         raw_path = "data/raw/heart_disease_raw.csv"
@@ -48,7 +50,9 @@ def download_heart_disease_data():
         logger.info(f"Dataset shape: {heart_disease_df.shape}")
         logger.info(f"Features: {list(heart_disease_df.columns[:-1])}")
         logger.info(f"Target: {heart_disease_df.columns[-1]}")
-        logger.info(f"\nTarget distribution:\n{heart_disease_df.iloc[:, -1].value_counts()}")
+        logger.info(
+            f"\nTarget distribution:\n{heart_disease_df.iloc[:, -1].value_counts()}"
+        )
         logger.info(f"Missing values: {heart_disease_df.isnull().sum().sum()} total")
 
         return heart_disease_df

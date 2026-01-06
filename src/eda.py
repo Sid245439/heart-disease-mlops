@@ -26,7 +26,9 @@ def basic_info(df, name="df"):
 def plot_target_distribution(df, target_col, title_suffix=""):
     sns.countplot(x=target_col, data=df)
     plt.title(f"Target Distribution {title_suffix}")
-    plt.savefig(f"logs/target_distribution{title_suffix}.png", dpi=120, bbox_inches="tight")
+    plt.savefig(
+        f"logs/target_distribution{title_suffix}.png", dpi=120, bbox_inches="tight"
+    )
     plt.close()
 
 

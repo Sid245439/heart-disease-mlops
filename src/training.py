@@ -42,13 +42,17 @@ class ModelTrainer:
         with mlflow.start_run(run_name="logistic-regression"):
             param_grid = {"C": [0.001, 0.01, 0.1, 1, 10], "max_iter": [1000]}
             lr = LogisticRegression(random_state=42, solver="lbfgs")
-            grid_search = GridSearchCV(lr, param_grid, cv=5, n_jobs=-1, scoring="roc_auc")
+            grid_search = GridSearchCV(
+                lr, param_grid, cv=5, n_jobs=-1, scoring="roc_auc"
+            )
             grid_search.fit(X_train, y_train)
 
             best_lr = grid_search.best_estimator_
             metrics = self._evaluate_model(best_lr, X_train, y_train, X_test, y_test)
 
-            mlflow.log_params({"model": "LogisticRegression", "best_C": grid_search.best_params_["C"]})
+            mlflow.log_params(
+                {"model": "LogisticRegression", "best_C": grid_search.best_params_["C"]}
+            )
             mlflow.log_metrics(metrics)
             mlflow.sklearn.log_model(best_lr, "model")
 
@@ -97,7 +101,9 @@ class ModelTrainer:
             if hasattr(X_train, "columns"):
                 feature_names = list(X_train.columns)
             else:
-                feature_names = [f"f{i}" for i in range(len(best_rf.feature_importances_))]
+                feature_names = [
+                    f"f{i}" for i in range(len(best_rf.feature_importances_))
+                ]
 
         importances = best_rf.feature_importances_
         # Ensure same length
@@ -157,7 +163,9 @@ class ModelTrainer:
 
     def select_best_model(self):
         """Select best model based on test AUC"""
-        best_key = max(self.models.keys(), key=lambda x: self.models[x]["metrics"]["test_auc"])
+        best_key = max(
+            self.models.keys(), key=lambda x: self.models[x]["metrics"]["test_auc"]
+        )
         self.best_model = self.models[best_key]["model"]
         logger.info("Best model: %s", best_key)
         return self.best_model
@@ -184,7 +192,9 @@ def train_pipeline(data_path="data/raw/heart_disease_raw.csv"):
 
     # Train models
     trainer = ModelTrainer()
-    trainer.train_logistic_regression(X_train_processed, y_train, X_test_processed, y_test)
+    trainer.train_logistic_regression(
+        X_train_processed, y_train, X_test_processed, y_test
+    )
     trainer.train_random_forest(X_train_processed, y_train, X_test_processed, y_test)
 
     # Save best
