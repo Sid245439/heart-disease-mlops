@@ -49,7 +49,6 @@ logs/
 
 # Jupyter
 .ipynb_checkpoints/
-*.ipynb
 
 # Docker
 .dockerignore
