@@ -51,7 +51,7 @@ test = [
 [tool.ruff]
 preview = true
 line-length = 120
-exclude = ["build/", "dist/", ".nox/", "noxfile.py", "tests/"]
+exclude = ["build/", "dist/", ".nox/", "noxfile.py", "tests/", ".venv/", "__pycache__/", "venv/", ".ruff-cache/", ".mypy_cache/"]
 
 [tool.ruff.lint]
 select = ["ALL"]
