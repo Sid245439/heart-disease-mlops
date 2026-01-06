@@ -541,7 +541,7 @@
   <a href="#1-build-the-image" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1) Build the image
+        1. Build the image
       
     </span>
   </a>
@@ -552,7 +552,7 @@
   <a href="#2-ensure-the-cluster-can-see-the-image" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2) Ensure the cluster can see the image
+        2. Ensure the cluster can see the image
       
     </span>
   </a>
@@ -563,7 +563,7 @@
   <a href="#3-apply-the-manifest" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3) Apply the manifest
+        3. Apply the manifest
       
     </span>
   </a>
@@ -574,7 +574,7 @@
   <a href="#4-verify" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4) Verify
+        4. Verify
       
     </span>
   </a>
@@ -585,7 +585,7 @@
   <a href="#5-access-the-service" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5) Access the service
+        5. Access the service
       
     </span>
   </a>
@@ -739,26 +739,26 @@
 </ol>
 <p>The current manifest does <strong>not</strong> mount an external volume at <code>/app/models</code> so that the baked-in model artifacts remain available.</p>
 <h2 id="deploy-minikube-docker-desktop-kubernetes">Deploy (Minikube / Docker Desktop Kubernetes)<a class="headerlink" href="#deploy-minikube-docker-desktop-kubernetes" title="Permanent link">&para;</a></h2>
-<h3 id="1-build-the-image">1) Build the image<a class="headerlink" href="#1-build-the-image" title="Permanent link">&para;</a></h3>
+<h3 id="1-build-the-image">1. Build the image<a class="headerlink" href="#1-build-the-image" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>nox<span class="w"> </span>-s<span class="w"> </span>train
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>heart-disease-mlops:latest<span class="w"> </span>.
 </code></pre></div>
-<h3 id="2-ensure-the-cluster-can-see-the-image">2) Ensure the cluster can see the image<a class="headerlink" href="#2-ensure-the-cluster-can-see-the-image" title="Permanent link">&para;</a></h3>
+<h3 id="2-ensure-the-cluster-can-see-the-image">2. Ensure the cluster can see the image<a class="headerlink" href="#2-ensure-the-cluster-can-see-the-image" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>Minikube</strong> (example):</li>
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>minikube<span class="w"> </span>image<span class="w"> </span>load<span class="w"> </span>heart-disease-mlops:latest
 </code></pre></div>
 <p>Or build directly inside minikube’s Docker daemon.</p>
-<h3 id="3-apply-the-manifest">3) Apply the manifest<a class="headerlink" href="#3-apply-the-manifest" title="Permanent link">&para;</a></h3>
+<h3 id="3-apply-the-manifest">3. Apply the manifest<a class="headerlink" href="#3-apply-the-manifest" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>k8s/deployment.yaml
 </code></pre></div>
-<h3 id="4-verify">4) Verify<a class="headerlink" href="#4-verify" title="Permanent link">&para;</a></h3>
+<h3 id="4-verify">4. Verify<a class="headerlink" href="#4-verify" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>heart-disease
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>kubectl<span class="w"> </span>get<span class="w"> </span>svc<span class="w"> </span>heart-disease-service
 </code></pre></div>
-<h3 id="5-access-the-service">5) Access the service<a class="headerlink" href="#5-access-the-service" title="Permanent link">&para;</a></h3>
+<h3 id="5-access-the-service">5. Access the service<a class="headerlink" href="#5-access-the-service" title="Permanent link">&para;</a></h3>
 <p>If you don’t have a cloud load balancer (typical for local clusters), use port-forward:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>kubectl<span class="w"> </span>port-forward<span class="w"> </span>svc/heart-disease-service<span class="w"> </span><span class="m">8000</span>:8000
 </code></pre></div>
