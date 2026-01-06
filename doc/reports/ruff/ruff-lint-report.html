@@ -1,0 +1,1365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JUnit Matrix</title>
+    <style type="text/css">
+        body {
+    background-color: white;
+    padding-bottom: 20em;
+    margin: 0;
+    min-height: 15cm;
+}
+
+h1, h2, h3, h4, h5, h6, h7 {
+    font-family: sans-serif;
+}
+
+h1 {
+    background-color: #007acc;
+    color: white;
+    padding: 3mm;
+    margin-top: 0;
+    margin-bottom: 1mm;
+}
+
+.footer {
+    font-style: italic;
+    font-size: small;
+    text-align: right;
+    padding: 1em;
+}
+
+.testsuite {
+    padding-bottom: 2em;
+    margin-left: 1em;
+}
+
+.proplist {
+    width: 100%;
+    margin-bottom: 2em;
+    border-collapse: collapse;
+    border: 1px solid grey;
+}
+
+.proplist th {
+    background-color: silver;
+    width: 5em;
+    padding: 2px;
+    padding-right: 1em;
+    text-align: left;
+}
+
+.proplist td {
+    padding: 2px;
+    word-break: break-all;
+}
+
+.index-table {
+    width: 90%;
+    margin-left: 1em;
+}
+
+.index-table td {
+    vertical-align: top;
+    max-width: 200px;
+    word-wrap: break-word;
+}
+
+.failure-index {
+
+}
+
+.toc {
+    margin-bottom: 2em;
+    font-family: monospace;
+}
+
+.stdio, pre {
+    min-height: 1em;
+    background-color: #1e1e1e;
+    color: silver;
+    padding: 0.5em;
+}
+.tdpre {
+    background-color: #1e1e1e;
+}
+
+.test {
+    margin-left: 0.5cm;
+}
+
+.toc {
+    list-style: none;
+}
+
+.toc li.outcome {
+    list-style: none;
+}
+
+.toc li.outcome::before {
+    content: "\2022";
+    color: black;
+    font-weight: bold;
+    display: inline-block;
+    width: 1.27em;
+    margin-left: -1.27em;
+    font-size: 1.2em;
+}
+
+.toc li.outcome-failed {
+    background-color: lightcoral;
+}
+
+.toc li.outcome-failed::before {
+    color: red;
+}
+
+.toc li.outcome-passed::before {
+    color: green;
+}
+
+.toc li.outcome-skipped::before {
+    color: orange;
+}
+
+.testcases .outcome {
+    border-left: 1em;
+    padding: 2px;
+}
+
+.testcases .outcome-failed {
+    border-left: 1em solid lightcoral;
+}
+
+
+.outcome-passed {
+    border-left: 1em solid lightgreen;
+}
+
+.outcome-skipped {
+    border-left: 1em dotted silver;
+}
+
+.testcases .outcome-passed {
+    border-left: 1em solid lightgreen;
+}
+
+.testcases .outcome-skipped {
+    border-left: 1em solid #FED8B1;
+}
+
+.stats-table {
+}
+
+.stats-table td {
+    min-width: 4em;
+    text-align: right;
+}
+
+.stats-table .failed {
+    background-color: lightcoral;
+}
+
+.stats-table .passed {
+    background-color: lightgreen;
+}
+
+.matrix-table {
+    table-layout: fixed;
+    border-spacing: 0;
+    width: available;
+    margin-left: 1em;
+}
+
+.matrix-table td {
+    vertical-align: center;
+}
+
+.matrix-table td:last-child {
+    width: 0;
+}
+
+.matrix-table tr:hover {
+    background-color: yellow;
+}
+
+.matrix-axis-name {
+    white-space: nowrap;
+    padding-right: 0.5em;
+    border-left: 1px solid black;
+    border-top: 1px solid black;
+    text-align: right;
+}
+
+.matrix-axis-line {
+    border-left: 1px solid black;
+    width: 0.5em;
+}
+
+.matrix-classname {
+    text-align: left;
+    width: 100%;
+    border-top: 2px solid grey;
+    border-bottom: 1px solid silver;
+}
+
+.matrix-casename {
+    text-align: left;
+    font-weight: normal;
+    font-style: italic;
+    padding-left: 1em;
+    border-bottom: 1px solid silver;
+}
+
+.matrix-result {
+    display: block;
+    width: 1em;
+    text-align: center;
+    padding: 1mm;
+    margin: 0;
+}
+
+.matrix-result-combined {
+    white-space: nowrap;
+    padding-right: 0.2em;
+    text-align: right;
+}
+
+.matrix-result-failed {
+    background-color: lightcoral;
+}
+
+.matrix-result-passed {
+    background-color: lightgreen;
+}
+
+.matrix-result-skipped {
+    background-color: lightyellow;
+}
+
+.matrix-even {
+    background-color: lightgray;
+}
+    </style>
+</head>
+<body>
+    
+<h1>
+    Reports Matrix
+</h1>
+
+<table class="matrix-table">
+    
+    
+    
+    <tr><!-- top row, stats and each matrix axis -->
+        <td colspan="1" rowspan="3"> <!-- stats -->
+            <table class="stats-table">
+                
+                <tr>
+                    <th class="failed">Failed</th>
+                    <td>126</td>
+                </tr>
+                
+            </table>
+        </td>
+        <td colspan="2"></td>
+
+    </tr>
+    
+    <!-- matrix column index - [&#39;ruff-lint-report.xml&#39;] -->
+    
+    <tr>
+        <td colspan="2" class="matrix-axis-name ">
+            <a href="ruff-lint-report.xml.html">ruff-lint-report</a>
+        </td>
+        
+    </tr>
+    
+    <tr>
+        
+        <td class="matrix-axis-line matrix-even"></td>
+        
+        <td class="matrix-axis-line "></td>
+        
+    </tr>
+
+    <!-- test results by class/test -->
+    
+    <tr>
+        <th class="matrix-classname" colspan="2">C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\EDA_UCI</th>
+        
+        <td class="matrix-axis-line "></td>
+        
+    </tr>
+    
+    
+    <tr>
+        <th class="matrix-casename">org.ruff.CPY001</th>
+        <td class="matrix-casename matrix-result-combined">
+            Failed
+        </td>
+        
+        
+
+        <td class="matrix-axis-line ">
+            
+            <a href="ruff-lint-report.xml.html#925b5666-4af2-4a7c-a1c8-2706520609b7">
+                        <span class="matrix-result matrix-result-failed">
+                            f
+                        </span>
+            </a>
+            
+
+        </td>
+        
+        
+    
+    <tr>
+        <th class="matrix-casename">org.ruff.RUF003</th>
+        <td class="matrix-casename matrix-result-combined">
+            Failed
+        </td>
+        
+        
+
+        <td class="matrix-axis-line ">
+            
+            <a href="ruff-lint-report.xml.html#cb836713-f283-460b-9bd6-42ff84044746">
+                        <span class="matrix-result matrix-result-failed">
+                            f
+                        </span>
+            </a>
+            
+
+        </td>
+        
+        
+    
+    <tr>
+        <th class="matrix-casename">org.ruff.T201</th>
+        <td class="matrix-casename matrix-result-combined">
+            Failed
+        </td>
+        
+        
+
+        <td class="matrix-axis-line ">
+            
+            <a href="ruff-lint-report.xml.html#a1077e39-17c0-4f35-b043-d222dad257dd">
+                        <span class="matrix-result matrix-result-failed">
+                            f
+                        </span>
+            </a>
+            
+
+        </td>
+        
+        
+    </tr>
+    
+    <tr>
+        <th class="matrix-classname" colspan="2">C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\app</th>
+        
+        <td class="matrix-axis-line "></td>
+        
+    </tr>
+    
+    
+    <tr>
+        <th class="matrix-casename">org.ruff.CPY001</th>
+        <td class="matrix-casename matrix-result-combined">
+            Failed
+        </td>
+        
+        
+
+        <td class="matrix-axis-line ">
+            
+            <a href="ruff-lint-report.xml.html#65aa3812-3a47-4b80-9caa-fd4d9accca1f">
+                        <span class="matrix-result matrix-result-failed">
+                            f
+                        </span>
+            </a>
+            
+
+        </td>
+        
+        
+    
+    <tr>
+        <th class="matrix-casename">org.ruff.S403</th>
+        <td class="matrix-casename matrix-result-combined">
+            Failed
+        </td>
+        
+        
+
+        <td class="matrix-axis-line ">
+            
+            <a href="ruff-lint-report.xml.html#0722c1a2-73bc-4678-849e-67eb4d61572e">
+                        <span class="matrix-result matrix-result-failed">
+                            f
+                        </span>
+            </a>
+            
+
+        </td>
+        
+        
+    
+    <tr>
+        <th class="matrix-casename">org.ruff.PLW0603</th>
+        <td class="matrix-casename matrix-result-combined">
+            Failed
+        </td>
+        
+        
+
+        <td class="matrix-axis-line ">
+            
+            <a href="ruff-lint-report.xml.html#c40de166-48f0-4bec-a45b-d9316fe08216">
+                        <span class="matrix-result matrix-result-failed">
+                            f
+                        </span>
+            </a>
+            
+
+        </td>
+        
+        
+    
+    <tr>
+        <th class="matrix-casename">org.ruff.S301</th>
+        <td class="matrix-casename matrix-result-combined">
+            Failed
+        </td>
+        
+        
+
+        <td class="matrix-axis-line ">
+            
+            <a href="ruff-lint-report.xml.html#0ecbb736-fb59-4a4a-9dc4-bffbc33e6ec4">
+                        <span class="matrix-result matrix-result-failed">
+                            f
+                        </span>
+            </a>
+            
+
+        </td>
+        
+        
+    
+    <tr>
+        <th class="matrix-casename">org.ruff.BLE001</th>
+        <td class="matrix-casename matrix-result-combined">
+            Failed
+        </td>
+        
+        
+
+        <td class="matrix-axis-line ">
+            
+            <a href="ruff-lint-report.xml.html#b9a9bc34-4b5e-4155-a122-d16a021c5c96">
+                        <span class="matrix-result matrix-result-failed">
+                            f
+                        </span>
+            </a>
+            
+
+        </td>
+        
+        
+    
+    <tr>
+        <th class="matrix-casename">org.ruff.TRY400</th>
+        <td class="matrix-casename matrix-result-combined">
+            Failed
+        </td>
+        
+        
+
+        <td class="matrix-axis-line ">
+            
+            <a href="ruff-lint-report.xml.html#6a117aa9-d388-4bed-a6a6-912ac94db3c4">
+                        <span class="matrix-result matrix-result-failed">
+                            f
+                        </span>
+            </a>
+            
+
+        </td>
+        
+        
+    
+    <tr>
+        <th class="matrix-casename">org.ruff.DOC201</th>
+        <td class="matrix-casename matrix-result-combined">
+            Failed
+        </td>
+        
+        
+
+        <td class="matrix-axis-line ">
+            
+            <a href="ruff-lint-report.xml.html#3594d0b0-0e4f-4792-9fba-92011e7a9074">
+                        <span class="matrix-result matrix-result-failed">
+                            f
+                        </span>
+            </a>
+            
+
+        </td>
+        
+        
+    
+    <tr>
+        <th class="matrix-casename">org.ruff.G004</th>
+        <td class="matrix-casename matrix-result-combined">
+            Failed
+        </td>
+        
+        
+
+        <td class="matrix-axis-line ">
+            
+            <a href="ruff-lint-report.xml.html#b03898c7-d63f-4574-b7fa-862a7274a165">
+                        <span class="matrix-result matrix-result-failed">
+                            f
+                        </span>
+            </a>
+            
+
+        </td>
+        
+        
+    
+    <tr>
+        <th class="matrix-casename">org.ruff.RUF029</th>
+        <td class="matrix-casename matrix-result-combined">
+            Failed
+        </td>
+        
+        
+
+        <td class="matrix-axis-line ">
+            
+            <a href="ruff-lint-report.xml.html#c2e8cf20-f935-4f5a-a97c-a1440fac63f7">
+                        <span class="matrix-result matrix-result-failed">
+                            f
+                        </span>
+            </a>
+            
+
+        </td>
+        
+        
+    
+    <tr>
+        <th class="matrix-casename">org.ruff.TRY301</th>
+        <td class="matrix-casename matrix-result-combined">
+            Failed
+        </td>
+        
+        
+
+        <td class="matrix-axis-line ">
+            
+            <a href="ruff-lint-report.xml.html#374bda5e-671f-4cf8-8e1a-fd4096d160fa">
+                        <span class="matrix-result matrix-result-failed">
+                            f
+                        </span>
+            </a>
+            
+
+        </td>
+        
+        
+    
+    <tr>
+        <th class="matrix-casename">org.ruff.PLR2004</th>
+        <td class="matrix-casename matrix-result-combined">
+            Failed
+        </td>
+        
+        
+
+        <td class="matrix-axis-line ">
+            
+            <a href="ruff-lint-report.xml.html#f0b6a24d-a900-40f5-8640-946085ab6378">
+                        <span class="matrix-result matrix-result-failed">
+                            f
+                        </span>
+            </a>
+            
+
+        </td>
+        
+        
+    
+    <tr>
+        <th class="matrix-casename">org.ruff.B904</th>
+        <td class="matrix-casename matrix-result-combined">
+            Failed
+        </td>
+        
+        
+
+        <td class="matrix-axis-line ">
+            
+            <a href="ruff-lint-report.xml.html#7698093c-c694-4185-9e83-a1f78f6a76f7">
+                        <span class="matrix-result matrix-result-failed">
+                            f
+                        </span>
+            </a>
+            
+
+        </td>
+        
+        
+    </tr>
+    
+    <tr>
+        <th class="matrix-classname" colspan="2">C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\download_data</th>
+        
+        <td class="matrix-axis-line "></td>
+        
+    </tr>
+    
+    
+    <tr>
+        <th class="matrix-casename">org.ruff.CPY001</th>
+        <td class="matrix-casename matrix-result-combined">
+            Failed
+        </td>
+        
+        
+
+        <td class="matrix-axis-line ">
+            
+            <a href="ruff-lint-report.xml.html#49d9db16-8f51-4f1a-8668-6d228dae20e1">
+                        <span class="matrix-result matrix-result-failed">
+                            f
+                        </span>
+            </a>
+            
+
+        </td>
+        
+        
+    
+    <tr>
+        <th class="matrix-casename">org.ruff.DOC201</th>
+        <td class="matrix-casename matrix-result-combined">
+            Failed
+        </td>
+        
+        
+
+        <td class="matrix-axis-line ">
+            
+            <a href="ruff-lint-report.xml.html#996d8fd7-72f1-4ece-a77a-d10a3e21a814">
+                        <span class="matrix-result matrix-result-failed">
+                            f
+                        </span>
+            </a>
+            
+
+        </td>
+        
+        
+    
+    <tr>
+        <th class="matrix-casename">org.ruff.G004</th>
+        <td class="matrix-casename matrix-result-combined">
+            Failed
+        </td>
+        
+        
+
+        <td class="matrix-axis-line ">
+            
+            <a href="ruff-lint-report.xml.html#17ea9245-c975-4af2-aab8-f4a0245b7d9a">
+                        <span class="matrix-result matrix-result-failed">
+                            f
+                        </span>
+            </a>
+            
+
+        </td>
+        
+        
+    
+    <tr>
+        <th class="matrix-casename">org.ruff.PD003</th>
+        <td class="matrix-casename matrix-result-combined">
+            Failed
+        </td>
+        
+        
+
+        <td class="matrix-axis-line ">
+            
+            <a href="ruff-lint-report.xml.html#bd31bcab-9c98-4e8c-9529-09b039510ce1">
+                        <span class="matrix-result matrix-result-failed">
+                            f
+                        </span>
+            </a>
+            
+
+        </td>
+        
+        
+    
+    <tr>
+        <th class="matrix-casename">org.ruff.TRY300</th>
+        <td class="matrix-casename matrix-result-combined">
+            Failed
+        </td>
+        
+        
+
+        <td class="matrix-axis-line ">
+            
+            <a href="ruff-lint-report.xml.html#1d2a5bde-8224-48d0-a815-3ab1517edf9c">
+                        <span class="matrix-result matrix-result-failed">
+                            f
+                        </span>
+            </a>
+            
+
+        </td>
+        
+        
+    
+    <tr>
+        <th class="matrix-casename">org.ruff.BLE001</th>
+        <td class="matrix-casename matrix-result-combined">
+            Failed
+        </td>
+        
+        
+
+        <td class="matrix-axis-line ">
+            
+            <a href="ruff-lint-report.xml.html#11064f1f-b81d-474e-952b-225e9fae696b">
+                        <span class="matrix-result matrix-result-failed">
+                            f
+                        </span>
+            </a>
+            
+
+        </td>
+        
+        
+    
+    <tr>
+        <th class="matrix-casename">org.ruff.TRY400</th>
+        <td class="matrix-casename matrix-result-combined">
+            Failed
+        </td>
+        
+        
+
+        <td class="matrix-axis-line ">
+            
+            <a href="ruff-lint-report.xml.html#52b05539-81de-4795-9411-548f286e3259">
+                        <span class="matrix-result matrix-result-failed">
+                            f
+                        </span>
+            </a>
+            
+
+        </td>
+        
+        
+    
+    <tr>
+        <th class="matrix-casename">org.ruff.PLC0415</th>
+        <td class="matrix-casename matrix-result-combined">
+            Failed
+        </td>
+        
+        
+
+        <td class="matrix-axis-line ">
+            
+            <a href="ruff-lint-report.xml.html#fe5af1e3-8788-4b90-bdc0-7c7bf013ed03">
+                        <span class="matrix-result matrix-result-failed">
+                            f
+                        </span>
+            </a>
+            
+
+        </td>
+        
+        
+    
+    <tr>
+        <th class="matrix-casename">org.ruff.NPY002</th>
+        <td class="matrix-casename matrix-result-combined">
+            Failed
+        </td>
+        
+        
+
+        <td class="matrix-axis-line ">
+            
+            <a href="ruff-lint-report.xml.html#88d5f9ca-48ac-4421-9a74-d092271715b5">
+                        <span class="matrix-result matrix-result-failed">
+                            f
+                        </span>
+            </a>
+            
+
+        </td>
+        
+        
+    
+    <tr>
+        <th class="matrix-casename">org.ruff.F841</th>
+        <td class="matrix-casename matrix-result-combined">
+            Failed
+        </td>
+        
+        
+
+        <td class="matrix-axis-line ">
+            
+            <a href="ruff-lint-report.xml.html#8e70b60b-761a-4596-9513-4feeb152dbfe">
+                        <span class="matrix-result matrix-result-failed">
+                            f
+                        </span>
+            </a>
+            
+
+        </td>
+        
+        
+    </tr>
+    
+    <tr>
+        <th class="matrix-classname" colspan="2">C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\exploration\eda</th>
+        
+        <td class="matrix-axis-line "></td>
+        
+    </tr>
+    
+    
+    <tr>
+        <th class="matrix-casename">org.ruff.CPY001</th>
+        <td class="matrix-casename matrix-result-combined">
+            Failed
+        </td>
+        
+        
+
+        <td class="matrix-axis-line ">
+            
+            <a href="ruff-lint-report.xml.html#e2b86763-5eab-418b-a6ce-d397d59aa6b8">
+                        <span class="matrix-result matrix-result-failed">
+                            f
+                        </span>
+            </a>
+            
+
+        </td>
+        
+        
+    </tr>
+    
+    <tr>
+        <th class="matrix-classname" colspan="2">C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\exploration\modeling</th>
+        
+        <td class="matrix-axis-line "></td>
+        
+    </tr>
+    
+    
+    <tr>
+        <th class="matrix-casename">org.ruff.CPY001</th>
+        <td class="matrix-casename matrix-result-combined">
+            Failed
+        </td>
+        
+        
+
+        <td class="matrix-axis-line ">
+            
+            <a href="ruff-lint-report.xml.html#a2ab5b89-7d63-40f5-9683-21ce99264bcf">
+                        <span class="matrix-result matrix-result-failed">
+                            f
+                        </span>
+            </a>
+            
+
+        </td>
+        
+        
+    
+    <tr>
+        <th class="matrix-casename">org.ruff.T201</th>
+        <td class="matrix-casename matrix-result-combined">
+            Failed
+        </td>
+        
+        
+
+        <td class="matrix-axis-line ">
+            
+            <a href="ruff-lint-report.xml.html#fb699052-3a38-49e0-8d91-0a6ae2783ed6">
+                        <span class="matrix-result matrix-result-failed">
+                            f
+                        </span>
+            </a>
+            
+
+        </td>
+        
+        
+    </tr>
+    
+    <tr>
+        <th class="matrix-classname" colspan="2">C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\__init__</th>
+        
+        <td class="matrix-axis-line "></td>
+        
+    </tr>
+    
+    
+    <tr>
+        <th class="matrix-casename">org.ruff.CPY001</th>
+        <td class="matrix-casename matrix-result-combined">
+            Failed
+        </td>
+        
+        
+
+        <td class="matrix-axis-line ">
+            
+            <a href="ruff-lint-report.xml.html#c33a068c-e821-4101-a070-70f1e8e9718c">
+                        <span class="matrix-result matrix-result-failed">
+                            f
+                        </span>
+            </a>
+            
+
+        </td>
+        
+        
+    </tr>
+    
+    <tr>
+        <th class="matrix-classname" colspan="2">C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\eda</th>
+        
+        <td class="matrix-axis-line "></td>
+        
+    </tr>
+    
+    
+    <tr>
+        <th class="matrix-casename">org.ruff.CPY001</th>
+        <td class="matrix-casename matrix-result-combined">
+            Failed
+        </td>
+        
+        
+
+        <td class="matrix-axis-line ">
+            
+            <a href="ruff-lint-report.xml.html#9f033b57-41dc-4b05-a99f-92094f3d41a3">
+                        <span class="matrix-result matrix-result-failed">
+                            f
+                        </span>
+            </a>
+            
+
+        </td>
+        
+        
+    
+    <tr>
+        <th class="matrix-casename">org.ruff.T201</th>
+        <td class="matrix-casename matrix-result-combined">
+            Failed
+        </td>
+        
+        
+
+        <td class="matrix-axis-line ">
+            
+            <a href="ruff-lint-report.xml.html#0760f1d0-8831-4674-9112-5e3c60b0fcd2">
+                        <span class="matrix-result matrix-result-failed">
+                            f
+                        </span>
+            </a>
+            
+
+        </td>
+        
+        
+    </tr>
+    
+    <tr>
+        <th class="matrix-classname" colspan="2">C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\preprocessing</th>
+        
+        <td class="matrix-axis-line "></td>
+        
+    </tr>
+    
+    
+    <tr>
+        <th class="matrix-casename">org.ruff.CPY001</th>
+        <td class="matrix-casename matrix-result-combined">
+            Failed
+        </td>
+        
+        
+
+        <td class="matrix-axis-line ">
+            
+            <a href="ruff-lint-report.xml.html#b117866b-9f5f-434a-8a59-82a2f41fccd5">
+                        <span class="matrix-result matrix-result-failed">
+                            f
+                        </span>
+            </a>
+            
+
+        </td>
+        
+        
+    
+    <tr>
+        <th class="matrix-casename">org.ruff.S403</th>
+        <td class="matrix-casename matrix-result-combined">
+            Failed
+        </td>
+        
+        
+
+        <td class="matrix-axis-line ">
+            
+            <a href="ruff-lint-report.xml.html#60af79ae-80fa-43c4-85bb-463050e86547">
+                        <span class="matrix-result matrix-result-failed">
+                            f
+                        </span>
+            </a>
+            
+
+        </td>
+        
+        
+    
+    <tr>
+        <th class="matrix-casename">org.ruff.N803</th>
+        <td class="matrix-casename matrix-result-combined">
+            Failed
+        </td>
+        
+        
+
+        <td class="matrix-axis-line ">
+            
+            <a href="ruff-lint-report.xml.html#da11626c-5bb9-45b8-939e-e3fe97615e89">
+                        <span class="matrix-result matrix-result-failed">
+                            f
+                        </span>
+            </a>
+            
+
+        </td>
+        
+        
+    
+    <tr>
+        <th class="matrix-casename">org.ruff.DOC201</th>
+        <td class="matrix-casename matrix-result-combined">
+            Failed
+        </td>
+        
+        
+
+        <td class="matrix-axis-line ">
+            
+            <a href="ruff-lint-report.xml.html#28abf1ae-65c9-404e-af53-0cb9c6398173">
+                        <span class="matrix-result matrix-result-failed">
+                            f
+                        </span>
+            </a>
+            
+
+        </td>
+        
+        
+    
+    <tr>
+        <th class="matrix-casename">org.ruff.N806</th>
+        <td class="matrix-casename matrix-result-combined">
+            Failed
+        </td>
+        
+        
+
+        <td class="matrix-axis-line ">
+            
+            <a href="ruff-lint-report.xml.html#973cb89e-27f5-450b-891d-5d6fdc978139">
+                        <span class="matrix-result matrix-result-failed">
+                            f
+                        </span>
+            </a>
+            
+
+        </td>
+        
+        
+    
+    <tr>
+        <th class="matrix-casename">org.ruff.G004</th>
+        <td class="matrix-casename matrix-result-combined">
+            Failed
+        </td>
+        
+        
+
+        <td class="matrix-axis-line ">
+            
+            <a href="ruff-lint-report.xml.html#c2f42b9a-bfe2-499c-b194-fa44be3f49e2">
+                        <span class="matrix-result matrix-result-failed">
+                            f
+                        </span>
+            </a>
+            
+
+        </td>
+        
+        
+    
+    <tr>
+        <th class="matrix-casename">org.ruff.DOC501</th>
+        <td class="matrix-casename matrix-result-combined">
+            Failed
+        </td>
+        
+        
+
+        <td class="matrix-axis-line ">
+            
+            <a href="ruff-lint-report.xml.html#8f65fa6f-36c4-4c17-a239-c8b38ba4a9fe">
+                        <span class="matrix-result matrix-result-failed">
+                            f
+                        </span>
+            </a>
+            
+
+        </td>
+        
+        
+    
+    <tr>
+        <th class="matrix-casename">org.ruff.S301</th>
+        <td class="matrix-casename matrix-result-combined">
+            Failed
+        </td>
+        
+        
+
+        <td class="matrix-axis-line ">
+            
+            <a href="ruff-lint-report.xml.html#f0be797f-eb56-4b2b-9422-ac70204d9729">
+                        <span class="matrix-result matrix-result-failed">
+                            f
+                        </span>
+            </a>
+            
+
+        </td>
+        
+        
+    </tr>
+    
+    <tr>
+        <th class="matrix-classname" colspan="2">C:\Users\sesa682918\Code\wilp-programs\heart-disease-mlops\src\training</th>
+        
+        <td class="matrix-axis-line "></td>
+        
+    </tr>
+    
+    
+    <tr>
+        <th class="matrix-casename">org.ruff.CPY001</th>
+        <td class="matrix-casename matrix-result-combined">
+            Failed
+        </td>
+        
+        
+
+        <td class="matrix-axis-line ">
+            
+            <a href="ruff-lint-report.xml.html#a298c4e5-0c4b-4335-b747-07583e5f8db4">
+                        <span class="matrix-result matrix-result-failed">
+                            f
+                        </span>
+            </a>
+            
+
+        </td>
+        
+        
+    
+    <tr>
+        <th class="matrix-casename">org.ruff.S403</th>
+        <td class="matrix-casename matrix-result-combined">
+            Failed
+        </td>
+        
+        
+
+        <td class="matrix-axis-line ">
+            
+            <a href="ruff-lint-report.xml.html#483d903a-aa33-42db-87c6-77ec7ae4fbfd">
+                        <span class="matrix-result matrix-result-failed">
+                            f
+                        </span>
+            </a>
+            
+
+        </td>
+        
+        
+    
+    <tr>
+        <th class="matrix-casename">org.ruff.N803</th>
+        <td class="matrix-casename matrix-result-combined">
+            Failed
+        </td>
+        
+        
+
+        <td class="matrix-axis-line ">
+            
+            <a href="ruff-lint-report.xml.html#d2b45986-8437-4f0d-aebb-162c0d1ead90">
+                        <span class="matrix-result matrix-result-failed">
+                            f
+                        </span>
+            </a>
+            
+
+        </td>
+        
+        
+    
+    <tr>
+        <th class="matrix-casename">org.ruff.DOC201</th>
+        <td class="matrix-casename matrix-result-combined">
+            Failed
+        </td>
+        
+        
+
+        <td class="matrix-axis-line ">
+            
+            <a href="ruff-lint-report.xml.html#69ce9ec9-5913-4e60-8a2b-b7745826dcbd">
+                        <span class="matrix-result matrix-result-failed">
+                            f
+                        </span>
+            </a>
+            
+
+        </td>
+        
+        
+    
+    <tr>
+        <th class="matrix-casename">org.ruff.S101</th>
+        <td class="matrix-casename matrix-result-combined">
+            Failed
+        </td>
+        
+        
+
+        <td class="matrix-axis-line ">
+            
+            <a href="ruff-lint-report.xml.html#92e4b2bc-cbef-4966-9177-f0dd083ae07e">
+                        <span class="matrix-result matrix-result-failed">
+                            f
+                        </span>
+            </a>
+            
+
+        </td>
+        
+        
+    
+    <tr>
+        <th class="matrix-casename">org.ruff.PLR6301</th>
+        <td class="matrix-casename matrix-result-combined">
+            Failed
+        </td>
+        
+        
+
+        <td class="matrix-axis-line ">
+            
+            <a href="ruff-lint-report.xml.html#319f32cc-5d1c-4656-a8ad-aed7f0e12633">
+                        <span class="matrix-result matrix-result-failed">
+                            f
+                        </span>
+            </a>
+            
+
+        </td>
+        
+        
+    
+    <tr>
+        <th class="matrix-casename">org.ruff.E722</th>
+        <td class="matrix-casename matrix-result-combined">
+            Failed
+        </td>
+        
+        
+
+        <td class="matrix-axis-line ">
+            
+            <a href="ruff-lint-report.xml.html#99b02358-8d15-4a1e-8b04-c3d5df5037a4">
+                        <span class="matrix-result matrix-result-failed">
+                            f
+                        </span>
+            </a>
+            
+
+        </td>
+        
+        
+    
+    <tr>
+        <th class="matrix-casename">org.ruff.N806</th>
+        <td class="matrix-casename matrix-result-combined">
+            Failed
+        </td>
+        
+        
+
+        <td class="matrix-axis-line ">
+            
+            <a href="ruff-lint-report.xml.html#f5294ca8-af76-476c-a13b-fd99d2c66a1c">
+                        <span class="matrix-result matrix-result-failed">
+                            f
+                        </span>
+            </a>
+            
+
+        </td>
+        
+        
+    </tr>
+    
+
+</table>
+
+<p class="footer">
+    Generated by junit2html
+</p>
+</body>
+</html>
