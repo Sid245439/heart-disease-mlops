@@ -136,3 +136,4 @@ See `k8s/deployment.yaml` and the docs page `doc/deployment.md`.
 - [GitHub - Heart Disease MLOps](https://github.com/Sid245439/heart-disease-mlops)
 - [Documentation Site](https://sid245439.github.io/heart-disease-mlops/site/index.html) 10 page detailed report
 - [Documentation source files](./doc/)
+- [End to End Demo Video](https://wilpbitspilaniacin0-my.sharepoint.com/:v:/g/personal/2024ab05302_wilp_bits-pilani_ac_in/IQA2KcYgXN0vS7Dwpymkzkq7AYuNU9Fs0d5Bo61-Q4LghA8?e=rRchLe&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
