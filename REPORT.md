@@ -3,7 +3,10 @@
 ## Setup & Reproducibility
 
 - Environment: environment is set up using uv. For that you have to install uv first. Follow: https://docs.astral.sh/uv/
+- Install UV: `pip install uv`
 - Install nox: `uv pip install --system nox nox-uv`
+- Set up development environment: `uv nox -s dev`
+- Set the dev environment available at `.nox/dev`.
 - Data: `python download.py` downloads raw CSV; cleaned data lives in `data/processed/heart_disease_clean_binary.csv`.
 - Training: `python -c "from src.training import train_pipeline; train_pipeline('data/raw/heart_disease_raw.csv')"` saves `models/best_model.pkl` and `models/preprocessor.pkl`.
 - Tests: `pytest tests/ -v` for preprocessing sanity.
@@ -27,6 +30,7 @@ For a cleaner, assignment-aligned writeup, see the documentation pages under `do
 - Experiment name: `heart-disease-mlops`.
 - Parameters, metrics, and artifacts (including feature importance plot) logged per run.
 - Launch UI: `mlflow ui --host 0.0.0.0 --port 5000` → `http://localhost:5000`.
+- To simplify starting the ui and set up run nox session `nox -s mlflow_ui`.
 
 ## Packaging, Containerization, Deployment
 

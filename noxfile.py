@@ -157,6 +157,23 @@ def train(session: Session) -> None:
 
 @session(
     venv_backend="uv",
+    uv_groups=["train"],
+    python="3.12",
+    uv_no_install_project=True,
+)
+def mlflow_ui(session: Session) -> None:
+    """Start the MLflow UI locally for development."""
+    session.chdir(PROJECT_DIRECTORY)
+
+    args = list(session.posargs)
+    if not args:
+        args = ["--host", "localhost", "--port", "5000"]
+
+    session.run("mlflow", "ui", *args, external=True)
+
+
+@session(
+    venv_backend="uv",
     uv_only_groups=["docs"],
     python="3.12",
     uv_no_install_project=True,

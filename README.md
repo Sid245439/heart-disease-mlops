@@ -15,7 +15,11 @@ Full project documentation is in the MkDocs site under `doc/`.
 
 1. Install `uv` (once)
 
-- https://docs.astral.sh/uv/
+https://docs.astral.sh/uv/
+
+```bash
+pip install uv
+```
 
 2. Install nox
 
@@ -55,10 +59,11 @@ uvicorn app:app --reload
 ## Run MLflow UI
 
 ```bash
-mlflow ui --backend-store-uri file:./mlruns --host 127.0.0.1 --port 5000
+mlflow ui --backend-store-uri file:./mlruns --host localhost --port 5000
 ```
 
-- UI: http://127.0.0.1:5000
+- UI: http://localhost:5000
+- Alternative: `nox -s mlflow_ui`
 
 ## Docker
 

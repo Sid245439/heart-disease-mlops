@@ -10,13 +10,23 @@ This is the same tooling used by GitHub Actions workflows.
 
 Follow: https://docs.astral.sh/uv/
 
+```bash
+pip install uv
+```
+
 ### 2. Install nox
 
 ```bash
 uv pip install --system nox nox-uv
 ```
 
-### 3. Run quality gates (format/lint/typing/tests)
+### 3. Set up development environment
+
+```bash
+uv nox -s dev
+```
+
+### 4. Run quality gates (format/lint/typing/tests)
 
 ```bash
 nox
@@ -30,7 +40,7 @@ Artifacts are written to:
 - `doc/reports/pytest/`
 - `doc/reports/coverage/`
 
-### 4. Download data + train
+### 5. Download data + train
 
 ```bash
 nox -s train
