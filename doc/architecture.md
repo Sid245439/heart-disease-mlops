@@ -3,17 +3,17 @@
 ## High-level flow
 
 ```mermaid
-flowchart LR
+flowchart TD
   A[UCI Dataset CSV] --> B[download.py]
   B --> C[data/raw/heart_disease_raw.csv]
-  C --> D[Preprocessing\nHeartDiseasePreprocessor]
-  D --> E[Training\nLogistic Regression + Random Forest]
-  E --> F[MLflow Tracking\nparams/metrics/artifacts/models]
-  E --> G[Saved Artifacts\nmodels/best_model.pkl\nmodels/preprocessor.pkl]
-  G --> H[FastAPI Service\napp.py]
-  H --> I[/predict]
-  H --> J[/health]
-  H --> K[/metrics]
+  C --> D[Preprocessing<br/>HeartDiseasePreprocessor]
+  D --> E[Training<br/>Logistic Regression + Random Forest]
+  E --> F[MLflow Tracking<br/>params/metrics/artifacts/models]
+  E --> G[Saved Artifacts<br/>models/best_model.pkl<br/>models/preprocessor.pkl]
+  G --> H[FastAPI Service<br/>app.py]
+  H --> I["/predict"]
+  H --> J["/health"]
+  H --> K["/metrics"]
   K --> L[Prometheus/Grafana]
 ```
 

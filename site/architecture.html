@@ -636,17 +636,17 @@
 
 <h1 id="architecture">Architecture<a class="headerlink" href="#architecture" title="Permanent link">&para;</a></h1>
 <h2 id="high-level-flow">High-level flow<a class="headerlink" href="#high-level-flow" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>flowchart LR
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>flowchart TD
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  A[UCI Dataset CSV] --&gt; B[download.py]
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  B --&gt; C[data/raw/heart_disease_raw.csv]
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  C --&gt; D[Preprocessing\nHeartDiseasePreprocessor]
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>  D --&gt; E[Training\nLogistic Regression + Random Forest]
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>  E --&gt; F[MLflow Tracking\nparams/metrics/artifacts/models]
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>  E --&gt; G[Saved Artifacts\nmodels/best_model.pkl\nmodels/preprocessor.pkl]
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>  G --&gt; H[FastAPI Service\napp.py]
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>  H --&gt; I[/predict]
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>  H --&gt; J[/health]
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>  H --&gt; K[/metrics]
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  C --&gt; D[Preprocessing&lt;br/&gt;HeartDiseasePreprocessor]
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>  D --&gt; E[Training&lt;br/&gt;Logistic Regression + Random Forest]
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>  E --&gt; F[MLflow Tracking&lt;br/&gt;params/metrics/artifacts/models]
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>  E --&gt; G[Saved Artifacts&lt;br/&gt;models/best_model.pkl&lt;br/&gt;models/preprocessor.pkl]
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>  G --&gt; H[FastAPI Service&lt;br/&gt;app.py]
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>  H --&gt; I[&quot;/predict&quot;]
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>  H --&gt; J[&quot;/health&quot;]
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>  H --&gt; K[&quot;/metrics&quot;]
 <a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>  K --&gt; L[Prometheus/Grafana]
 </code></pre></div>
 <h2 id="components">Components<a class="headerlink" href="#components" title="Permanent link">&para;</a></h2>

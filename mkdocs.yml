@@ -23,6 +23,7 @@ theme:
 
 plugins:
   - search
+  - mermaid2
 
 extra_css:
   - _static/extra.css

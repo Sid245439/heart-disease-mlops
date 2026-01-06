@@ -56,20 +56,18 @@ For a cleaner, assignment-aligned writeup, see the documentation pages under `do
 ## Architecture (high level)
 
 ```mermaid
-flowchart LR
-    subgraph Data
-      A[Raw CSV] --> B[download_data.py]
-      B --> C[EDA_UCI.ipynb]
-    end
-    C --> D["HeartDiseasePreprocessor<br/>src/preprocessing.py"]
-    D --> E["ModelTrainer<br/>src/training.py"]
-    E -->|best model + preprocessor| F[(models/)]
-    F --> G["FastAPI Service<br/>app.py"]
-    G --> H["/predict"]
-    G --> I["/metrics"]
-    G --> J["/health"]
-    H --> K["Prometheus/Grafana"]
-    I --> K
+flowchart TD
+  A[UCI Dataset CSV] --> B[download.py]
+  B --> C[data/raw/heart_disease_raw.csv]
+  C --> D[Preprocessing<br/>HeartDiseasePreprocessor]
+  D --> E[Training<br/>Logistic Regression + Random Forest]
+  E --> F[MLflow Tracking<br/>params/metrics/artifacts/models]
+  E --> G[Saved Artifacts<br/>models/best_model.pkl<br/>models/preprocessor.pkl]
+  G --> H[FastAPI Service<br/>app.py]
+  H --> I["/predict"]
+  H --> J["/health"]
+  H --> K["/metrics"]
+  K --> L[Prometheus/Grafana]
 ```
 
 ## API Quick Reference
