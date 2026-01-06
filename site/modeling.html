@@ -1,0 +1,1141 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Project documentation">
+      
+      
+      
+      
+        <link rel="prev" href="eda.html">
+      
+      
+        <link rel="next" href="experiment-tracking.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Modeling - Heart Disease MLOps</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#feature-engineering-model-development" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="Heart Disease MLOps" class="md-header__button md-logo" aria-label="Heart Disease MLOps" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Heart Disease MLOps
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Modeling
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/${GITHUB_REPOSITORY}" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ${GITHUB_REPOSITORY}
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Heart Disease MLOps" class="md-nav__button md-logo" aria-label="Heart Disease MLOps" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Heart Disease MLOps
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/${GITHUB_REPOSITORY}" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ${GITHUB_REPOSITORY}
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="eda.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EDA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modeling
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="modeling.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modeling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-problem-formulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Problem Formulation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-feature-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Feature Set
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-data-splitting-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Data Splitting Strategy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-preprocessing-feature-engineering-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Preprocessing / Feature Engineering Pipeline
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Preprocessing / Feature Engineering Pipeline">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-numerical-preprocessing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Numerical preprocessing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-categorical-preprocessing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Categorical preprocessing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-why-a-pipeline-matters-mlops-relevance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Why a pipeline matters (MLOps relevance)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-candidate-models-notebook-experimentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Candidate Models (Notebook Experimentation)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-threshold-selection-recall-constrained-decision-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Threshold Selection (Recall-Constrained Decision Rule)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-evaluation-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Evaluation Metrics
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-final-model-choice-notebook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Final Model Choice (Notebook)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-scripted-reproducible-training-project-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Scripted, Reproducible Training (Project Pipeline)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Scripted, Reproducible Training (Project Pipeline)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-models-trained-assignment-requirement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 Models trained (assignment requirement)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-cross-validation-and-tuning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 Cross-validation and tuning
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#93-metrics-collected" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3 Metrics collected
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#94-model-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.4 Model selection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#95-artifacts-saved" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.5 Artifacts saved
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-how-to-reproduce-modeling-end-to-end" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. How to Reproduce Modeling End-to-End
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. How to Reproduce Modeling End-to-End">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-a-notebook-exploration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option A — Notebook exploration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-b-reproducible-training-pipeline-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option B — Reproducible training pipeline (recommended)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="experiment-tracking.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Experiment Tracking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-problem-formulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Problem Formulation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-feature-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Feature Set
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-data-splitting-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Data Splitting Strategy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-preprocessing-feature-engineering-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Preprocessing / Feature Engineering Pipeline
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Preprocessing / Feature Engineering Pipeline">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-numerical-preprocessing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Numerical preprocessing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-categorical-preprocessing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Categorical preprocessing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-why-a-pipeline-matters-mlops-relevance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Why a pipeline matters (MLOps relevance)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-candidate-models-notebook-experimentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Candidate Models (Notebook Experimentation)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-threshold-selection-recall-constrained-decision-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Threshold Selection (Recall-Constrained Decision Rule)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-evaluation-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Evaluation Metrics
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-final-model-choice-notebook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Final Model Choice (Notebook)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-scripted-reproducible-training-project-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Scripted, Reproducible Training (Project Pipeline)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Scripted, Reproducible Training (Project Pipeline)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-models-trained-assignment-requirement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 Models trained (assignment requirement)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-cross-validation-and-tuning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 Cross-validation and tuning
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#93-metrics-collected" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3 Metrics collected
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#94-model-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.4 Model selection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#95-artifacts-saved" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.5 Artifacts saved
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-how-to-reproduce-modeling-end-to-end" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. How to Reproduce Modeling End-to-End
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. How to Reproduce Modeling End-to-End">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-a-notebook-exploration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option A — Notebook exploration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-b-reproducible-training-pipeline-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option B — Reproducible training pipeline (recommended)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="feature-engineering-model-development">Feature Engineering &amp; Model Development<a class="headerlink" href="#feature-engineering-model-development" title="Permanent link">&para;</a></h1>
+<p>This document describes the complete modeling workflow for the Heart Disease UCI dataset:</p>
+<ul>
+<li>Feature engineering (encoding + scaling)</li>
+<li>Training <strong>at least two</strong> classification models</li>
+<li>Documented model selection/tuning</li>
+<li>Evaluation using appropriate metrics</li>
+<li>Reproducible pipeline implementation (scripted training)</li>
+</ul>
+<p>Primary sources:</p>
+<ul>
+<li>Notebook: <code>exploration/modeling.ipynb</code> (model experimentation and threshold analysis)</li>
+<li>Training pipeline: <code>src/training.py</code> (cross-validated tuning + MLflow logging)</li>
+<li>Preprocessing utilities: <code>src/preprocessing.py</code></li>
+</ul>
+<h2 id="1-problem-formulation">1. Problem Formulation<a class="headerlink" href="#1-problem-formulation" title="Permanent link">&para;</a></h2>
+<p><strong>Task:</strong> binary classification to predict heart disease risk.</p>
+<p><strong>Target construction (binary):</strong></p>
+<ul>
+<li>Original label <code>num</code> is multi-class (0–4).</li>
+<li>Project target uses: <code>target = 1</code> if <code>num != 0</code>, else <code>0</code>.</li>
+</ul>
+<p>This aligns with common clinical framing: any positive diagnosis is treated as “disease present”.</p>
+<h2 id="2-feature-set">2. Feature Set<a class="headerlink" href="#2-feature-set" title="Permanent link">&para;</a></h2>
+<p>The modeling notebook explicitly selects a 13-feature input set plus the derived target:</p>
+<p><strong>Categorical (discrete/encoded) features</strong></p>
+<ul>
+<li><code>sex</code>, <code>cp</code>, <code>fbs</code>, <code>restecg</code>, <code>exang</code>, <code>slope</code>, <code>ca</code>, <code>thal</code></li>
+</ul>
+<p><strong>Numeric features (standard-scaled)</strong></p>
+<ul>
+<li><code>age</code>, <code>trestbps</code>, <code>chol</code>, <code>thalach</code></li>
+</ul>
+<p><strong>Numeric feature (min-max scaled)</strong></p>
+<ul>
+<li><code>oldpeak</code></li>
+</ul>
+<p>Rationale (from EDA + common practice): most continuous features are approximately well-behaved under standardization, while <code>oldpeak</code> is often skewed and can benefit from bounded scaling.</p>
+<h2 id="3-data-splitting-strategy">3. Data Splitting Strategy<a class="headerlink" href="#3-data-splitting-strategy" title="Permanent link">&para;</a></h2>
+<p>In <code>exploration/modeling.ipynb</code>, the dataset is split into:</p>
+<ul>
+<li>Train: 70%</li>
+<li>Validation: 15%</li>
+<li>Test: 15%</li>
+</ul>
+<p>Important details:</p>
+<ul>
+<li><code>stratify</code> is used on the target to preserve class proportions across splits.</li>
+<li><code>random_state=42</code> ensures repeatability.</li>
+</ul>
+<p>Purpose:</p>
+<ul>
+<li><strong>Validation set</strong> is used to tune decision threshold (see Section 6).</li>
+<li><strong>Test set</strong> is held out for the final unbiased evaluation.</li>
+</ul>
+<h2 id="4-preprocessing-feature-engineering-pipeline">4. Preprocessing / Feature Engineering Pipeline<a class="headerlink" href="#4-preprocessing-feature-engineering-pipeline" title="Permanent link">&para;</a></h2>
+<p>The notebook uses a fully reproducible <code>sklearn</code> <code>ColumnTransformer</code>:</p>
+<h3 id="41-numerical-preprocessing">4.1 Numerical preprocessing<a class="headerlink" href="#41-numerical-preprocessing" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Missing values imputed with <strong>median</strong> (<code>SimpleImputer(strategy="median")</code>)</li>
+<li>Scaling:</li>
+<li>StandardScaler for <code>age</code>, <code>trestbps</code>, <code>chol</code>, <code>thalach</code></li>
+<li>MinMaxScaler for <code>oldpeak</code></li>
+</ul>
+<h3 id="42-categorical-preprocessing">4.2 Categorical preprocessing<a class="headerlink" href="#42-categorical-preprocessing" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Missing values imputed with <strong>most frequent</strong> (<code>SimpleImputer(strategy="most_frequent")</code>)</li>
+<li>One-hot encoding via <code>OneHotEncoder(handle_unknown="ignore")</code></li>
+<li><code>handle_unknown="ignore"</code> is important for robust inference when previously unseen categories appear.</li>
+</ul>
+<h3 id="43-why-a-pipeline-matters-mlops-relevance">4.3 Why a pipeline matters (MLOps relevance)<a class="headerlink" href="#43-why-a-pipeline-matters-mlops-relevance" title="Permanent link">&para;</a></h3>
+<p>This design prevents training/serving skew by ensuring that the exact same transformations used during training are applied at inference time.</p>
+<h2 id="5-candidate-models-notebook-experimentation">5. Candidate Models (Notebook Experimentation)<a class="headerlink" href="#5-candidate-models-notebook-experimentation" title="Permanent link">&para;</a></h2>
+<p>The notebook evaluates multiple classifiers under the same preprocessing pipeline:</p>
+<ul>
+<li>Logistic Regression (<code>class_weight="balanced"</code>)</li>
+<li>Random Forest (<code>n_estimators=400</code>, <code>class_weight="balanced"</code>)</li>
+<li>Histogram-based Gradient Boosting (<code>HistGradientBoostingClassifier</code>)</li>
+<li>Support Vector Classifier (<code>SVC(class_weight="balanced")</code>)</li>
+<li>Gaussian Naive Bayes (<code>GaussianNB</code>)</li>
+<li>XGBoost (<code>XGBClassifier</code>, tuned with a conservative learning rate and many estimators)</li>
+</ul>
+<p>All candidates are trained as:</p>
+<ul>
+<li><code>Pipeline([("prep", preprocessor), ("clf", model)])</code></li>
+</ul>
+<p>This ensures a fair comparison with identical preprocessing.</p>
+<h2 id="6-threshold-selection-recall-constrained-decision-rule">6. Threshold Selection (Recall-Constrained Decision Rule)<a class="headerlink" href="#6-threshold-selection-recall-constrained-decision-rule" title="Permanent link">&para;</a></h2>
+<p>In healthcare-oriented risk prediction, <strong>false negatives</strong> can be more costly than false positives. The notebook therefore does not rely purely on the default 0.5 threshold.</p>
+<p>It defines a helper <code>get_best_threshold(...)</code>:</p>
+<ul>
+<li>Sweeps thresholds from 0.00 to 1.00</li>
+<li>Chooses the highest threshold that achieves at least a target recall on validation</li>
+</ul>
+<p>Two recall constraints are used in the notebook:</p>
+<ul>
+<li>Candidate comparison: <code>min_recall=0.99</code></li>
+<li>Final Logistic Regression selection: <code>min_recall=0.95</code></li>
+</ul>
+<p>This produces a tuned operating point that prioritizes sensitivity (recall), then reports the resulting precision/accuracy/F1.</p>
+<p>Notes on probability handling:</p>
+<ul>
+<li>For models supporting <code>predict_proba</code>, probabilities are used.</li>
+<li>Otherwise, <code>decision_function</code> is used as a scoring proxy.</li>
+</ul>
+<h2 id="7-evaluation-metrics">7. Evaluation Metrics<a class="headerlink" href="#7-evaluation-metrics" title="Permanent link">&para;</a></h2>
+<p>The notebook reports standard classification metrics on validation and test:</p>
+<ul>
+<li>Accuracy</li>
+<li>Precision</li>
+<li>Recall</li>
+<li>F1-score</li>
+</ul>
+<p>Additionally, it visualizes a <strong>confusion matrix</strong> for the final selected model on the test set.</p>
+<p><img alt="Confusion Matrix" src="images/heart_disease_confusion_matrix.png" /></p>
+<p>Why these metrics:</p>
+<ul>
+<li>Accuracy can be misleading when classes are imbalanced.</li>
+<li>Precision/Recall/F1 provide a better picture of clinical screening tradeoffs.</li>
+<li>Threshold tuning is explicitly tied to a recall target.</li>
+</ul>
+<h2 id="8-final-model-choice-notebook">8. Final Model Choice (Notebook)<a class="headerlink" href="#8-final-model-choice-notebook" title="Permanent link">&para;</a></h2>
+<p>After comparing candidates, the notebook fits a final pipeline with:</p>
+<ul>
+<li><code>LogisticRegression(solver="liblinear", max_iter=1000, random_state=42)</code></li>
+</ul>
+<p>and evaluates it using the validation-chosen threshold on the test set.</p>
+<p>Rationale for Logistic Regression (typical justifications consistent with the notebook setup):</p>
+<ul>
+<li>Strong baseline for tabular medical data</li>
+<li>Interpretable and stable</li>
+<li>Fast training and suitable for CI/CD retraining loops</li>
+</ul>
+<h2 id="9-scripted-reproducible-training-project-pipeline">9. Scripted, Reproducible Training (Project Pipeline)<a class="headerlink" href="#9-scripted-reproducible-training-project-pipeline" title="Permanent link">&para;</a></h2>
+<p>While the notebook focuses on experimentation and threshold analysis, the production-oriented training flow is implemented in <code>src/training.py</code>.</p>
+<h3 id="91-models-trained-assignment-requirement">9.1 Models trained (assignment requirement)<a class="headerlink" href="#91-models-trained-assignment-requirement" title="Permanent link">&para;</a></h3>
+<p>The pipeline trains <strong>two required models</strong>:</p>
+<ul>
+<li>Logistic Regression (with hyperparameter search over <code>C</code>)</li>
+<li>Random Forest (with hyperparameter search over <code>n_estimators</code>, <code>max_depth</code>, <code>min_samples_split</code>)</li>
+</ul>
+<h3 id="92-cross-validation-and-tuning">9.2 Cross-validation and tuning<a class="headerlink" href="#92-cross-validation-and-tuning" title="Permanent link">&para;</a></h3>
+<p>Both models are tuned with <code>GridSearchCV</code> using:</p>
+<ul>
+<li><code>cv=5</code></li>
+<li><code>scoring="roc_auc"</code></li>
+</ul>
+<p>This meets the assignment requirement to evaluate with cross-validation and a relevant metric (ROC-AUC).</p>
+<h3 id="93-metrics-collected">9.3 Metrics collected<a class="headerlink" href="#93-metrics-collected" title="Permanent link">&para;</a></h3>
+<p>The pipeline computes and logs (train + test where applicable):</p>
+<ul>
+<li>Accuracy</li>
+<li>Precision</li>
+<li>Recall</li>
+<li>F1</li>
+<li>ROC-AUC</li>
+</ul>
+<h3 id="94-model-selection">9.4 Model selection<a class="headerlink" href="#94-model-selection" title="Permanent link">&para;</a></h3>
+<p>The pipeline selects the best model based on <strong>test ROC-AUC</strong>.</p>
+<h3 id="95-artifacts-saved">9.5 Artifacts saved<a class="headerlink" href="#95-artifacts-saved" title="Permanent link">&para;</a></h3>
+<p>The pipeline saves:</p>
+<ul>
+<li><code>models/best_model.pkl</code></li>
+<li><code>models/preprocessor.pkl</code></li>
+</ul>
+<p>These are the artifacts loaded by the serving API in <code>app.py</code>.</p>
+<h2 id="10-how-to-reproduce-modeling-end-to-end">10. How to Reproduce Modeling End-to-End<a class="headerlink" href="#10-how-to-reproduce-modeling-end-to-end" title="Permanent link">&para;</a></h2>
+<h3 id="option-a-notebook-exploration">Option A — Notebook exploration<a class="headerlink" href="#option-a-notebook-exploration" title="Permanent link">&para;</a></h3>
+<p>Open and run:</p>
+<ul>
+<li><code>exploration/modeling.ipynb</code></li>
+</ul>
+<p>This reproduces the preprocessing pipeline, candidate comparison, threshold tuning, and confusion matrix visualization.</p>
+<h3 id="option-b-reproducible-training-pipeline-recommended">Option B — Reproducible training pipeline (recommended)<a class="headerlink" href="#option-b-reproducible-training-pipeline-recommended" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Download data:</li>
+</ol>
+<pre><code class="language-bash">python download_data.py
+</code></pre>
+<ol>
+<li>Train + log experiments:</li>
+</ol>
+<pre><code class="language-bash">python -c &quot;from src.training import train_pipeline; train_pipeline('data/raw/heart_disease_raw.csv')&quot;
+</code></pre>
+<ol>
+<li>View experiment tracking UI:</li>
+</ol>
+<pre><code class="language-bash">mlflow ui --host 0.0.0.0 --port 5000
+</code></pre>
+<p>This will use the local <code>mlruns/</code> directory and show runs for Logistic Regression and Random Forest (parameters, metrics, and model artifacts).</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": [], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

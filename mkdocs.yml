@@ -6,6 +6,13 @@ repo_name: ${GITHUB_REPOSITORY}
 docs_dir: doc
 site_dir: site
 
+# When opening built docs directly from disk (file://), directory URLs can show a folder listing
+# instead of index.html. Disabling this generates `page.html` files.
+use_directory_urls: false
+
+theme:
+  name: material
+
 nav:
   - Home: index.md
   - EDA: eda.md
