@@ -42,6 +42,7 @@ typing = [
     "junit2html>=31.0.5",
     "mypy~=1.19.0",
     "pandas-stubs>=2.3.3.251219",
+    "types-seaborn",
 ]
 test = [
     "pytest>=9.0.2",
@@ -80,3 +81,20 @@ ignore = [
 
 [tool.mypy]
 exclude = ["build/", "dist/", ".nox/", "noxfile.py", "tests/"] 
+
+[[tool.mypy.overrides]]
+module = [
+    "fastapi",
+    "loguru",
+    "prometheus_client",
+    "pydantic",
+    "sklearn",
+    "sklearn.*",
+    "matplotlib",
+    "matplotlib.*",
+    "mlflow",
+    "mlflow.*",
+    "seaborn",
+    "seaborn.*",
+]
+ignore_missing_imports = true

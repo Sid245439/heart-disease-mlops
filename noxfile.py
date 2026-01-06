@@ -1,8 +1,5 @@
 from __future__ import annotations
 
-import argparse
-import os
-import shutil
 from pathlib import Path
 from nox import Session
 import nox
@@ -24,6 +21,8 @@ DATA_DIRECTORY = PROJECT_DIRECTORY / "data" / "raw"
 
 nox.options.reuse_existing_virtualenvs = True
 nox.options.error_on_missing_interpreters = True
+# Single command to run all sessions in order
+nox.options.sessions = ["lint", "typing", "format", "test"]
 
 
 @session(
@@ -78,9 +77,8 @@ def format(session: Session) -> None:
 
 @session(
     venv_backend="uv",
-    uv_only_groups=["typing"],
+    uv_groups=["typing", "train"],
     python="3.12",
-    uv_no_install_project=True,
 )
 def typing(session: Session) -> None:
     """Run mypy to check typing issues."""
@@ -110,7 +108,6 @@ def dev(session: Session) -> None:
     venv_backend="uv",
     uv_groups=["test"],
     python="3.12",
-    uv_no_install_project=True,
 )
 def test(session: Session) -> None:
     """Run the test suite."""
@@ -143,9 +140,8 @@ def test(session: Session) -> None:
 
 @session(
     venv_backend="uv",
-    uv_only_groups=["train"],
+    uv_groups=["train"],
     python="3.12",
-    uv_no_install_project=True,
 )
 def train(session: Session) -> None:
     """Download data and train models."""
