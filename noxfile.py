@@ -67,7 +67,7 @@ def lint(session: Session) -> None:
     uv_no_install_project=True,
 )
 def format(session: Session) -> None:
-    """Run black and ruff to format the code."""
+    """Run ruff to format the code."""
     FORMAT_DIRECTORY.mkdir(parents=True, exist_ok=True)
 
     with (FORMAT_DIRECTORY / "ruff-format-diff.patch").open("w") as f:
