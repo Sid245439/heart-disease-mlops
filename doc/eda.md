@@ -1,6 +1,6 @@
 # Exploratory Data Analysis (EDA) — Heart Disease UCI
 
-This document captures the complete EDA process used in this project, aligned with the assignment requirements (data acquisition, cleaning considerations, class balance analysis, and professional visualizations).
+This document captures the complete EDA process used in this project.
 
 Primary EDA source:
 
