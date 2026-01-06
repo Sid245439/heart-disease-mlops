@@ -6,6 +6,7 @@ readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
     "fastapi>=0.124.4",
+    "flask>=3.1.2",
     "gunicorn>=23.0.0",
     "joblib>=1.5.2",
     "loguru>=0.7.3",
