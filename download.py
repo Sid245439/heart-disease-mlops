@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """Data Download Script - Run this ONCE to fetch the Heart Disease dataset."""
 
 import sys
