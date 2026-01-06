@@ -1,5 +1,5 @@
 # Use official Python runtime as base image
-FROM python:3.11-slim
+FROM python:3.12-slim
 
 # Set working directory
 WORKDIR /app
@@ -14,24 +14,7 @@ RUN apt-get update && apt-get install -y \
 COPY environment.yml /app/
 
 # Install dependencies via pip (faster than conda in Docker)
-RUN pip install --no-cache-dir \
-    numpy==1.24.* \
-    pandas==2.0.* \
-    scikit-learn==1.3.* \
-    matplotlib==3.7.* \
-    seaborn==0.12.* \
-    mlflow==2.10.* \
-    flask==3.0.* \
-    fastapi==0.104.1 \
-    uvicorn==0.24.0 \
-    pydantic==2.5.0 \
-    python-multipart==0.0.6 \
-    requests==2.31.* \
-    joblib==1.3.2 \
-    onnx==1.15.0 \
-    skl2onnx==1.16.0 \
-    prometheus-client==0.18.* \
-    gunicorn==21.*
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy application code
 COPY . /app/
