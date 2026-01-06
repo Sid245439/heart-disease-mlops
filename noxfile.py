@@ -153,3 +153,14 @@ def train(session: Session) -> None:
         "-c",
         "from src.training import train_pipeline; train_pipeline('data/raw/heart_disease_raw.csv')",
     )
+
+
+@session(
+    venv_backend="uv",
+    uv_only_groups=["docs"],
+    python="3.12",
+    uv_no_install_project=True,
+)
+def docs(session: Session) -> None:
+    """Build documentation site (MkDocs)."""
+    session.run("mkdocs", "build", "--clean", "--strict")

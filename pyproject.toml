@@ -54,6 +54,10 @@ train = [
     "mlflow>=3.7.0",
 ]
 
+docs = [
+    "mkdocs>=1.6.1",
+]
+
 [tool.ruff]
 preview = true
 line-length = 120

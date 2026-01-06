@@ -1,0 +1,17 @@
+site_name: Heart Disease MLOps
+site_description: Project documentation
+repo_url: https://github.com/${GITHUB_REPOSITORY}
+repo_name: ${GITHUB_REPOSITORY}
+
+docs_dir: doc
+site_dir: site
+
+nav:
+  - Home: index.md
+  - EDA: eda.md
+  - Modeling: modeling.md
+  - Experiment Tracking: experiment-tracking.md
+
+markdown_extensions:
+  - toc:
+      permalink: true
