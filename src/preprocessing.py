@@ -22,7 +22,7 @@ logger.add(sys.stdout, level="INFO", format="{time:YYYY-MM-DD HH:mm:ss} [{level}
 class HeartDiseasePreprocessor:
     """Preprocessing pipeline."""
 
-    def __init__(self) -> None:  # noqa: D107
+    def __init__(self) -> None:
         self.scaler: StandardScaler = StandardScaler()
         self.encoders: dict[str, LabelEncoder] = {}
         self.feature_columns: list[str] | None = None

@@ -42,7 +42,7 @@ logger.add(sys.stdout, level="INFO", format="{time:YYYY-MM-DD HH:mm:ss} [{level}
 class ModelTrainer:
     """Train and evaluate multiple models."""
 
-    def __init__(self, experiment_name: str = "heart-disease-mlops") -> None:  # noqa: D107
+    def __init__(self, experiment_name: str = "heart-disease-mlops") -> None:
         self.experiment_name = experiment_name
         self.models: dict[str, dict[str, Any]] = {}
         self.best_model: BaseEstimator | None = None
