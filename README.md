@@ -27,7 +27,19 @@ pip install uv
 uv pip install --system nox nox-uv
 ```
 
-3. Run the full CI suite locally
+3. Create the development environment
+
+```bash
+uv nox -s dev
+```
+
+4. Activate the dev environment
+
+```bash
+source .nox/dev/Scripts/activate
+```
+
+4. Run the full CI suite locally
 
 ```bash
 nox
@@ -63,7 +75,11 @@ mlflow ui  --host localhost --port 5000
 ```
 
 - UI: http://localhost:5000
-- Alternative: `nox -s mlflow_ui`
+- Alternative:
+
+```bash
+nox -s mlflow_ui
+```
 
 ## Docker
 
