@@ -19,6 +19,8 @@ COVERAGE_DIRECTORY = REPORTS_DIRECTORY / "coverage"
 FORMAT_DIRECTORY = REPORTS_DIRECTORY / "format"
 TYPING_DIRECTORY = REPORTS_DIRECTORY / "typing"
 
+DATA_DIRECTORY = PROJECT_DIRECTORY / "data" / "raw"
+
 
 nox.options.reuse_existing_virtualenvs = True
 nox.options.error_on_missing_interpreters = True
@@ -136,4 +138,22 @@ def test(session: Session) -> None:
         str(pytest_xml),
         "--report-matrix",
         str(pytest_html),
+    )
+
+
+@session(
+    venv_backend="uv",
+    uv_only_groups=["train"],
+    python="3.12",
+    uv_no_install_project=True,
+)
+def train(session: Session) -> None:
+    """Download data and train models."""
+    DATA_DIRECTORY.mkdir(parents=True, exist_ok=True)
+
+    session.run("python", "download.py")
+    session.run(
+        "python",
+        "-c",
+        "from src.training import train_pipeline; train_pipeline('data/raw/heart_disease_raw.csv')",
     )

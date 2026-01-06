@@ -903,6 +903,7 @@ dependencies = [
     { name = "loguru" },
     { name = "matplotlib" },
     { name = "onnx" },
+    { name = "pandas" },
     { name = "prometheus-client" },
     { name = "scikit-learn" },
     { name = "seaborn" },
@@ -933,6 +934,9 @@ test = [
     { name = "pytest" },
     { name = "pytest-cov" },
 ]
+train = [
+    { name = "mlflow" },
+]
 typing = [
     { name = "junit2html" },
     { name = "mypy" },
@@ -948,6 +952,7 @@ requires-dist = [
     { name = "loguru", specifier = ">=0.7.3" },
     { name = "matplotlib", specifier = ">=3.10.8" },
     { name = "onnx", specifier = ">=1.20.0" },
+    { name = "pandas", specifier = ">=2.2.0" },
     { name = "prometheus-client", specifier = ">=0.23.1" },
     { name = "scikit-learn", specifier = ">=1.8.0" },
     { name = "seaborn", specifier = ">=0.13.2" },
@@ -978,6 +983,7 @@ test = [
     { name = "pytest", specifier = ">=9.0.2" },
     { name = "pytest-cov", specifier = ">=6.3.0" },
 ]
+train = [{ name = "mlflow", specifier = ">=3.7.0" }]
 typing = [
     { name = "junit2html", specifier = ">=31.0.5" },
     { name = "mypy", specifier = "~=1.19.0" },
