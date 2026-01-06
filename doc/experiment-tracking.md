@@ -51,12 +51,12 @@ This downloads the dataset (to `data/raw/heart_disease_raw.csv`) and runs the tr
 2. Start the MLflow UI
 
 ```bash
-mlflow ui --backend-store-uri file:./mlruns --host 127.0.0.1 --port 5000
+mlflow ui --host localhost --port 5000
 ```
 
 3. Open the UI in your browser
 
-- `http://127.0.0.1:5000`
+- `http://localhost:5000`
 
 ### Option B: run an MLflow Tracking Server (recommended for repeatable local work)
 
@@ -66,21 +66,21 @@ If you want a more “server-like” setup (separate backend store + artifact di
 mlflow server \
 	--backend-store-uri sqlite:///mlflow.db \
 	--default-artifact-root ./mlartifacts \
-	--host 127.0.0.1 \
+	--host localhost \
 	--port 5000
 ```
 
 Then, in a separate terminal, point clients at it:
 
 ```bash
-export MLFLOW_TRACKING_URI=http://127.0.0.1:5000
+export MLFLOW_TRACKING_URI=http://localhost:5000
 nox -s train
 ```
 
 Windows PowerShell:
 
 ```powershell
-$env:MLFLOW_TRACKING_URI = "http://127.0.0.1:5000"
+$env:MLFLOW_TRACKING_URI = "http://localhost:5000"
 nox -s train
 ```
 

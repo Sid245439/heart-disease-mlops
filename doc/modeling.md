@@ -211,7 +211,7 @@ This reproduces the preprocessing pipeline, candidate comparison, threshold tuni
 1. Download data:
 
 ```bash
-python download_data.py
+python download.py
 ```
 
 2. Train + log experiments:
@@ -223,7 +223,7 @@ python -c "from src.training import train_pipeline; train_pipeline('data/raw/hea
 3. View experiment tracking UI:
 
 ```bash
-mlflow ui --host 0.0.0.0 --port 5000
+mlflow ui --host localhost --port 5000
 ```
 
 This will use the local `mlruns/` directory and show runs for Logistic Regression and Random Forest (parameters, metrics, and model artifacts).

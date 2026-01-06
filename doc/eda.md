@@ -24,13 +24,13 @@ Two equivalent ways are supported in this repo:
 
 1. **Reproducible download script (recommended for pipelines):**
 
-- Script: `download_data.py`
+- Script: `download.py`
 - Output: `data/raw/heart_disease_raw.csv`
 
 Run:
 
 ```bash
-python download_data.py
+python download.py
 ```
 
 This script downloads the data from the url `https://archive.ics.uci.edu/static/public/45/data.csv`. This is the 45th version of the data.

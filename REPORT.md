@@ -29,7 +29,7 @@ For a cleaner, assignment-aligned writeup, see the documentation pages under `do
 
 - Experiment name: `heart-disease-mlops`.
 - Parameters, metrics, and artifacts (including feature importance plot) logged per run.
-- Launch UI: `mlflow ui --host 0.0.0.0 --port 5000` → `http://localhost:5000`.
+- Launch UI: `mlflow ui --host localhost --port 5000` → `http://localhost:5000`.
 - To simplify starting the ui and set up run nox session `nox -s mlflow_ui`.
 
 ## Packaging, Containerization, Deployment
