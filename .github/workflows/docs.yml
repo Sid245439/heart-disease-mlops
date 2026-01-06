@@ -38,6 +38,10 @@ jobs:
         run: |
           uv pip install --system nox nox-uv
 
+      - name: Configure GitHub Pages
+        if: github.event_name != 'pull_request'
+        uses: actions/configure-pages@v5
+
       - name: Build docs (MkDocs)
         run: |
           nox -s docs
@@ -60,7 +64,11 @@ jobs:
     if: github.event_name != 'pull_request'
     needs: build
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4
